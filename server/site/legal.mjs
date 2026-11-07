@@ -1,5 +1,5 @@
 // Legal details for the footer and the imprint page (Impressum, § 5 DDG). Edit here only.
-import { layout, esc, breadcrumbs, breadcrumbLd } from "./layout.mjs";
+import { layout, esc } from "./layout.mjs";
 
 export const LEGAL = {
   entity: "OpenInvestorPortal GbR",
@@ -18,19 +18,21 @@ export const CONTACT_EMAIL = LEGAL.email;
 
 const mail = (m) => `<a href="mailto:${esc(m)}">${esc(m)}</a>`;
 
-/** One-line imprint for the footer of every page. */
-export const footerLegal = () =>
-  `<div class="wrap legal">${esc(LEGAL.entity)} · Contact: ${esc(LEGAL.contactPerson)} · ${mail(LEGAL.email)} · <a href="/imprint">Imprint</a></div>`;
+/** Discreet imprint link for the footer of every page. */
+export const footerLegal = () => `<div class="wrap legal"><a href="/imprint">Imprint</a></div>`;
+
+// Deliberately quiet: small, muted type. The page exists to meet the legal requirement, not to be read.
+const IMPRINT_CSS = `.imprint{padding:40px 0 56px;border:0;color:#94a3b8;font-size:12.5px;line-height:1.6}
+.imprint h1{font-size:15px;font-weight:600;letter-spacing:0;color:#64748b;margin:0 0 16px}
+.imprint h2{font-size:12.5px;font-weight:600;color:#64748b;margin:18px 0 2px;letter-spacing:0}
+.imprint p{margin:0 0 6px;max-width:640px}
+.imprint strong{font-weight:500;color:#64748b}
+.imprint a{color:inherit}`;
 
 function imprintPage() {
-  const crumbs = [{ name: "Imprint", path: "/imprint" }];
   const addr = LEGAL.address ? `<br>${LEGAL.address.map(esc).join("<br>")}` : "";
-  const body = `<section class="page-head"><div class="wrap">
-  ${breadcrumbs(crumbs)}
+  const body = `<section class="imprint"><div class="wrap">
   <h1>Imprint (Impressum)</h1>
-  <p class="lead">Legal information about the operator of OpenInvestorPortal.</p>
-</div></section>
-<section class="tight"><div class="wrap prose">
   <h2>Angaben gemäß § 5 DDG</h2>
   <p><strong>${esc(LEGAL.entity)}</strong>${addr}</p>
   <p>Vertreten durch ${LEGAL.partners.length > 1 ? "die Gesellschafter" : "den Gesellschafter"}: ${LEGAL.partners.map(esc).join(", ")}</p>
@@ -52,10 +54,11 @@ function imprintPage() {
     description: "Imprint of OpenInvestorPortal: operator, contact person and email address, and notes on the community-researched registry content and trademarks.",
     path: "/imprint",
     body,
-    jsonld: [breadcrumbLd(crumbs)],
+    noindex: true,
+    css: IMPRINT_CSS,
   });
 }
 
 export async function pages(ctx) {
-  return [{ path: "/imprint", render: imprintPage, lastmod: ctx.latest, priority: 0.2 }];
+  return [{ path: "/imprint", render: imprintPage, lastmod: ctx.latest, sitemap: false }];
 }
