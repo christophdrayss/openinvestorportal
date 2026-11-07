@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenInvestorPortal — The Unified Interface for Every Investor Portal</title>
+<meta name="description" content="The open registry and protocol for investor portal access. Investors connect once; portals stay in control; credentials and data never pass through us.">
+<link rel="stylesheet" href="/site.css?v=3">
+<!--SEO_HEAD-->
+</head>
+<body>
+
+<!--NAV-->
+
+<header>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="hero-fade"></div>
+  <div class="wrap hero">
+    <div class="hero-inner">
+      <span class="eyebrow"><b>Open standard</b> · Registry · Protocol · Free to list</span>
+      <h1>The Unified Interface for <em>Every Investor Portal.</em></h1>
+      <p class="lead">Register once with OpenInvestorPortal, then connect peer to peer. Fetch investor reports, capital calls, distributions and documents programmatically from every portal you use, through one interface. We broker the handshake. Everything after that runs directly between you and the portal.</p>
+      <div class="legend">
+        <span><i></i>Investors</span>
+        <span><i class="accent"></i>Handshake</span>
+        <span><i class="hollow"></i>Portals</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="how"><div class="wrap">
+  <p class="kicker">How it works</p>
+  <h2>One handshake through us. Everything else peer to peer.</h2>
+  <p class="sub">OpenInvestorPortal is a registry and a certificate authority. It introduces investor and portal to each other exactly once. Every request, every document and every statement afterwards travels directly between the two peers, and we are not in the path.</p>
+  <div class="grid3">
+    <div class="card"><span class="step">01 · Register</span><h3>Investor creates a key</h3><p>A keypair is generated on the investor's device. Only the public key is registered with OpenInvestorPortal and becomes the investor's identity. The private key never leaves.</p></div>
+    <div class="card"><span class="step">02 · Link</span><h3>Portal links the account</h3><p>Inside the portal's own UI the investor clicks “Connect with OpenInvestorPortal”. The portal stores the public key against the account and we issue a signed link certificate. No password is shared with anyone.</p></div>
+    <div class="card"><span class="step">03 · Peer to peer</span><h3>Direct, signed, offline-verifiable</h3><p>The investor's client signs each request with its key and calls the portal's endpoint directly. The portal checks the signature and the link certificate offline, with no call to us. Reports, capital calls and documents flow peer to peer. Revocation propagates in under an hour.</p></div>
+  </div>
+</div></section>
+
+<section id="investors"><div class="wrap">
+  <div class="grid2">
+    <div class="card aud" id="investors-card">
+      <p class="kicker">For investors &amp; fund administrators</p>
+      <h3>Stop logging into fifteen portals</h3>
+      <ul>
+        <li>One API and one MCP server. Documents, capital calls, distributions and capital account statements from every linked portal, normalised to the ILPA templates.</li>
+        <li>Your key, your data. We never hold your credentials, we never see your statements.</li>
+        <li>Works with your AI agent today. Claude, ChatGPT or your own tooling call the same tools.</li>
+        <li>For portals that have not joined yet: a local, read-only connector under your own login, with clear rules, never run by us.</li>
+      </ul>
+      <a class="btn btn-primary" href="#api">See the API</a>
+    </div>
+    <div class="card aud" id="operators">
+      <p class="kicker">For portal operators</p>
+      <h3>Give your LPs an API without building a platform</h3>
+      <ul>
+        <li>Listing is free. You control your entry and get a vendor-verified badge.</li>
+        <li>OIPP is about eight read-only REST endpoints. Investors authenticate with their own keys; you verify signatures, nothing else changes in your stack.</li>
+        <li>You decide the scope of every link and can revoke it at any time. Nothing leaves your systems except to your own user.</li>
+        <li>Sanctioned API access replaces unsanctioned scraping of your site. Join and the fallback connector for your portal is retired.</li>
+      </ul>
+      <a class="btn btn-secondary" href="mailto:hello@openinvestorportal.org?subject=List%20our%20portal">List your portal</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="api"><div class="wrap">
+  <p class="kicker">The protocol <span class="soon">Coming soon</span></p>
+  <h2>OIPP: a small surface every portal can implement</h2>
+  <p class="sub">Read-only REST, mirrored as MCP tools. Payloads follow the ILPA templates. Requests are signed with HTTP Message Signatures (RFC 9421) and carry a short-lived link certificate signed by us, so portals verify everything offline.</p>
+  <div class="grid2">
+<pre><span class="c"># investor client → portal, directly</span>
+GET /oipp/v1/capital-calls?since=2026-01-01
+Authorization: OIPP <span class="s">oip:inv_7f3a</span>
+OIPP-Link: <span class="s">eyJhbGciOi…</span>   <span class="c"># signed by OpenInvestorPortal, 24h</span>
+Signature-Input: sig=("@method" "@target-uri" "content-digest")
+Signature: sig=:<span class="s">MEUCIQ…</span>:   <span class="c"># signed by the investor's key</span>
+
+<span class="c"># portal verifies, returns ILPA-shaped JSON</span>
+200 OK
+{ <span class="k">"capital_calls"</span>: [ { <span class="k">"fund"</span>: "…", <span class="k">"due_date"</span>: "2026-02-15",
+    <span class="k">"amount"</span>: { <span class="k">"value"</span>: 250000, <span class="k">"currency"</span>: "EUR" } } ] }</pre>
+<pre><span class="c"># resources every OIPP portal exposes</span>
+GET /oipp/.well-known/oipp          <span class="c"># discovery, JWKS</span>
+GET /oipp/v1/accounts               <span class="c"># commitments on this portal</span>
+GET /oipp/v1/documents              <span class="c"># metadata, filters</span>
+GET /oipp/v1/documents/{id}/content
+GET /oipp/v1/capital-calls          <span class="c"># ILPA capital call template</span>
+GET /oipp/v1/distributions          <span class="c"># ILPA distribution template</span>
+GET /oipp/v1/capital-account-statements
+GET /oipp/v1/notifications?cursor=  <span class="c"># change feed</span>
+
+<span class="c"># the same, as MCP tools</span>
+list_accounts · list_documents · get_document
+list_capital_calls · list_distributions
+list_capital_account_statements · list_notifications</pre>
+  </div>
+</div></section>
+
+<section id="managed"><div class="wrap">
+  <div class="teaser">
+    <div>
+      <p class="kicker">Managed Portal Vaults</p>
+      <h2 style="font-size:clamp(24px,3vw,32px)">The unified interface, with nothing to run</h2>
+      <p class="sub" style="margin-bottom:22px">For investors and family offices who want the outcome and not the infrastructure. We operate a dedicated vault for your portal keys and second factors, and deliver your documents, capital calls and statements to wherever you work.</p>
+      <a class="btn btn-primary" href="/vaults">About Managed Vaults</a>
+    </div>
+    <ul>
+      <li>Dedicated vault per client, keys non-exportable</li>
+      <li>Second-factor logins handled for you</li>
+      <li>Delivery to SFTP, SharePoint, email or API</li>
+      <li>Named operations contact, full audit log</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="registry"><div class="wrap">
+  <div class="reg-head">
+    <div>
+      <p class="kicker" id="reg-count"><!--REG_COUNT-->Open data · CC0</p>
+      <h2 style="margin:0">Investor Portal Registry</h2>
+    </div>
+    <input class="search" id="q" placeholder="Search portals or vendors…" aria-label="Search portals">
+  </div>
+  <div class="tablewrap"><table id="reg">
+    <thead><tr><th data-sort="name" aria-sort="ascending">Portal</th><th data-sort="vendor">Vendor</th><th data-sort="category">Category</th><th data-sort="api">API</th><th data-sort="mcp">MCP</th><th data-sort="sftp">SFTP</th><th data-sort="difficulty">Difficulty</th><th></th></tr></thead>
+    <tbody><!--REG_ROWS--></tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:14px;margin-top:16px">Difficulty is how hard it is to reach documents programmatically today, 1 easy to 5 hard, from community research. Status values: <span class="pill available">available</span> documented and self-serve · <span class="pill partner-only">partner-only</span> needs an agreement · <span class="pill none">none</span> confirmed absent · <span class="pill">unknown</span> not checked yet. Entries are community-maintained and CC0. Vendors correct their entry by pull request.</p>
+  <p class="reg-links" style="font-size:14px;margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 22px"><a href="/portals" style="text-decoration:none;color:var(--ink2)">Browse the full registry</a><a href="/compare" style="text-decoration:none;color:var(--ink2)">Comparisons</a><a href="/guides" style="text-decoration:none;color:var(--ink2)">Guides</a><a href="/administrators" style="text-decoration:none;color:var(--ink2)">Administrators</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <div>OpenInvestorPortal · open registry and protocol for investor portal access · code MIT, data CC0<br><span style="font-size:12.5px">Product names and logos are trademarks of their respective owners and are used only to identify the listed products. Owners can request a correction or removal by pull request or email.</span></div>
+  <div><code>GET /v1/portals</code> <code>GET /v1/portals/{id}</code> <code>POST /mcp</code> <code>GET /schema/portal.schema.json</code></div>
+</div></footer>
+
+<script type="application/json" id="reg-data"><!--REG_DATA--></script>
+<script>
+/* ---------- registry table ----------
+   Rows are server-rendered by server/site/home.mjs in the default order (name, ascending), and the same
+   data is inlined as JSON in #reg-data, so sorting and search work without a fetch.
+   Keep the row markup here in sync with rowHtml() in home.mjs. */
+(() => {
+  const tbody = document.querySelector('#reg tbody');
+  const q = document.getElementById('q');
+  let rows = [];
+  try { rows = JSON.parse(document.getElementById('reg-data').textContent).portals; } catch { return; }
+  const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const pill = (v) => `<span class="pill ${esc(v)}">${esc(v)}</span>`;
+  // Access statuses sort from most open to least open; unknown last.
+  const rank = { available: 0, beta: 1, "partner-only": 2, planned: 3, none: 4, unknown: 5 };
+  let sortKey = 'name', sortDir = 1;
+  const cmp = (a, b) => {
+    let x = a[sortKey], y = b[sortKey];
+    if (['api', 'mcp', 'sftp'].includes(sortKey)) { x = rank[x] ?? 9; y = rank[y] ?? 9; }
+    if (sortKey === 'difficulty') { x = x ?? 9; y = y ?? 9; }
+    if (typeof x === 'string') return x.localeCompare(y, undefined, { sensitivity: 'base' }) * sortDir || a.name.localeCompare(b.name);
+    return (x - y) * sortDir || a.name.localeCompare(b.name);
+  };
+  const ths = document.querySelectorAll('#reg th[data-sort]');
+  ths.forEach(th => th.addEventListener('click', () => {
+    const k = th.dataset.sort;
+    sortDir = sortKey === k ? -sortDir : 1;
+    sortKey = k;
+    ths.forEach(t => t.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+    render();
+  }));
+  const render = () => {
+    const f = q.value.trim().toLowerCase();
+    const list = rows.filter(p => !f || `${p.name} ${p.vendor} ${p.category}`.toLowerCase().includes(f)).sort(cmp);
+    tbody.innerHTML = list.map(p => `<tr>
+      <td><a class="pname" href="/portals/${esc(p.id)}">${p.logo ? `<img class="plogo" src="${esc(p.logo)}" alt="" loading="lazy">` : `<span class="plogo ph">${esc(p.name[0])}</span>`}${esc(p.name)}</a></td><td>${esc(p.vendor)}</td><td style="color:var(--muted)">${esc(p.category)}</td>
+      <td>${pill(p.api)}</td><td>${pill(p.mcp)}</td><td>${pill(p.sftp)}</td><td>${p.difficulty ? `<span class="diff d${p.difficulty}" title="1 easy, 5 hard">${p.difficulty} / 5</span>` : `<span class="pill unknown">unrated</span>`}</td><td><a class="visit" href="${esc(p.website)}" target="_blank" rel="noopener noreferrer">Visit <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></td></tr>`).join('')
+      || '<tr><td colspan="8" style="color:var(--muted)">No match.</td></tr>';
+  };
+  q.addEventListener('input', render);
+  if (q.value) render(); // the browser restored a search term, e.g. on back navigation
+})();
+
+/* ---------- hero network animation ----------
+   Investors (left) and portals (right). A handshake pulse travels investor → hub → portal,
+   the hub flashes, a direct link appears, and from then on data packets travel investor ↔ portal
+   directly, never touching the hub. Links age out so the scene keeps evolving. */
+(() => {
+  const cv = document.getElementById('net');
+  const ctx = cv.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const C = { inv: [11,18,32], por: [11,18,32], hub: [94,116,97] };
+  const rgba = (c, a) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
+  let W, H, dpr, investors = [], portals = [], hub, links = [], handshakes = [], packets = [], t0 = performance.now();
+
+  function layout() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const narrow = W < 860;
+    const colL = Math.max(24, (W - 1120) / 2), colR = W - colL; // align the scene with the content column
+    const x0 = narrow ? W * 0.08 : colL + (colR - colL) * 0.56, x1 = narrow ? W * 0.92 : colR; // scene occupies right part on desktop
+    const mk = (n, x, col, phase) => Array.from({ length: n }, (_, i) => ({
+      bx: x + (Math.random() - .5) * W * 0.04, by: H * (0.12 + 0.76 * (i + .5) / n), r: 5.5, col, ph: phase + i * 1.7, x: 0, y: 0, glow: 0,
+    }));
+    investors = mk(6, x0 + (x1 - x0) * 0.08, C.inv, 0);
+    portals = mk(8, x0 + (x1 - x0) * 0.92, C.por, 2).map(p => ({ ...p, hollow: true }));
+    hub = { bx: (x0 + x1) / 2, by: H / 2, r: 11, col: C.hub, ph: 0, x: 0, y: 0, glow: 0 };
+    links = []; handshakes = []; packets = [];
+  }
+
+  function drift(n, t) { n.x = n.bx + Math.sin(t / 2600 + n.ph) * 7; n.y = n.by + Math.cos(t / 3100 + n.ph * 1.3) * 7; }
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const ease = (k) => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+
+  function startHandshake(now) {
+    const free = investors.flatMap(i => portals.filter(p => !links.some(l => l.a === i && l.b === p)).map(p => [i, p]));
+    if (!free.length) return;
+    const [a, b] = free[Math.floor(Math.random() * free.length)];
+    handshakes.push({ a, b, t: now, dur: 1700 });
+  }
+
+  function dot(n, extra = 0) {
+    const g = n.glow;
+    if (g > 0.01) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 10 + extra + g * 10, 0, 7); ctx.fillStyle = rgba(n.col, 0.10 * g); ctx.fill(); }
+    ctx.beginPath(); ctx.arc(n.x, n.y, n.r + extra, 0, 7);
+    if (n.hollow) { ctx.fillStyle = '#fff'; ctx.fill(); ctx.strokeStyle = rgba(n.col, 0.9); ctx.lineWidth = 1.6; ctx.stroke(); }
+    else { ctx.fillStyle = rgba(n.col, 0.95); ctx.fill(); }
+    ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 4 + extra, 0, 7); ctx.strokeStyle = rgba(n.col, 0.12); ctx.lineWidth = 1; ctx.stroke();
+  }
+
+  let lastHs = 0, lastPk = 0;
+  function frame(now) {
+    const t = now - t0;
+    ctx.clearRect(0, 0, W, H);
+    [...investors, ...portals, hub].forEach(n => { drift(n, t); n.glow *= 0.94; });
+
+    // faint spokes to the hub: the directory knows everyone
+    ctx.lineWidth = 1;
+    [...investors, ...portals].forEach(n => { ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(hub.x, hub.y); ctx.strokeStyle = rgba(n.col, 0.07); ctx.setLineDash([2, 6]); ctx.stroke(); });
+    ctx.setLineDash([]);
+
+    // established links: direct, bypassing the hub
+    links = links.filter(l => now - l.t < 26000);
+    links.forEach(l => {
+      const age = (now - l.t) / 26000, alpha = (age < .08 ? age / .08 : 1) * (age > .8 ? (1 - age) / .2 : 1);
+      const grad = ctx.createLinearGradient(l.a.x, l.a.y, l.b.x, l.b.y);
+      grad.addColorStop(0, rgba(C.inv, 0.28 * alpha)); grad.addColorStop(1, rgba(C.inv, 0.28 * alpha));
+      ctx.beginPath(); ctx.moveTo(l.a.x, l.a.y);
+      const cx = (l.a.x + l.b.x) / 2, cy = (l.a.y + l.b.y) / 2 + (l.a.y < hub.y ? -1 : 1) * Math.abs(l.a.y - l.b.y) * 0.25 - (l.a.y < hub.y ? 40 : -40);
+      ctx.quadraticCurveTo(cx, cy, l.b.x, l.b.y); ctx.strokeStyle = grad; ctx.lineWidth = 1.4; ctx.stroke();
+      l.cx = cx; l.cy = cy; l.alpha = alpha;
+    });
+
+    // handshakes: investor → hub → portal
+    handshakes = handshakes.filter(h => now - h.t < h.dur + 200);
+    handshakes.forEach(h => {
+      const k = Math.min(1, (now - h.t) / h.dur);
+      let x, y, col;
+      if (k < .5) { const e = ease(k / .5); x = lerp(h.a.x, hub.x, e); y = lerp(h.a.y, hub.y, e); col = C.hub; if (k > .46) hub.glow = 1; }
+      else { const e = ease((k - .5) / .5); x = lerp(hub.x, h.b.x, e); y = lerp(hub.y, h.b.y, e); col = C.hub; }
+      ctx.beginPath(); ctx.moveTo(k < .5 ? h.a.x : hub.x, k < .5 ? h.a.y : hub.y); ctx.lineTo(x, y); ctx.strokeStyle = rgba(col, .35); ctx.lineWidth = 1; ctx.stroke();
+      ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fillStyle = rgba(col, 1); ctx.fill();
+      if (k >= 1 && !h.done) { h.done = true; h.b.glow = 1; links.push({ a: h.a, b: h.b, t: now }); }
+    });
+
+    // data packets along links (direct)
+    packets = packets.filter(p => now - p.t < p.dur);
+    packets.forEach(p => {
+      const l = p.l; if (!links.includes(l)) return;
+      let k = ease((now - p.t) / p.dur); if (p.back) k = 1 - k;
+      const x = (1 - k) * (1 - k) * l.a.x + 2 * (1 - k) * k * l.cx + k * k * l.b.x;
+      const y = (1 - k) * (1 - k) * l.a.y + 2 * (1 - k) * k * l.cy + k * k * l.b.y;
+      ctx.beginPath(); ctx.arc(x, y, 2.6, 0, 7); ctx.fillStyle = rgba(C.hub, 0.95 * (l.alpha ?? 1)); ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, 7, 0, 7); ctx.fillStyle = rgba(C.hub, 0.14); ctx.fill();
+      if (now - p.t > p.dur - 40) (p.back ? l.a : l.b).glow = 0.6;
+    });
+
+    [...investors, ...portals].forEach(n => dot(n));
+    dot(hub, 2);
+    ctx.font = '11px ui-monospace, Menlo, monospace'; ctx.fillStyle = rgba(C.hub, .8); ctx.textAlign = 'center';
+    ctx.fillText('handshake', hub.x, hub.y + 28);
+
+    if (!reduce) {
+      if (now - lastHs > (links.length < 4 ? 1400 : 3200)) { startHandshake(now); lastHs = now; }
+      if (links.length && now - lastPk > 650) { const l = links[Math.floor(Math.random() * links.length)]; packets.push({ l, t: now, dur: 1500, back: Math.random() < .45 }); lastPk = now; }
+      requestAnimationFrame(frame);
+    }
+  }
+
+  layout(); addEventListener('resize', () => { layout(); if (reduce) seed(); });
+  function seed() { // static scene for reduced motion
+    for (let i = 0; i < 6; i++) startHandshake(-5000);
+    handshakes.forEach(h => { links.push({ a: h.a, b: h.b, t: performance.now() - 5000 }); }); handshakes = [];
+    frame(performance.now());
+  }
+  if (reduce) seed(); else requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

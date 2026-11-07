@@ -1,0 +1,101 @@
+{
+  "id": "addepar-client-portal",
+  "name": "Addepar Client Portal",
+  "vendor": {
+    "name": "Addepar, Inc.",
+    "website": "https://addepar.com",
+    "country": "US"
+  },
+  "website": "https://addepar.com",
+  "category": "reporting-platform",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "real-estate",
+    "hedge-fund",
+    "other"
+  ],
+  "regions": [
+    "north-america",
+    "global",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "none"
+      ],
+      "notes": "Firm-branded Client Portal (firmdomain.addepar.com): clients sign in with email/password, view holdings, allocations, performance and files published by the advisor; file vault includes advisor- and client-uploaded files. MFA methods not confirmed in public docs; API Tracker lists SSO/social login without detail."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "base_url": "https://api.addepar.com/",
+      "docs_url": "https://developers.addepar.com/docs",
+      "auth": [
+        "basic",
+        "oauth2-authorization-code"
+      ],
+      "audience": [
+        "partner",
+        "fund-admin"
+      ],
+      "sandbox": true,
+      "notes": "JSON:API REST with published OpenAPI spec. Keys created by firm administrators (Firm Settings > API Access Key); OAuth clients via partners@addepar.com. Resources: portfolio query/views, transactions, positions, entities, Files (/v1/files list/download), Generated Reports, Client Portal publish (/v1/portal/publish_files, scopes FILE_WRITE, PUBLISH_FILE). Environments: firmdomain.addepar.com/api, api.addepar.com (3rd parties), clientdev, partner sandbox. End investors (portal users) cannot obtain keys; access is firm-level."
+    },
+    "mcp": {
+      "status": "beta",
+      "endpoint": "https://mcp.addepar.com/",
+      "auth": [
+        "oauth2"
+      ],
+      "maintainer": "vendor",
+      "docs_url": "https://claude.com/connectors/addepar",
+      "notes": "Official Addepar MCP server, Anthropic-verified Claude connector added August 2026, documentation marks it closed beta. Sign in with an Addepar account; permission aware. 15 tools including get_private_fund_cash_movements and get_upcoming_private_fund_capital_activity (capital calls, distributions, NAVs, unfunded). Aimed at advisor firm users; end-client access not stated."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "publish_files API can notify clients when files are published."
+    },
+    "export_formats": [
+      "pdf",
+      "xlsx",
+      "json"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "performance",
+    "nav",
+    "fund_reports",
+    "tax_documents",
+    "other"
+  ],
+  "standards": [
+    "openapi",
+    "oauth2"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_email": "partners@addepar.com",
+    "developer_portal": "https://developers.addepar.com"
+  },
+  "notes": "Treated here as a portal (Client Portal), not as an aggregator. Confidence: high on API facts (vendor developer portal). The documented API is for the firm (advisor/family office) that licenses Addepar; the end investor viewing a Client Portal has no documented self-serve API or MCP. A family office that is itself the Addepar licensee gets full API access to positions and files. Rate limits unspecified (increase on request). Terms not reviewed. Correction 2026-11-07: vendor MCP server exists (closed beta), see access.mcp.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

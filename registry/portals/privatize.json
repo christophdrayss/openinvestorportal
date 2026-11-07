@@ -1,0 +1,65 @@
+{
+  "id": "privatize",
+  "name": "Privatize",
+  "vendor": {
+    "name": "Privatize Group GmbH",
+    "website": "https://www.privatizegroup.com",
+    "country": "DE"
+  },
+  "website": "https://www.privatizegroup.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "infrastructure",
+    "real-estate",
+    "private-credit"
+  ],
+  "regions": [
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Frankfurt-based B2B2C private-markets platform for banks (white-label), asset managers/MFOs and financial advisors; ELTIFs from EUR 1,000; digital subscription; custody via partner banks (DAB BNP Paribas, Fondsdepot Bank, UBS, V-Bank). Login/MFA not published."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API or developer documentation found; site says funds are 'seamlessly integrated in client accounts' via partner custody banks."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "subscriptions",
+    "kyc",
+    "fund_reports"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://www.privatizegroup.com/"
+  },
+  "notes": "Added as DACH platform. Confidence: low-medium overall; vendor site is marketing only. Positions are typically booked in the investor's custody account at a partner bank, so position data may be reachable via the bank rather than Privatize. Investor-side API: unknown. Terms not retrievable.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

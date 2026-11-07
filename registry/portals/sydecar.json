@@ -1,0 +1,77 @@
+{
+  "id": "sydecar",
+  "name": "Sydecar",
+  "vendor": {
+    "name": "Sydecar, Inc.",
+    "website": "https://www.sydecar.io",
+    "country": "US"
+  },
+  "website": "https://www.sydecar.io",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://app.sydecar.io",
+      "sso": [
+        "none"
+      ],
+      "mfa": [
+        "email"
+      ],
+      "notes": "Investors log in by requesting a magic link to their email (help center); no password documented. K-1s viewable/downloadable in Tax Center."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Third-party directory (Software Advice) lists 'API' as a feature; no vendor developer docs, llms.txt makes no API mention. Unconfirmed."
+    },
+    "mcp": {
+      "status": "none",
+      "notes": "None found as of 2026-11-07."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Deal updates, capital calls and document notices by email (product updates)."
+    },
+    "export_formats": [
+      "pdf",
+      "csv"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://help.sydecar.io"
+  },
+  "notes": "Confidence: high on magic-link login and Tax Center K-1 download (vendor help center). CSV export documented only for syndicate contacts (GP side). Website Terms of Service prohibit 'any robot, spider, or other automatic device' and providing others access to the account; paying customers are governed by an MSA. No investor-side API found; API existence unconfirmed (third-party feature list only).",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://www.sydecar.io/legal/terms-of-service",
+    "automation_policy": "prohibited",
+    "notes": "Prohibited Uses bar robots/spiders and account sharing; MSA may differ for customers."
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

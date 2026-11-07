@@ -1,0 +1,87 @@
+{
+  "id": "moonfare",
+  "name": "Moonfare",
+  "vendor": {
+    "name": "Moonfare GmbH",
+    "website": "https://www.moonfare.com",
+    "country": "DE"
+  },
+  "website": "https://www.moonfare.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "infrastructure",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "europe",
+    "dach",
+    "uk",
+    "north-america",
+    "apac",
+    "middle-east"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "none"
+      ],
+      "mfa": [
+        "totp",
+        "sms"
+      ],
+      "notes": "Security page: 2FA enabled by default; app-based 2FA (e.g. Google Authenticator) recommended, implying SMS default. SSO described only for employees."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "partner"
+      ],
+      "notes": "Institutional pages advertise 'API integration' and white-label for wealth managers, banks, neo-banks and fintechs to offer PE on their own platform; no public docs, base URL or auth published. Fund admin fundcraft integrated via API (press, 2024-2026)."
+    },
+    "mcp": {
+      "status": "none",
+      "notes": "None found in MCP registry/GitHub as of 2026-11-07."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Capital call and quarterly report notifications by email (marketing pages); not verified in help docs."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "performance",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_email": "team@moonfare.com",
+    "support_url": "https://www.moonfare.com/security"
+  },
+  "notes": "Confidence: high on default 2FA (vendor security page). Medium on partner API (vendor marketing pages, no docs). Partner models: client-directed, advised (POA) and nominee, so delegates can see investments via partner access rather than an investor API. Digital Reporting and quarterly reports appear in the web app 3-6 months after first capital call. No investor-side API, export beyond PDF unknown. Terms of use page not retrievable (404 at tested URLs); automation policy unknown.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

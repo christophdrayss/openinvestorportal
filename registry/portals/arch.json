@@ -1,0 +1,96 @@
+{
+  "id": "arch",
+  "name": "Arch",
+  "vendor": {
+    "name": "Arch Labs, Inc.",
+    "website": "https://arch.com",
+    "country": "US"
+  },
+  "website": "https://arch.com",
+  "category": "reporting-platform",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "real-estate",
+    "hedge-fund",
+    "fund-of-funds",
+    "other"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://arch.com/portal",
+      "notes": "Client portal consolidating statements, capital calls, distributions and K-1s; digest emails of account updates and upcoming capital calls. MFA not published (trust.arch.com)."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "base_url": "https://arch.co/client-api/v0",
+      "docs_url": "https://arch.co/client-api/api-docs/",
+      "auth": [
+        "jwt",
+        "oauth2-client-credentials"
+      ],
+      "audience": [
+        "lp",
+        "fund-admin",
+        "partner"
+      ],
+      "notes": "Arch Client API (JSON REST, OpenAPI definitions per resource): Accounts, Activities, Cash Flows, Holdings, Investing Entities, Issuing Entities, Lookthroughs, Offerings, Tasks, Tax Documents, Users, User Roles, Firms, Addepar. Client-credential JWT bearer tokens. Available to Arch clients (family offices, wealth managers, institutional allocators, accounting firms). Docs site is a JS app; content not readable anonymously. Vendor also cites delivery via SFTP drop-offs and flat files (older site copy)."
+    },
+    "mcp": {
+      "status": "none",
+      "notes": "No MCP server found (API Evangelist 2026-07; official registry empty)."
+    },
+    "sftp": {
+      "status": "partner-only",
+      "notes": "Earlier arch.co site: 'delivers data to downstream systems via API integrations, SFTP dropoffs, flat files, or Open Data Program' (not on current arch.com page)."
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Digest email: account updates, upcoming capital calls, document summaries."
+    },
+    "export_formats": [
+      "pdf",
+      "csv",
+      "xlsx",
+      "json"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "nav",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "other"
+  ],
+  "standards": [
+    "openapi"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_portal": "https://arch.co/client-api/api-docs/",
+    "support_url": "https://arch.com/contact"
+  },
+  "notes": "Classification: Arch is an AGGREGATOR / digital admin layer, not a GP-issued LP portal. It pulls 'statements, capital calls, and K-1s from portals and inboxes' on behalf of its clients (700+ customers, 50,000+ funds) and exposes the normalized data via its Client API and integrations (Addepar etc.). Confidence: high on API existence and resource list (API Evangelist index of OpenAPI files, 2026-07; vendor docs URL confirmed live but JS-rendered). Medium on SFTP/flat-file delivery (older vendor copy). Investor-side API: yes for the client organisation (investor or their delegate), gated by a paid subscription; auth is client-credentials JWT.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

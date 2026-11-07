@@ -1,0 +1,63 @@
+{
+  "id": "finventions-investment-portal",
+  "name": "Finventions Investment Portal",
+  "vendor": {
+    "name": "Finventions",
+    "website": "https://www.finventions.de",
+    "country": "DE"
+  },
+  "website": "https://www.finventions.de/investment-portal/",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "real-estate",
+    "private-equity",
+    "other"
+  ],
+  "regions": [
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Oracle APEX application, username and password login on the deployments seen; no MFA or SSO visible before login."
+    },
+    "api": {
+      "status": "none",
+      "notes": "No external API described on vendor pages."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "csv",
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "fund_reports",
+    "nav",
+    "performance"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "Deployments show internal-use and no-reproduction notices for licensed market data."
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "White-label fund information and reporting portal on Oracle APEX used by German and Luxembourg service KVGs and administrators. Deployments: HANSAINVEST Informationsportal (HIP), HAL Investment Portal Luxembourg (likely). Aimed at fund initiators and institutional clients rather than retail LPs. Interactive reports offer CSV and PDF export.",
+  "updated": "2026-11-07"
+}

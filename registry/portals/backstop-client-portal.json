@@ -1,0 +1,68 @@
+{
+  "id": "backstop-client-portal",
+  "name": "Backstop Client Portal",
+  "vendor": {
+    "name": "ION Analytics (Backstop Solutions)",
+    "website": "https://ionanalytics.com/backstop/",
+    "country": "US"
+  },
+  "website": "https://ionanalytics.com/backstop/services/client-portal/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "hedge-fund",
+    "fund-of-funds",
+    "private-equity",
+    "venture-capital",
+    "real-estate"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Branded reporting portal with PDF watermarking and download tracking."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "audience": [
+        "gp",
+        "lp",
+        "fund-admin"
+      ],
+      "notes": "Specially licensed REST APIs for Backstop customers, sales-led, no public docs. No API for an LP to pull from a GP's Client Portal."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "performance",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "support_url": "https://ionanalytics.com/backstop/contact-us/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Legacy name InvestorBridge. Backstop also sells IntellX to allocators, which retrieves documents from fund emails and GP portals on the allocator's behalf.",
+  "updated": "2026-11-07"
+}

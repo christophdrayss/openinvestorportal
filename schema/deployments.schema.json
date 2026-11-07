@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openinvestorportal.org/schema/deployments.schema.json",
+  "title": "Portal deployments",
+  "description": "Which GP or fund administrator puts which portal product in front of its investors. Lets an LP map the portal name they see to the product entry that describes access.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "operator",
+      "portal_name",
+      "product"
+    ],
+    "properties": {
+      "operator": {
+        "type": "string",
+        "description": "GP or fund manager whose investors use this portal"
+      },
+      "operator_website": {
+        "type": "string",
+        "format": "uri"
+      },
+      "administrator": {
+        "type": "string",
+        "description": "Fund administrator running the portal for the GP, if any"
+      },
+      "portal_name": {
+        "type": "string",
+        "description": "Name the investor sees"
+      },
+      "product": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "description": "Portal product id in registry/portals, or null when not yet identified"
+      },
+      "country": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      },
+      "confidence": {
+        "type": "string",
+        "enum": [
+          "confirmed",
+          "likely",
+          "unknown"
+        ]
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  }
+}

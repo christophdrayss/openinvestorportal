@@ -1,0 +1,64 @@
+{
+  "id": "digify",
+  "name": "Digify Data Room",
+  "vendor": {
+    "name": "Digify",
+    "website": "https://digify.com"
+  },
+  "website": "https://digify.com",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Homepage cites SSO; 2FA not mentioned. Recipients view via links that can require email verification or an NDA."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "docs_url": "https://developer.digify.com/",
+      "auth": [
+        "basic"
+      ],
+      "audience": [
+        "gp"
+      ],
+      "notes": "Keys created in the in-app Developer Portal (Key ID as username, Secret as password over HTTPS); keys inherit the creating user's permissions. Covers files, links, recipients, data rooms (rooms, folders, invitations, permissions) and analytics. Required plan not stated. Sandbox account on request. Sender side only; no recipient API described."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "available",
+      "docs_url": "https://help.digify.com/en/articles/3556613-digify-webhook",
+      "notes": "JSON POST with basic auth for View, Print and Download events, including recipient name and email depending on access type."
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "Legal page https://digify.com/legal.html not reviewed."
+  },
+  "contact": {
+    "developer_portal": "https://developer.digify.com/",
+    "support_url": "https://help.digify.com/en/collections/3480983-api"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: documented sender-side REST API with basic-auth keys, plus webhooks; Zapier connector (8,000+ apps). Unknown: plan gating, MCP, recipient bulk download (the product is DRM-focused, with watermarking and revocation), terms on automation.",
+  "updated": "2026-11-07"
+}

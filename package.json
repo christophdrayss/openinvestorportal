@@ -1,0 +1,25 @@
+{
+  "name": "openinvestorportal",
+  "version": "0.1.0",
+  "description": "Open registry of investor portal access: APIs, MCP servers, SFTP, docs. The open router for LP portal access.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build-index.mjs",
+    "check": "npm run validate && npm run build",
+    "dev": "node server/index.mjs",
+    "start": "node server/index.mjs",
+    "import-research": "node scripts/import-research.mjs",
+    "fetch-logos": "node scripts/fetch-logos.mjs",
+    "build-site": "node scripts/build-site.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.76"
+  }
+}

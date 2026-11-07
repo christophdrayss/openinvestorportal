@@ -1,0 +1,66 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "iq-eq-cosmos",
+  "name": "IQ-EQ Cosmos",
+  "vendor": {
+    "name": "IQ-EQ",
+    "website": "https://iqeq.com",
+    "country": "LU"
+  },
+  "website": "https://iqeq.com/services/iqeq-cosmos",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "real-estate",
+    "fund-of-funds",
+    "private-credit",
+    "other"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Dashboards on web and Apple/Android mobile. Login URL and MFA not published."
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown",
+      "notes": "IQ-EQ mentions automated text alerts on key metric changes."
+    },
+    "export_formats": [
+      "pdf",
+      "xlsx",
+      "csv",
+      "other"
+    ]
+  },
+  "capabilities": [
+    "performance",
+    "fund_reports",
+    "nav",
+    "other"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "IQ-EQ's in-house reporting and portfolio monitoring platform with modules for GPs and LPs plus real estate, ESG and HNWI dashboards (high confidence, IQ-EQ page). Built by IQ-EQ's in-house team on its Snowflake-based Data Platform over FIS Investran, Allvue and PFS Paxus. Exports dashboards as PNG, PDF or PPT and data as Excel or CSV. Positioned more as analytics than a document portal; whether all administered funds' LPs get it is not confirmed (medium confidence)."
+}

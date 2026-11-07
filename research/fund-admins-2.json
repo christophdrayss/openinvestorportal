@@ -1,0 +1,640 @@
+{
+  "portals": [
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "capinteract-lp-interact",
+      "name": "CapInteract LP Interact",
+      "vendor": {
+        "name": "CapInteract",
+        "website": "https://www.capinteract.com",
+        "country": "US"
+      },
+      "website": "https://www.capinteract.com/",
+      "category": "lp-portal",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "hedge-fund",
+        "other"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "White-label investor portal under the administrator's brand. Vendor says MFA applies everywhere a human signs in; factor types not stated."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No API described on the vendor home page. Separate Ci Data Platform is a read-only data layer over existing ledgers for the administrator."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_account_statements",
+        "performance",
+        "fund_reports"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "White-label client platform sold to fund administrators. LP Interact is the investor portal: each investor sees only their own capital accounts, statements and fund performance; content approved by the administrator and logged. Sibling products GP Interact, Ci Data Platform, Guardian Interact. Runs over Investran, eFront, Allvue or an in-house ledger. SOC 2 Type II per vendor. Deployment: Apex Group states its 'Apex investor portal' is powered by CapInteract (high confidence). Vendor HQ Waterford, US with engineering in Belgrade, Serbia (medium confidence, vendor page only). Ownership not stated."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "alter-domus-corpro",
+      "name": "Alter Domus CorPro",
+      "vendor": {
+        "name": "Alter Domus",
+        "website": "https://www.alterdomus.com",
+        "country": "LU"
+      },
+      "website": "https://www.alterdomus.com/",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "infrastructure"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Proprietary client and investor portal. Login URL not captured (alterdomus.com was under maintenance on 2026-11-07)."
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "gp"
+          ],
+          "notes": "2024 press release says information reaches clients through the CorPro client portal or direct API connectivity. Client (GP) side; no LP-side API found."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "fund_reports"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Alter Domus' proprietary client and investor portal for fund administration across private equity, debt capital markets and real estate (high confidence, Alter Domus job posting). In loan agency, CorPro shows borrowers and lenders live daily accruals and lender positions (high confidence, Alter Domus factsheet). Development capacity in Vilnius. Capabilities listed are typical fund-admin portal content (medium confidence). Separate investor onboarding product Alter Domus Intelligence is built with SUBSCRIBE."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "citcoone",
+      "name": "CitcoOne",
+      "vendor": {
+        "name": "Citco",
+        "website": "https://www.citco.com"
+      },
+      "website": "https://www.citco.com/our-clients/investors",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "hedge-fund",
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "other"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://citcoone.citco.com/",
+          "notes": "Client Login on citco.com points to citcoone.citco.com, which redirects to an OAuth2/OIDC authorization flow at login.citco.com (application name CitcoOne). MFA not stated publicly."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No API mentioned on Citco investor pages."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "nav",
+        "fund_reports",
+        "subscriptions",
+        "other"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Citco's proprietary investor and client platform (high confidence). Features per Citco: interactive dashboards and workflows, order placement, document management, fund details, dynamic reporting, capital activity monitoring. January 2025 update added online capital transaction instructions with e-signature. Used for online PE capital commitments (600+ in 10 days at one close, per Alternatives Watch). Separate Citco Credit Portal (2026) for loan servicing."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "gen-ii-sensr-portal",
+      "name": "Gen II Sensr Portal",
+      "vendor": {
+        "name": "Gen II Fund Services",
+        "website": "https://gen2fund.com",
+        "country": "US"
+      },
+      "website": "https://gen2fund.com/technology",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "venture-capital"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Investor portal and data room; login URL and MFA not published in the sources reviewed."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No LP API described. Sensr DataBridge is a separate no-code data feed from Gen II to client (GP) systems."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "performance",
+        "fund_reports",
+        "subscriptions"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Gen II's proprietary investor portal and data room, formerly Update Capital, renamed Sensr Portal in May 2024 (high confidence). February 2026 release adds an AI layer: natural-language search and summaries of capital call and distribution notices and quarterly and annual reports, Q&A on performance and capital balances, investor-specific alerts, ring-fenced to each investor's data, connected to Gen II's general ledger. Funded digital subscription platform links to it."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "iq-eq-cosmos",
+      "name": "IQ-EQ Cosmos",
+      "vendor": {
+        "name": "IQ-EQ",
+        "website": "https://iqeq.com",
+        "country": "LU"
+      },
+      "website": "https://iqeq.com/services/iqeq-cosmos",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "real-estate",
+        "fund-of-funds",
+        "private-credit",
+        "other"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Dashboards on web and Apple/Android mobile. Login URL and MFA not published."
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown",
+          "notes": "IQ-EQ mentions automated text alerts on key metric changes."
+        },
+        "export_formats": [
+          "pdf",
+          "xlsx",
+          "csv",
+          "other"
+        ]
+      },
+      "capabilities": [
+        "performance",
+        "fund_reports",
+        "nav",
+        "other"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "IQ-EQ's in-house reporting and portfolio monitoring platform with modules for GPs and LPs plus real estate, ESG and HNWI dashboards (high confidence, IQ-EQ page). Built by IQ-EQ's in-house team on its Snowflake-based Data Platform over FIS Investran, Allvue and PFS Paxus. Exports dashboards as PNG, PDF or PPT and data as Excel or CSV. Positioned more as analytics than a document portal; whether all administered funds' LPs get it is not confirmed (medium confidence)."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "csc-viewpoint",
+      "name": "CSC ViewPoint",
+      "vendor": {
+        "name": "CSC",
+        "website": "https://www.cscglobal.com",
+        "country": "US"
+      },
+      "website": "https://cscglobal.com/funds/fund-administration/",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "real-estate"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Login URL not identified; the general CSC login is login.cscglobal.com."
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "performance",
+        "fund_reports",
+        "documents"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Investor and GP portal built by PEF Services, acquired by CSC in June 2021 (high confidence, CSC press release): purpose-built portal with real-time access to investment performance data from the fund's official books and records. Whether it is still the default LP portal across CSC versus FIS Data Exchange is not confirmed (low confidence)."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "vistra-vfunds",
+      "name": "Vistra VFunds",
+      "vendor": {
+        "name": "Vistra",
+        "website": "https://www.vistra.com",
+        "country": "HK"
+      },
+      "website": "https://www.vistra.com/vfunds",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "real-estate",
+        "private-credit",
+        "other"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://my.vistra.com/",
+          "notes": "Vistra states single sign-on and multi-factor authentication; factor types not stated."
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "fund_reports",
+        "kyc",
+        "other"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Vistra's branded platform for fund managers and investors: interactive dashboards, document exchange, web onboarding (high confidence, Vistra page). VFunds 2.0 (Dec 2021) was reported as 'powered by Eleven'; that vendor was not identified further, so the underlying software is unconfirmed. Entry describes the Vistra-branded portal until the vendor is identified."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "yardi-investment-manager",
+      "name": "Yardi Investment Manager",
+      "vendor": {
+        "name": "Yardi Systems",
+        "website": "https://www.yardi.com",
+        "country": "US"
+      },
+      "website": "https://www.yardi.com/",
+      "category": "lp-portal",
+      "asset_classes": [
+        "real-estate"
+      ],
+      "regions": [
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Branded investor portal; the Apex deployment uses a Yardi identity login on yardione.com."
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "performance",
+        "fund_reports"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Real estate investment management software with a branded investor portal for investment metrics, capital activity and reports (high confidence, Standish Management 2022 press release). Deployments: Standish Real Estate (confirmed); Apex Group lists a Yardi portal for Yardi clients. Facts beyond the press release not checked (low confidence)."
+    },
+    {
+      "verification": {
+        "status": "unverified"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "updated": "2026-11-07",
+      "id": "goji",
+      "name": "Goji",
+      "vendor": {
+        "name": "Goji Investments",
+        "website": "https://goji.investments",
+        "country": "GB"
+      },
+      "website": "https://goji.investments",
+      "category": "other",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "other"
+      ],
+      "regions": [
+        "uk",
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available"
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "kyc",
+        "subscriptions",
+        "messaging",
+        "documents"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "notes": "Digital investment platform used by Ocorian since January 2024 for digital investor onboarding (KYC/AML) and investor communications through the fund lifecycle (high confidence, Ocorian press release and investor services page). Vendor website and details not checked directly (low confidence)."
+    }
+  ],
+  "assessments": [
+    {
+      "id": "capinteract-lp-interact",
+      "difficulty": 4,
+      "rationale": "White-label web portal with MFA; no API, SFTP or feed documented for investors.",
+      "lp_side_api": false,
+      "sources": [
+        "https://www.capinteract.com/",
+        "https://www.apexgroup.com/technology-platforms/apex-investor-portal/"
+      ]
+    },
+    {
+      "id": "alter-domus-corpro",
+      "difficulty": 4,
+      "rationale": "Proprietary web portal; API connectivity offered to clients (GPs), none documented for LPs.",
+      "lp_side_api": false,
+      "sources": [
+        "https://jobs.workinlithuania.com/job-offers/10809-client-portal-delivery-specialist-non-tech",
+        "https://business.mammothtimes.com/mammothtimes/article/bizwire-2024-1-23-alter-domus-solidifies-its-experience-in-major-migrations-with-creation-of-a-dedicated-key-client-partnerships-team-as-private-markets-firms-reach-operational-tipping-point",
+        "https://alterdomus.com/wp-content/uploads/2024/07/AD0062-AD-European-Agency-Factsheet.pdf"
+      ]
+    },
+    {
+      "id": "citcoone",
+      "difficulty": 4,
+      "rationale": "Proprietary web portal behind an OAuth2/OIDC login at login.citco.com; no public API.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://www.citco.com/our-clients/investors",
+        "https://www.citco.com/insights/citcoone-enhanced-with-online-transactions-feature",
+        "https://www.alternativeswatch.com/2023/10/31/citco-upgrades-online-capital-raising-service/"
+      ]
+    },
+    {
+      "id": "gen-ii-sensr-portal",
+      "difficulty": 4,
+      "rationale": "Proprietary web portal with AI Q&A; DataBridge feeds go to GP systems, nothing documented for LPs.",
+      "lp_side_api": false,
+      "sources": [
+        "https://gen2fund.com/news/gen-ii-transforms-sensr-portal-into-first-of-its-kind-ai-powered-investor-portal-for-the-private-markets/",
+        "https://gen2fund.com/news/gen-ii-announces-the-rebranding-of-its-portal-to-sensr-portal/"
+      ]
+    },
+    {
+      "id": "iq-eq-cosmos",
+      "difficulty": 3,
+      "rationale": "Dashboards export to PDF, PPT, Excel and CSV; no API documented.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://iqeq.com/services/iqeq-cosmos",
+        "https://the-drawdown.com/article/iq-eq-launches-investor-solutions-offering"
+      ]
+    },
+    {
+      "id": "csc-viewpoint",
+      "difficulty": 4,
+      "rationale": "Web portal only per public material; no API or exports documented.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://cscglobal.com/service/press/press-csc-global-financial-markets-acquires-pef-services-llc/"
+      ]
+    },
+    {
+      "id": "vistra-vfunds",
+      "difficulty": 5,
+      "rationale": "Web portal with SSO and MFA; dashboards allow downloads; no API documented.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://www.vistra.com/vfunds",
+        "https://hedgeweek.com/vistra-launches-vfunds-20"
+      ]
+    },
+    {
+      "id": "yardi-investment-manager",
+      "difficulty": 4,
+      "rationale": "Branded investor web portal; investor-side access channels not checked.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://prnewswire.com/news-releases/standish-management-enhances-client-service-with-yardi-investment-manager-301510923.html",
+        "https://www.apexgroup.com/client-portals/"
+      ]
+    },
+    {
+      "id": "goji",
+      "difficulty": 4,
+      "rationale": "Onboarding and communications platform; investor data access channels not checked.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://www.ocorian.com/service/investor-services",
+        "https://www.ocorian.com/press-releases/ocorian-partners-goji-offer-fully-digitalised-investor-journey-private-fund-managers"
+      ]
+    }
+  ]
+}

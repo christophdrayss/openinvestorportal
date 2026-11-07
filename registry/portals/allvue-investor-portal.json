@@ -1,0 +1,71 @@
+{
+  "id": "allvue-investor-portal",
+  "name": "Allvue Investor Portal",
+  "vendor": {
+    "name": "Allvue Systems",
+    "website": "https://www.allvuesystems.com",
+    "country": "US"
+  },
+  "website": "https://www.allvuesystems.com/solutions/investor-portal/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "venture-capital",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Branded GP portal. SSO and MFA not stated."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp",
+        "fund-admin"
+      ],
+      "notes": "Nexius Data Platform described as API-first (real-time APIs, bulk extraction, Snowflake, flat files) for client teams. No public developer docs."
+    },
+    "mcp": {
+      "status": "unknown",
+      "notes": "Agentic AI platform page does not mention MCP."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "support_url": "https://support.allvuesystems.com/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: portal delivers capital call and distribution notices, reports, capital account statements, K-1s. GP-side APIs exist but are undocumented publicly. No LP-side programmatic access identified.",
+  "updated": "2026-11-07"
+}

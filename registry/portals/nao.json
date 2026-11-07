@@ -1,0 +1,66 @@
+{
+  "id": "nao",
+  "name": "NAO",
+  "vendor": {
+    "name": "NAO Co-Investment GmbH",
+    "website": "https://www.investnao.com",
+    "country": "DE"
+  },
+  "website": "https://www.investnao.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "infrastructure",
+    "hedge-fund",
+    "other"
+  ],
+  "regions": [
+    "dach",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Mobile-app-first retail platform (from EUR 1, savings plans); brokerage via DonauCapital Wertpapier GmbH, custody at Baader Bank. Web login exists; MFA not published."
+    },
+    "api": {
+      "status": "none",
+      "notes": "No API, developer or B2B integration mentioned anywhere."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "performance",
+    "tax_documents",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Added as DACH platform. Confidence: medium (vendor site, app store). Retail co-investment app; positions are custodied at Baader Bank, so bank statements/data may be the practical data path. Investor-side API: none. Terms not reviewed.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

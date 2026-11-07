@@ -1,0 +1,58 @@
+{
+  "id": "fundrbird",
+  "name": "Fundrbird Investor Portal",
+  "vendor": {
+    "name": "Fundrbird",
+    "website": "https://fundrbird.com",
+    "country": "DE"
+  },
+  "website": "https://fundrbird.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity"
+  ],
+  "regions": [
+    "dach",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp"
+      ],
+      "notes": "Vendor site mentions an API for connecting fund data to BI tools, dashboards and data warehouses, aimed at the GP. No public documentation found. LP-side access unknown."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "German operational software for PE and VC firms (fund accounting, reporting, compliance) with an investor portal module and a GP-facing data API (vendor site, medium confidence).",
+  "updated": "2026-11-07"
+}

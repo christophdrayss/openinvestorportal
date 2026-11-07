@@ -1,0 +1,88 @@
+{
+  "id": "example-portal",
+  "name": "Example Portal",
+  "vendor": {
+    "name": "Juniper Square",
+    "website": "https://www.junipersquare.com",
+    "country": "US"
+  },
+  "website": "https://www.junipersquare.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "real-estate",
+    "private-credit"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "none"
+      ],
+      "mfa": [
+        "totp",
+        "email"
+      ],
+      "automation_friendly": false,
+      "notes": "Per-GP branded portals; LP logs in per sponsor."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "auth": [
+        "api-key"
+      ],
+      "audience": [
+        "gp",
+        "partner"
+      ],
+      "notes": "GP-side API offered via partner program. LP-side programmatic access not known. To be confirmed."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Email alerts for new documents, capital calls, distributions."
+    },
+    "export_formats": [
+      "pdf",
+      "xlsx"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Seed entry. All access facts need community or vendor confirmation.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://www.example.com/terms",
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "planned",
+    "version": "0.1",
+    "auth": [
+      "oipp-signature"
+    ],
+    "notes": "Replace with your endpoint once implemented."
+  }
+}

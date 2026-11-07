@@ -1,0 +1,67 @@
+{
+  "id": "odin",
+  "name": "Odin",
+  "vendor": {
+    "name": "Odin (Join Odin Ltd)",
+    "website": "https://www.joinodin.com",
+    "country": "GB"
+  },
+  "website": "https://www.joinodin.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital"
+  ],
+  "regions": [
+    "uk",
+    "europe",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "FCA-regulated SPV/fund platform (UK Trust, Delaware LP). Investors subscribe via deal pages; certificates of beneficial ownership issued post-close; S/EIS certificates within ~3 months. Login/MFA methods not published."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No developer docs or API mentions on joinodin.com, help center (intercom.help/odinlovesyou) or investor GitBook. docs.odin.io belongs to a different company."
+    },
+    "mcp": {
+      "status": "none",
+      "notes": "None found as of 2026-11-07."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Deal and document notifications by email (help center)."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "tax_documents",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://intercom.help/odinlovesyou/en/"
+  },
+  "notes": "Confidence: high that no public API/MCP exists; medium on document delivery (help articles: investor documents and legal agreements on deal pages; certificate within 2-3 weeks). MFA, exports and terms on automation not confirmed (help pages returned 404/redirect during research). Investor-side API: none found.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

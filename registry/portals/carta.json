@@ -1,0 +1,98 @@
+{
+  "id": "carta",
+  "name": "Carta LP Portal",
+  "vendor": {
+    "name": "Carta",
+    "website": "https://carta.com",
+    "country": "US"
+  },
+  "website": "https://carta.com/explore/fund-erp/lp-portal/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity"
+  ],
+  "regions": [
+    "north-america",
+    "europe",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Single LP login across all funds administered on Carta. 2FA set up at registration; methods not confirmed. Multi-select download of K-1s, capital notices and annual reports."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "docs_url": "https://docs.carta.com/api-platform/guides/getting-started/introduction/",
+      "auth": [
+        "oauth2-authorization-code",
+        "oauth2-client-credentials"
+      ],
+      "audience": [
+        "gp",
+        "partner"
+      ],
+      "sandbox": true,
+      "notes": "Public docs and a mock server; production access requires Carta approval. Suites: Launch, Investor (portfolio cap-table data for fund operators), Issuer, Portfolio, CRM. No LP self-serve path for fund-account data found."
+    },
+    "mcp": {
+      "status": "available",
+      "endpoint": "https://mcp.app.carta.com/mcp",
+      "transport": [
+        "streamable-http"
+      ],
+      "auth": [
+        "oauth2"
+      ],
+      "maintainer": "vendor",
+      "docs_url": "https://claude.com/connectors/carta",
+      "notes": "Vendor remote MCP server, Anthropic-verified connector since May 2026. Tools include discover, fetch, list_accounts, cap_table_chart. Fund performance and accounting data for investors are mentioned; documents and capital calls are not. LP coverage unconfirmed."
+    },
+    "sftp": {
+      "status": "partner-only",
+      "notes": "Only for the separate Carta LP Portfolio Analytics product (formerly Accelex)."
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Capital call notices emailed from investor-notices@carta.com with a link into the portal."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc",
+    "performance"
+  ],
+  "standards": [
+    "oauth2"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "Terms page returned HTTP 403 to the researcher."
+  },
+  "contact": {
+    "developer_portal": "https://docs.carta.com/",
+    "support_url": "https://support.carta.com/kb/en/limited-partners-425509"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: public API docs with sandbox, production gated; vendor MCP server with OAuth sign-in. Carta also runs a fund administration service on this platform. Unknown: whether an LP can use the MCP server or an API scope for their own commitments; terms on automation.",
+  "updated": "2026-11-07"
+}

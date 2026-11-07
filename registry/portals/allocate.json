@@ -1,0 +1,80 @@
+{
+  "id": "allocate",
+  "name": "Allocate",
+  "vendor": {
+    "name": "Allocate Management Company, LLC",
+    "website": "https://allocate.co",
+    "country": "US"
+  },
+  "website": "https://allocate.co",
+  "category": "marketplace",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity",
+    "private-credit"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://app.allocate.co/login",
+      "notes": "Serves 430+ wealth advisory firms; SOC 2 Type II, role-based permissions. MFA/SSO methods not published."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No public developer program or API (API Evangelist profile 2026-07/10). Vendor says it 'connects to existing client reporting systems' (document aggregation, reporting) but publishes no docs."
+    },
+    "mcp": {
+      "status": "partner-only",
+      "endpoint": "https://mcp.allocate.co/api/mcp",
+      "transport": [
+        "streamable-http"
+      ],
+      "auth": [
+        "other"
+      ],
+      "maintainer": "vendor",
+      "notes": "Remote MCP endpoint observed by third-party index (mcpbundles.com, probed 2026-09-18) requiring sign-in; tool list not public; no vendor announcement located. Direct GET returned 405 on 2026-11-07, consistent with a live MCP endpoint. Audience appears to be advisor customers."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://allocate.co/get-in-touch"
+  },
+  "notes": "Confidence: medium that a vendor-hosted MCP server exists for customers (endpoint observed, undocumented). High confidence no public API docs. Allocate is an advisor platform that aggregates documents/data for RIAs and builds white-label vehicles; end investors are typically advisor clients. Terms (allocate.co/legal) do not address bots/scraping; authorized users must keep credentials confidential; access may be terminated for any reason. Investor-side API: unknown.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://allocate.co/legal",
+    "automation_policy": "unknown",
+    "notes": "Terms silent on automation."
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

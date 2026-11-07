@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openinvestorportal.org/schema/portal.schema.json",
+  "title": "Investor Portal Registry Entry",
+  "description": "Describes how an investor portal can be accessed programmatically: web, API, MCP, SFTP, notifications.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "vendor",
+    "website",
+    "category",
+    "access",
+    "verification",
+    "updated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stable slug. Must match the filename (registry/portals/<id>.json)."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vendor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2"
+        }
+      }
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "lp-portal",
+        "fund-admin-portal",
+        "data-room",
+        "cap-table",
+        "marketplace",
+        "reporting-platform",
+        "other"
+      ]
+    },
+    "asset_classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "private-equity",
+          "venture-capital",
+          "private-credit",
+          "real-estate",
+          "infrastructure",
+          "hedge-fund",
+          "fund-of-funds",
+          "other"
+        ]
+      }
+    },
+    "regions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "global",
+          "north-america",
+          "europe",
+          "uk",
+          "dach",
+          "apac",
+          "latam",
+          "middle-east"
+        ]
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Each channel describes one way to get data out of (or into) the portal.",
+      "properties": {
+        "web": {
+          "$ref": "#/$defs/webAccess"
+        },
+        "api": {
+          "$ref": "#/$defs/apiAccess"
+        },
+        "mcp": {
+          "$ref": "#/$defs/mcpAccess"
+        },
+        "sftp": {
+          "$ref": "#/$defs/channel"
+        },
+        "webhooks": {
+          "$ref": "#/$defs/channel"
+        },
+        "email_notifications": {
+          "$ref": "#/$defs/channel"
+        },
+        "export_formats": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "pdf",
+              "xlsx",
+              "csv",
+              "xml",
+              "json",
+              "ilpa-template",
+              "fundsxml",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "What data the portal exposes to investors.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "documents",
+          "capital_calls",
+          "distributions",
+          "capital_account_statements",
+          "nav",
+          "performance",
+          "tax_documents",
+          "fund_reports",
+          "cap_table",
+          "subscriptions",
+          "kyc",
+          "messaging",
+          "other"
+        ]
+      }
+    },
+    "standards": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Industry data standards the portal supports.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ilpa-reporting-template",
+          "ilpa-capital-call-template",
+          "ilpa-distribution-template",
+          "ilpa-performance-template",
+          "openapi",
+          "oauth2",
+          "saml-sso",
+          "scim",
+          "other"
+        ]
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "community-verified",
+            "vendor-verified"
+          ],
+          "description": "unverified: submitted, not checked. community-verified: a maintainer confirmed the public facts. vendor-verified: the vendor confirmed via a PR from a vendor-owned domain or DNS proof."
+        },
+        "verified_by": {
+          "type": "string"
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "proof": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link to PR, vendor statement, or DNS record."
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "developer_email": {
+          "type": "string",
+          "format": "email"
+        },
+        "developer_portal": {
+          "type": "string",
+          "format": "uri"
+        },
+        "support_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "terms": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What the portal terms say about automated access by the investor or an agent acting for the investor.",
+      "properties": {
+        "tos_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "automation_policy": {
+          "type": "string",
+          "enum": [
+            "permitted",
+            "tolerated",
+            "prohibited",
+            "unknown"
+          ],
+          "description": "permitted: terms or vendor explicitly allow consented automation. tolerated: not addressed, no blocking. prohibited: terms forbid it; connectors must refuse browser automation. unknown: not checked."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "oipp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "description": "Open Investor Portal Protocol support: the standard API every listed portal can implement so investors reach all portals through one interface with their own key.",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "version": {
+          "type": "string",
+          "description": "OIPP spec version implemented, e.g. 0.1"
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri",
+          "description": "Base URL of the portal OIPP endpoint, e.g. https://portal.example.com/oipp/v1"
+        },
+        "auth": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "oipp-signature",
+              "oauth2"
+            ]
+          },
+          "description": "oipp-signature: investor signs each request with their registered key (RFC 9421 HTTP Message Signatures). oauth2: portal is its own authorization server and issues tokens to the investor client."
+        },
+        "link_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where an investor links their OIPP key to their portal account (Connect with OpenInvestorPortal)."
+        },
+        "public_key_jwks": {
+          "type": "string",
+          "format": "uri",
+          "description": "Portal signing keys for response signatures."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "partner-only",
+        "beta",
+        "planned",
+        "none",
+        "unknown"
+      ],
+      "description": "available: documented and self-serve. partner-only: exists, requires commercial agreement. none: confirmed absent. unknown: nobody has checked yet."
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "docs_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "webAccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "login_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sso": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "saml",
+              "oidc",
+              "microsoft",
+              "google",
+              "none"
+            ]
+          }
+        },
+        "mfa": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "totp",
+              "sms",
+              "email",
+              "push",
+              "hardware-key",
+              "none"
+            ]
+          }
+        },
+        "automation_friendly": {
+          "type": "boolean",
+          "description": "True if no CAPTCHA / bot-blocking that prevents consented automation."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "apiAccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "rest",
+            "graphql",
+            "soap",
+            "odata",
+            "other"
+          ]
+        },
+        "base_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docs_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "openapi_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "auth": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "oauth2-client-credentials",
+              "oauth2-authorization-code",
+              "api-key",
+              "basic",
+              "jwt",
+              "mtls",
+              "other"
+            ]
+          }
+        },
+        "audience": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "lp",
+              "gp",
+              "fund-admin",
+              "partner"
+            ]
+          },
+          "description": "Who may obtain credentials."
+        },
+        "rate_limits": {
+          "type": "string"
+        },
+        "sandbox": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "mcpAccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri",
+          "description": "Remote MCP server URL."
+        },
+        "transport": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "streamable-http",
+              "sse",
+              "stdio"
+            ]
+          }
+        },
+        "auth": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "oauth2",
+              "api-key",
+              "none",
+              "other"
+            ]
+          }
+        },
+        "official_registry_name": {
+          "type": "string",
+          "description": "Name in the official MCP Registry (registry.modelcontextprotocol.io), e.g. io.github.vendor/portal."
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "maintainer": {
+          "type": "string",
+          "enum": [
+            "vendor",
+            "community",
+            "unknown"
+          ]
+        },
+        "docs_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

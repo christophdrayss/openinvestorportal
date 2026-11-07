@@ -1,0 +1,100 @@
+{
+  "id": "angellist-venture",
+  "name": "AngelList (Venture)",
+  "vendor": {
+    "name": "AngelList Advisors, LLC / AL Venture Services",
+    "website": "https://www.angellist.com",
+    "country": "US"
+  },
+  "website": "https://venture.angellist.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://venture.angellist.com",
+      "sso": [
+        "none"
+      ],
+      "mfa": [
+        "totp"
+      ],
+      "notes": "Optional 2FA via authenticator app with downloadable recovery codes (help center). LPs see Taxes and Documents tab; tax statements exportable as PDF or CSV."
+    },
+    "api": {
+      "status": "planned",
+      "style": "graphql",
+      "audience": [
+        "gp",
+        "partner"
+      ],
+      "notes": "GP side: AngelList Link page says 'API access planned for later this year' (2026). Separate GraphQL 'Investor Management API' / Data Room API exists for AngelList's Data Room and Digital Subscriptions products (GP/fund-ops customers; set up via portal@angellist.com; docs.angellist.com is auth-gated). No LP-facing API."
+    },
+    "mcp": {
+      "status": "available",
+      "endpoint": "https://mcp.angellist.com/mcp",
+      "transport": [
+        "streamable-http"
+      ],
+      "auth": [
+        "oauth2"
+      ],
+      "maintainer": "vendor",
+      "docs_url": "https://angellist.com/link",
+      "notes": "AngelList Link (launched 2026-07-23): read-only, 28 tools (capital accounts, capital calls, distributions, documents, financial statements, partners, closes, subscriptions). Available to GPs and their teams only; LPs explicitly not yet supported ('LP use cases later'). Listed in Claude connector marketplace as verified. Not in official MCP registry."
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "unknown",
+      "notes": "Data Room API pushes activity events (GP product)."
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "LPs receive email for capital calls, statements and updates."
+    },
+    "export_formats": [
+      "pdf",
+      "csv"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "nav",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "standards": [
+    "oauth2"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_email": "portal@angellist.com",
+    "developer_portal": "https://angellist.com/link",
+    "support_url": "https://help.angellist.com"
+  },
+  "notes": "Confidence: high on GP-only MCP server (vendor page angellist.com/link, help article on Link data & privacy, Claude marketplace listing). High on LP web features (help center: tax docs PDF/CSV, authenticator 2FA). Investor-side (LP) programmatic access: none today; AngelList states LP support planned. Terms page (venture.angellist.com/terms) could not be read (JS shell); automation policy unknown. Distinguish: MCP/API = GP audience; LP = web + email only.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://venture.angellist.com/terms",
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

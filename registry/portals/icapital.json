@@ -1,0 +1,92 @@
+{
+  "id": "icapital",
+  "name": "iCapital",
+  "vendor": {
+    "name": "Institutional Capital Network, Inc. (iCapital)",
+    "website": "https://icapital.com",
+    "country": "US"
+  },
+  "website": "https://icapital.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "infrastructure",
+    "hedge-fund",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "north-america",
+    "europe",
+    "apac"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "none"
+      ],
+      "notes": "Advisor/wealth-manager platform; end investors typically reach iCapital via their advisor's instance or custodian SSO. MFA methods not confirmed from public docs."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "audience": [
+        "partner",
+        "fund-admin"
+      ],
+      "notes": "No public developer portal, API reference or OpenAPI contract. Third-party catalog (API Evangelist, profiled 2026-08-01) states API documentation is available to integration partners only via sales/technical support. iCapital Data Management (ex-AltExchange/Mirador) delivers data to custodians and reporting vendors (BridgeFT partnership 2025) but transport (API vs SFTP) is not publicly documented."
+    },
+    "mcp": {
+      "status": "none",
+      "maintainer": "unknown",
+      "notes": "No iCapital MCP server found in the official MCP registry or GitHub as of 2026-11-07. April 2026 Anthropic partnership embeds Claude inside iCapital's platform; no MCP endpoint announced. A third-party Truthifi connector claims to link iCapital accounts to Claude (not vendor-maintained)."
+    },
+    "sftp": {
+      "status": "unknown",
+      "notes": "iCapital Data Management advertises delivery 'to any downstream reporting system'; SFTP not confirmed."
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Capital call/distribution notifications via platform; details not public."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "standards": [
+    "saml-sso"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://icapital.com/contact-us/"
+  },
+  "notes": "Confidence: high that no public/self-serve API exists (API Evangelist probe 2026-08/10: no dev portal, /openapi.json 404). Medium confidence that a partner API and a data-management feed exist (press releases: BridgeFT 2025, AltExchange acquisition 2024; Sacra analysis). Terms of Service s.7.1 prohibit 'any automated system (excluding authorized APIs)' and 'spiders, robots, avatars or intelligent agents', and require access 'through the interface provided by iCapital'; s.3.1 forbids sharing credentials, s.3.2 allows designated Authorized Users (employees, advisors, agents). MFA method on web login not confirmed. Investor-side API: none found.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://icapital.com/terms-of-service/",
+    "automation_policy": "prohibited",
+    "notes": "ToS 7.1(iv),(v),(viii) bar automated access and intelligent agents except 'authorized APIs'. Authorized Users (advisors/agents) may be designated under 3.2."
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

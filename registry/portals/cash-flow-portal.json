@@ -1,0 +1,64 @@
+{
+  "id": "cash-flow-portal",
+  "name": "Cash Flow Portal",
+  "vendor": {
+    "name": "Cash Flow Portal",
+    "website": "https://www.cashflowportal.com",
+    "country": "US"
+  },
+  "website": "https://www.cashflowportal.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "real-estate",
+    "other"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "partner-only",
+      "maintainer": "vendor",
+      "docs_url": "https://www.cashflowportal.com/demo/mcp-server",
+      "notes": "CFP MCP for sponsor users, scoped to what they may see. LP use not described."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "tax_documents",
+    "subscriptions",
+    "fund_reports"
+  ],
+  "terms": {
+    "tos_url": "https://www.cashflowportal.com/terms",
+    "automation_policy": "prohibited",
+    "notes": "No access outside publicly supported interfaces, no credential sharing."
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "US real estate syndication portal, one of few LP portal vendors with a vendor-built MCP server.",
+  "updated": "2026-11-07"
+}

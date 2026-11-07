@@ -1,0 +1,60 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "capinteract-lp-interact",
+  "name": "CapInteract LP Interact",
+  "vendor": {
+    "name": "CapInteract",
+    "website": "https://www.capinteract.com",
+    "country": "US"
+  },
+  "website": "https://www.capinteract.com/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "hedge-fund",
+    "other"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "White-label investor portal under the administrator's brand. Vendor says MFA applies everywhere a human signs in; factor types not stated."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API described on the vendor home page. Separate Ci Data Platform is a read-only data layer over existing ledgers for the administrator."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_account_statements",
+    "performance",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "White-label client platform sold to fund administrators. LP Interact is the investor portal: each investor sees only their own capital accounts, statements and fund performance; content approved by the administrator and logged. Sibling products GP Interact, Ci Data Platform, Guardian Interact. Runs over Investran, eFront, Allvue or an in-house ledger. SOC 2 Type II per vendor. Deployment: Apex Group states its 'Apex investor portal' is powered by CapInteract (high confidence). Vendor HQ Waterford, US with engineering in Belgrade, Serbia (medium confidence, vendor page only). Ownership not stated."
+}

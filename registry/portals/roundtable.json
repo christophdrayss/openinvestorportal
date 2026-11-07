@@ -1,0 +1,68 @@
+{
+  "id": "roundtable",
+  "name": "Roundtable",
+  "vendor": {
+    "name": "Roundtable (Roundtable SRL)",
+    "website": "https://www.roundtable.eu",
+    "country": "BE"
+  },
+  "website": "https://www.roundtable.eu",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity",
+    "real-estate"
+  ],
+  "regions": [
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://app.roundtable.eu",
+      "notes": "SPVs (French SAS/SC, Luxembourg SCSp) and EU funds; investor dashboard with documents, commitments, valuations; CSSF-registered EuVECA manager. MFA/SSO not published."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Third-party software directories list 'API' among features; no developer docs found on roundtable.eu or docs.roundtable.eu."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Investor updates and invitations by email."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "performance",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://docs.roundtable.eu/en/"
+  },
+  "notes": "Confidence: medium on investor features (vendor homepage). API unconfirmed (directory listings only); status page and FATCA generator exist, suggesting some tooling. Terms (Platform ToS, Deal-by-Deal ToS) not reviewed for automation language. Investor-side API: unknown.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

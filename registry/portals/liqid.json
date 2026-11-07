@@ -1,0 +1,69 @@
+{
+  "id": "liqid",
+  "name": "LIQID",
+  "vendor": {
+    "name": "LIQID Investments GmbH",
+    "website": "https://www.liqid.de",
+    "country": "DE"
+  },
+  "website": "https://www.liqid.de",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://authentication.liqid.de/login",
+      "sso": [
+        "oidc"
+      ],
+      "notes": "Auth0-backed login with OIDC discovery at authentication.liqid.de (customer login, not enterprise SSO). Web dashboard plus mobile app. MFA methods not published. Products: NXT (ELTIF, from EUR 10-20k) and PRO (PE/VC fund-of-funds, from EUR 100-200k)."
+    },
+    "api": {
+      "status": "none",
+      "notes": "api.liqid.de exists but returns 401 on all probed paths; developer.liqid.de/docs.liqid.de do not resolve; no developer program (API Evangelist probe 2026-08-25)."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "available"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Added as DACH platform. Confidence: high that no public API/MCP exists (third-party probe + vendor site). Upvest provides API infrastructure for LIQID's ELTIF, but that is B2B plumbing, not investor access. Investor-side API: none. Terms page not retrievable (404 at tested URL); automation policy unknown.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

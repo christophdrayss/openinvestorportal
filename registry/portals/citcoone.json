@@ -1,0 +1,63 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "citcoone",
+  "name": "CitcoOne",
+  "vendor": {
+    "name": "Citco",
+    "website": "https://www.citco.com"
+  },
+  "website": "https://www.citco.com/our-clients/investors",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "hedge-fund",
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "other"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://citcoone.citco.com/",
+      "notes": "Client Login on citco.com points to citcoone.citco.com, which redirects to an OAuth2/OIDC authorization flow at login.citco.com (application name CitcoOne). MFA not stated publicly."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API mentioned on Citco investor pages."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "nav",
+    "fund_reports",
+    "subscriptions",
+    "other"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Citco's proprietary investor and client platform (high confidence). Features per Citco: interactive dashboards and workflows, order placement, document management, fund details, dynamic reporting, capital activity monitoring. January 2025 update added online capital transaction instructions with e-signature. Used for online PE capital commitments (600+ in 10 days at one close, per Alternatives Watch). Separate Citco Credit Portal (2026) for loan servicing."
+}

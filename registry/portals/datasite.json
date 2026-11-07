@@ -1,0 +1,69 @@
+{
+  "id": "datasite",
+  "name": "Datasite Diligence",
+  "vendor": {
+    "name": "Datasite",
+    "website": "https://www.datasite.com",
+    "country": "US"
+  },
+  "website": "https://www.datasite.com/en/",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "SSO and MFA methods not confirmed from vendor pages fetched (security page returned 404)."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "docs_url": "https://developer.datasite.com/",
+      "auth": [
+        "api-key",
+        "other"
+      ],
+      "notes": "Vendor page 'Datasite APIs': growing catalog covering document upload, membership and permission controls, project retrieval and metadata, Q&A integration. Auth: 'OAuth 2' (grant type not stated) and custom API keys. Start with a free account or Datasite login at developer.datasite.com (redirects to app.global.datasite.com/dev-portal, a JS app the researcher could not read). Separate API terms referenced in the terms of use. Whether buy-side invitees can use it is not stated."
+    },
+    "mcp": {
+      "status": "partner-only",
+      "maintainer": "vendor",
+      "docs_url": "https://www.datasite.com/en/resources/ai-at-datasite/datasite-mcp",
+      "notes": "Vendor 'Datasite MCP' for Claude, ChatGPT, Microsoft Copilot and Blueflame AI. Sign in with Datasite credentials, scoped to existing permissions; the account must be 'enabled for MCP'. Tools described: create projects, folder structures, invite users, semantic search, upload, draft Q&A, gap analysis. Endpoint, transport and GA status not published. Positioned with Datasite Connect."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "standards": [
+    "oauth2"
+  ],
+  "terms": {
+    "tos_url": "https://www.datasite.com/en/legal/terms-of-use",
+    "automation_policy": "unknown",
+    "notes": "Terms of use bar circumventing security protocols and reverse engineering, and limit use to authorized projects; bots and scraping not named. API users are bound by separate API terms (not reviewed). Services agreement at /en/legal/services-agreement not reviewed."
+  },
+  "contact": {
+    "developer_email": "developer@datasite.com",
+    "developer_portal": "https://developer.datasite.com/",
+    "support_url": "https://www.datasite.com/en/contact/support"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Medium confidence: public developer portal with self-serve signup and OAuth 2 or API keys (from vendor marketing page; portal content not readable). Medium confidence: vendor MCP server exists, enabled per account. Unknown: whether a buyer or LP invited to a project can use the API or MCP for their own access; SSO, MFA, webhooks, SFTP, bulk download. Third-party unofficial wrappers appeared in search results and are not considered here.",
+  "updated": "2026-11-07"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "juniper-square",
+  "name": "Juniper Square Investor Portal",
+  "vendor": {
+    "name": "Juniper Square",
+    "website": "https://www.junipersquare.com",
+    "country": "US"
+  },
+  "website": "https://www.junipersquare.com/platform/investor-portal",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "real-estate",
+    "private-credit"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "saml",
+        "microsoft"
+      ],
+      "notes": "One Juniper Square login reused across every sponsor portal (700k+ investors). 2FA available to investors, methods not stated. SSO (Okta, Microsoft Entra ID) for enterprise GP users."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "audience": [
+        "gp",
+        "fund-admin",
+        "partner"
+      ],
+      "notes": "GP-side REST API and webhooks aligned with OpenAPI, sales-led, no public reference docs. No LP-facing API. A headless LP portal is on the vendor roadmap."
+    },
+    "mcp": {
+      "status": "beta",
+      "maintainer": "vendor",
+      "docs_url": "https://www.junipersquare.com/gpx/headless",
+      "notes": "Headless GPX MCP server, live with select customers since June 2026, read-only tools (contacts, accounts, positions, documents, transactions). GP-side only. Endpoint and auth not published. Not in the official MCP registry."
+    },
+    "sftp": {
+      "status": "partner-only",
+      "notes": "Inbound only, for administrators and GPs posting statements into Juniper Square."
+    },
+    "webhooks": {
+      "status": "partner-only",
+      "notes": "GP-side only."
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "tax_documents",
+    "subscriptions",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "kyc"
+  ],
+  "standards": [
+    "ilpa-capital-call-template",
+    "openapi",
+    "saml-sso"
+  ],
+  "terms": {
+    "tos_url": "https://www.junipersquare.com/terms-and-policies/end-user-terms-of-use",
+    "automation_policy": "prohibited",
+    "notes": "End User Terms and Website Terms prohibit scraping, robots and other automated queries without prior written permission, and sharing passwords with advisers."
+  },
+  "contact": {
+    "developer_portal": "https://www.junipersquare.com/gpx/apis-and-integrations",
+    "support_url": "https://www.junipersquare.com/administration/investor-services"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence (vendor pages 2026-11-07): GP-side REST API, webhooks, inbound SFTP and a read-only MCP server exist, all sales-led and not offered to investors. Also sold as a fund administration service on the same platform. LP access is the web portal with 2FA. Unknown: LP email notification behaviour, MCP endpoint and auth.",
+  "updated": "2026-11-07"
+}

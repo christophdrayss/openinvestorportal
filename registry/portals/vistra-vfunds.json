@@ -1,0 +1,59 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "vistra-vfunds",
+  "name": "Vistra VFunds",
+  "vendor": {
+    "name": "Vistra",
+    "website": "https://www.vistra.com",
+    "country": "HK"
+  },
+  "website": "https://www.vistra.com/vfunds",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "real-estate",
+    "private-credit",
+    "other"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://my.vistra.com/",
+      "notes": "Vistra states single sign-on and multi-factor authentication; factor types not stated."
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "fund_reports",
+    "kyc",
+    "other"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Vistra's branded platform for fund managers and investors: interactive dashboards, document exchange, web onboarding (high confidence, Vistra page). VFunds 2.0 (Dec 2021) was reported as 'powered by Eleven'; that vendor was not identified further, so the underlying software is unconfirmed. Entry describes the Vistra-branded portal until the vendor is identified."
+}

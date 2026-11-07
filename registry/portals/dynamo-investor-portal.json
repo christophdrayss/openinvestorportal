@@ -1,0 +1,66 @@
+{
+  "id": "dynamo-investor-portal",
+  "name": "Dynamo Investor Portal",
+  "vendor": {
+    "name": "Dynamo Software",
+    "website": "https://www.dynamosoftware.com",
+    "country": "US"
+  },
+  "website": "https://www.dynamosoftware.com",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "hedge-fund",
+    "fund-of-funds",
+    "real-estate"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Investor Portal v3.0 (2024) with tax document centre and e-consent."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp"
+      ],
+      "notes": "API exists for customers per review sites and vendor pages; no public docs."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Configurable notifications for new messages and documents (medium confidence)."
+    }
+  },
+  "capabilities": [
+    "documents",
+    "tax_documents",
+    "subscriptions",
+    "messaging",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Medium confidence overall: vendor site blocked automated fetches, facts from press and review listings. Portal is a window onto the Dynamo CRM.",
+  "updated": "2026-11-07"
+}

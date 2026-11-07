@@ -1,0 +1,80 @@
+{
+  "id": "cais",
+  "name": "CAIS",
+  "vendor": {
+    "name": "Capital Integration Systems LLC (CAIS)",
+    "website": "https://www.caisgroup.com",
+    "country": "US"
+  },
+  "website": "https://www.caisgroup.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "hedge-fund",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Advisor-facing platform (2,000+ wealth firms, ~62,000 advisors). SSO into CAIS from Tamarac is documented (no fee). End-investor login and MFA methods not confirmed."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "partner"
+      ],
+      "notes": "CAIS COO (May 2026) refers to 'expanding our AI-driven APIs' for partner platforms ('Alts Engine'); no public developer portal or docs found. Advisor data feed to Tamarac exists (creates/updates security snapshots; one-time setup fee; contact Tamarac@caisgroup.com) but transport is undocumented."
+    },
+    "mcp": {
+      "status": "beta",
+      "maintainer": "vendor",
+      "notes": "CAIS launched 'CAIS as an MCP server' with Anthropic Claude on 2026-05-19, available to a select group of advisors in the CAIS network. Endpoint, auth and tool list not published; not in official MCP registry. Advisor-side, not investor-side."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions"
+  ],
+  "standards": [
+    "saml-sso"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://www.caisgroup.com"
+  },
+  "notes": "Confidence: high that an advisor-only MCP server exists in limited release (InvestmentNews/BusinessWire 2026-05-19; press-release evidence, not vendor docs). High confidence that a CAIS->Tamarac data feed exists (Tamarac help page). No public API docs; APIs are partner-gated. Terms of Use do not explicitly address bots/scraping but limit each username/password to one subscriber and reserve monitoring; no explicit permission for consented automation. End investors generally do not log in directly; the advisor is the user. Investor-side API: none found.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://www.caisgroup.com/terms-of-use",
+    "automation_policy": "unknown",
+    "notes": "Terms silent on automated access; single-user credentials; 'unauthorized use' may be prosecuted."
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "goji",
+  "name": "Goji",
+  "vendor": {
+    "name": "Goji Investments",
+    "website": "https://goji.investments",
+    "country": "GB"
+  },
+  "website": "https://goji.investments",
+  "category": "other",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "other"
+  ],
+  "regions": [
+    "uk",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "kyc",
+    "subscriptions",
+    "messaging",
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Digital investment platform used by Ocorian since January 2024 for digital investor onboarding (KYC/AML) and investor communications through the fund lifecycle (high confidence, Ocorian press release and investor services page). Vendor website and details not checked directly (low confidence)."
+}

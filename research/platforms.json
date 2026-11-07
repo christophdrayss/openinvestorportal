@@ -1,0 +1,1939 @@
+{
+  "portals": [
+    {
+      "id": "icapital",
+      "name": "iCapital",
+      "vendor": {
+        "name": "Institutional Capital Network, Inc. (iCapital)",
+        "website": "https://icapital.com",
+        "country": "US"
+      },
+      "website": "https://icapital.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "infrastructure",
+        "hedge-fund",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "global",
+        "north-america",
+        "europe",
+        "apac"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "sso": [
+            "none"
+          ],
+          "notes": "Advisor/wealth-manager platform; end investors typically reach iCapital via their advisor's instance or custodian SSO. MFA methods not confirmed from public docs."
+        },
+        "api": {
+          "status": "partner-only",
+          "style": "rest",
+          "audience": [
+            "partner",
+            "fund-admin"
+          ],
+          "notes": "No public developer portal, API reference or OpenAPI contract. Third-party catalog (API Evangelist, profiled 2026-08-01) states API documentation is available to integration partners only via sales/technical support. iCapital Data Management (ex-AltExchange/Mirador) delivers data to custodians and reporting vendors (BridgeFT partnership 2025) but transport (API vs SFTP) is not publicly documented."
+        },
+        "mcp": {
+          "status": "none",
+          "maintainer": "unknown",
+          "notes": "No iCapital MCP server found in the official MCP registry or GitHub as of 2026-11-07. April 2026 Anthropic partnership embeds Claude inside iCapital's platform; no MCP endpoint announced. A third-party Truthifi connector claims to link iCapital accounts to Claude (not vendor-maintained)."
+        },
+        "sftp": {
+          "status": "unknown",
+          "notes": "iCapital Data Management advertises delivery 'to any downstream reporting system'; SFTP not confirmed."
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Capital call/distribution notifications via platform; details not public."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "standards": [
+        "saml-sso"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://icapital.com/contact-us/"
+      },
+      "notes": "Confidence: high that no public/self-serve API exists (API Evangelist probe 2026-08/10: no dev portal, /openapi.json 404). Medium confidence that a partner API and a data-management feed exist (press releases: BridgeFT 2025, AltExchange acquisition 2024; Sacra analysis). Terms of Service s.7.1 prohibit 'any automated system (excluding authorized APIs)' and 'spiders, robots, avatars or intelligent agents', and require access 'through the interface provided by iCapital'; s.3.1 forbids sharing credentials, s.3.2 allows designated Authorized Users (employees, advisors, agents). MFA method on web login not confirmed. Investor-side API: none found.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://icapital.com/terms-of-service/",
+        "automation_policy": "prohibited",
+        "notes": "ToS 7.1(iv),(v),(viii) bar automated access and intelligent agents except 'authorized APIs'. Authorized Users (advisors/agents) may be designated under 3.2."
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "cais",
+      "name": "CAIS",
+      "vendor": {
+        "name": "Capital Integration Systems LLC (CAIS)",
+        "website": "https://www.caisgroup.com",
+        "country": "US"
+      },
+      "website": "https://www.caisgroup.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "hedge-fund",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Advisor-facing platform (2,000+ wealth firms, ~62,000 advisors). SSO into CAIS from Tamarac is documented (no fee). End-investor login and MFA methods not confirmed."
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "partner"
+          ],
+          "notes": "CAIS COO (May 2026) refers to 'expanding our AI-driven APIs' for partner platforms ('Alts Engine'); no public developer portal or docs found. Advisor data feed to Tamarac exists (creates/updates security snapshots; one-time setup fee; contact Tamarac@caisgroup.com) but transport is undocumented."
+        },
+        "mcp": {
+          "status": "beta",
+          "maintainer": "vendor",
+          "notes": "CAIS launched 'CAIS as an MCP server' with Anthropic Claude on 2026-05-19, available to a select group of advisors in the CAIS network. Endpoint, auth and tool list not published; not in official MCP registry. Advisor-side, not investor-side."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions"
+      ],
+      "standards": [
+        "saml-sso"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://www.caisgroup.com"
+      },
+      "notes": "Confidence: high that an advisor-only MCP server exists in limited release (InvestmentNews/BusinessWire 2026-05-19; press-release evidence, not vendor docs). High confidence that a CAIS->Tamarac data feed exists (Tamarac help page). No public API docs; APIs are partner-gated. Terms of Use do not explicitly address bots/scraping but limit each username/password to one subscriber and reserve monitoring; no explicit permission for consented automation. End investors generally do not log in directly; the advisor is the user. Investor-side API: none found.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://www.caisgroup.com/terms-of-use",
+        "automation_policy": "unknown",
+        "notes": "Terms silent on automated access; single-user credentials; 'unauthorized use' may be prosecuted."
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "moonfare",
+      "name": "Moonfare",
+      "vendor": {
+        "name": "Moonfare GmbH",
+        "website": "https://www.moonfare.com",
+        "country": "DE"
+      },
+      "website": "https://www.moonfare.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "infrastructure",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "europe",
+        "dach",
+        "uk",
+        "north-america",
+        "apac",
+        "middle-east"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "sso": [
+            "none"
+          ],
+          "mfa": [
+            "totp",
+            "sms"
+          ],
+          "notes": "Security page: 2FA enabled by default; app-based 2FA (e.g. Google Authenticator) recommended, implying SMS default. SSO described only for employees."
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "partner"
+          ],
+          "notes": "Institutional pages advertise 'API integration' and white-label for wealth managers, banks, neo-banks and fintechs to offer PE on their own platform; no public docs, base URL or auth published. Fund admin fundcraft integrated via API (press, 2024-2026)."
+        },
+        "mcp": {
+          "status": "none",
+          "notes": "None found in MCP registry/GitHub as of 2026-11-07."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Capital call and quarterly report notifications by email (marketing pages); not verified in help docs."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "performance",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_email": "team@moonfare.com",
+        "support_url": "https://www.moonfare.com/security"
+      },
+      "notes": "Confidence: high on default 2FA (vendor security page). Medium on partner API (vendor marketing pages, no docs). Partner models: client-directed, advised (POA) and nominee, so delegates can see investments via partner access rather than an investor API. Digital Reporting and quarterly reports appear in the web app 3-6 months after first capital call. No investor-side API, export beyond PDF unknown. Terms of use page not retrievable (404 at tested URLs); automation policy unknown.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "angellist-venture",
+      "name": "AngelList (Venture)",
+      "vendor": {
+        "name": "AngelList Advisors, LLC / AL Venture Services",
+        "website": "https://www.angellist.com",
+        "country": "US"
+      },
+      "website": "https://venture.angellist.com",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital"
+      ],
+      "regions": [
+        "north-america",
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://venture.angellist.com",
+          "sso": [
+            "none"
+          ],
+          "mfa": [
+            "totp"
+          ],
+          "notes": "Optional 2FA via authenticator app with downloadable recovery codes (help center). LPs see Taxes and Documents tab; tax statements exportable as PDF or CSV."
+        },
+        "api": {
+          "status": "planned",
+          "style": "graphql",
+          "audience": [
+            "gp",
+            "partner"
+          ],
+          "notes": "GP side: AngelList Link page says 'API access planned for later this year' (2026). Separate GraphQL 'Investor Management API' / Data Room API exists for AngelList's Data Room and Digital Subscriptions products (GP/fund-ops customers; set up via portal@angellist.com; docs.angellist.com is auth-gated). No LP-facing API."
+        },
+        "mcp": {
+          "status": "available",
+          "endpoint": "https://mcp.angellist.com/mcp",
+          "transport": [
+            "streamable-http"
+          ],
+          "auth": [
+            "oauth2"
+          ],
+          "maintainer": "vendor",
+          "docs_url": "https://angellist.com/link",
+          "notes": "AngelList Link (launched 2026-07-23): read-only, 28 tools (capital accounts, capital calls, distributions, documents, financial statements, partners, closes, subscriptions). Available to GPs and their teams only; LPs explicitly not yet supported ('LP use cases later'). Listed in Claude connector marketplace as verified. Not in official MCP registry."
+        },
+        "sftp": {
+          "status": "none"
+        },
+        "webhooks": {
+          "status": "unknown",
+          "notes": "Data Room API pushes activity events (GP product)."
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "LPs receive email for capital calls, statements and updates."
+        },
+        "export_formats": [
+          "pdf",
+          "csv"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "nav",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "standards": [
+        "oauth2"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_email": "portal@angellist.com",
+        "developer_portal": "https://angellist.com/link",
+        "support_url": "https://help.angellist.com"
+      },
+      "notes": "Confidence: high on GP-only MCP server (vendor page angellist.com/link, help article on Link data & privacy, Claude marketplace listing). High on LP web features (help center: tax docs PDF/CSV, authenticator 2FA). Investor-side (LP) programmatic access: none today; AngelList states LP support planned. Terms page (venture.angellist.com/terms) could not be read (JS shell); automation policy unknown. Distinguish: MCP/API = GP audience; LP = web + email only.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://venture.angellist.com/terms",
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "sydecar",
+      "name": "Sydecar",
+      "vendor": {
+        "name": "Sydecar, Inc.",
+        "website": "https://www.sydecar.io",
+        "country": "US"
+      },
+      "website": "https://www.sydecar.io",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://app.sydecar.io",
+          "sso": [
+            "none"
+          ],
+          "mfa": [
+            "email"
+          ],
+          "notes": "Investors log in by requesting a magic link to their email (help center); no password documented. K-1s viewable/downloadable in Tax Center."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "Third-party directory (Software Advice) lists 'API' as a feature; no vendor developer docs, llms.txt makes no API mention. Unconfirmed."
+        },
+        "mcp": {
+          "status": "none",
+          "notes": "None found as of 2026-11-07."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Deal updates, capital calls and document notices by email (product updates)."
+        },
+        "export_formats": [
+          "pdf",
+          "csv"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://help.sydecar.io"
+      },
+      "notes": "Confidence: high on magic-link login and Tax Center K-1 download (vendor help center). CSV export documented only for syndicate contacts (GP side). Website Terms of Service prohibit 'any robot, spider, or other automatic device' and providing others access to the account; paying customers are governed by an MSA. No investor-side API found; API existence unconfirmed (third-party feature list only).",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://www.sydecar.io/legal/terms-of-service",
+        "automation_policy": "prohibited",
+        "notes": "Prohibited Uses bar robots/spiders and account sharing; MSA may differ for customers."
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "allocate",
+      "name": "Allocate",
+      "vendor": {
+        "name": "Allocate Management Company, LLC",
+        "website": "https://allocate.co",
+        "country": "US"
+      },
+      "website": "https://allocate.co",
+      "category": "marketplace",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity",
+        "private-credit"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://app.allocate.co/login",
+          "notes": "Serves 430+ wealth advisory firms; SOC 2 Type II, role-based permissions. MFA/SSO methods not published."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No public developer program or API (API Evangelist profile 2026-07/10). Vendor says it 'connects to existing client reporting systems' (document aggregation, reporting) but publishes no docs."
+        },
+        "mcp": {
+          "status": "partner-only",
+          "endpoint": "https://mcp.allocate.co/api/mcp",
+          "transport": [
+            "streamable-http"
+          ],
+          "auth": [
+            "other"
+          ],
+          "maintainer": "vendor",
+          "notes": "Remote MCP endpoint observed by third-party index (mcpbundles.com, probed 2026-09-18) requiring sign-in; tool list not public; no vendor announcement located. Direct GET returned 405 on 2026-11-07, consistent with a live MCP endpoint. Audience appears to be advisor customers."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://allocate.co/get-in-touch"
+      },
+      "notes": "Confidence: medium that a vendor-hosted MCP server exists for customers (endpoint observed, undocumented). High confidence no public API docs. Allocate is an advisor platform that aggregates documents/data for RIAs and builds white-label vehicles; end investors are typically advisor clients. Terms (allocate.co/legal) do not address bots/scraping; authorized users must keep credentials confidential; access may be terminated for any reason. Investor-side API: unknown.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://allocate.co/legal",
+        "automation_policy": "unknown",
+        "notes": "Terms silent on automation."
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "vauban-carta",
+      "name": "Vauban (Carta Fund Administration, UK/EU)",
+      "vendor": {
+        "name": "Carta (eShares, Inc.)",
+        "website": "https://carta.com",
+        "country": "US"
+      },
+      "website": "https://carta.com/uk/en/",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity"
+      ],
+      "regions": [
+        "uk",
+        "europe",
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://login.app.carta.com",
+          "sso": [
+            "none"
+          ],
+          "notes": "Vauban LPs now use Carta's LP portal (single login across commitments; capital accounts tab with PCAP ledger; capital call emails). Vauban help lives under support.carta.com/kb/en/vauban-434264. Note: vauban.io now redirects to an unrelated third-party site. MFA methods not confirmed."
+        },
+        "api": {
+          "status": "partner-only",
+          "style": "rest",
+          "docs_url": "https://docs.carta.com",
+          "auth": [
+            "oauth2-authorization-code",
+            "oauth2-client-credentials"
+          ],
+          "audience": [
+            "gp",
+            "partner"
+          ],
+          "rate_limits": "10 req/s, 300 req/min (per third-party summary of Carta docs)",
+          "sandbox": true,
+          "notes": "Carta API Platform: audience-gated suites (Investor suite targets fund operators; Portfolio suite targets personal-finance partners). Production access requires Carta review (1-2 weeks) after building in playground. Fund NAV/TVPI/LP capital accounts are served via the Data Warehouse, not the REST suites. No LP self-serve API."
+        },
+        "mcp": {
+          "status": "available",
+          "endpoint": "https://mcp.app.carta.com/mcp",
+          "transport": [
+            "streamable-http"
+          ],
+          "auth": [
+            "oauth2"
+          ],
+          "maintainer": "vendor",
+          "docs_url": "https://docs.carta.com/api-platform/docs/carta-mcp",
+          "notes": "Carta MCP: OAuth with existing Carta credentials, limited to data the signed-in account can view; Cap Table and Investors/Fund Admin surfaces (fund admin tools require firm data sharing enabled; scopes read_mcp_firms). Whether an LP-only Carta account can use the Investors tools is not documented. Docs URL returned 404 on fetch (may be behind nav)."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "LP onboarding guide: email notification for capital calls; document upload notices."
+        },
+        "export_formats": [
+          "pdf",
+          "xlsx"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "nav",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "standards": [
+        "oauth2",
+        "saml-sso"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_portal": "https://docs.carta.com",
+        "support_url": "https://support.carta.com/kb/en/vauban-434264"
+      },
+      "notes": "Vauban (acquired by Carta 2022) is operated as Carta's UK/EU fund administration; LP experience is the Carta LP portal. Confidence: high on Carta MCP server existence and OAuth model (vendor docs + multiple third-party summaries); high on partner-gated REST API. Medium on SSO (Carta documents SSO setup for fund-admin firms, not LPs). Investor-side API: not documented; the MCP server follows user permissions, so LP access is possible in principle but unconfirmed. Carta ToS not retrievable (403).",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://carta.com/legal/terms-of-service/",
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "odin",
+      "name": "Odin",
+      "vendor": {
+        "name": "Odin (Join Odin Ltd)",
+        "website": "https://www.joinodin.com",
+        "country": "GB"
+      },
+      "website": "https://www.joinodin.com",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital"
+      ],
+      "regions": [
+        "uk",
+        "europe",
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "FCA-regulated SPV/fund platform (UK Trust, Delaware LP). Investors subscribe via deal pages; certificates of beneficial ownership issued post-close; S/EIS certificates within ~3 months. Login/MFA methods not published."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No developer docs or API mentions on joinodin.com, help center (intercom.help/odinlovesyou) or investor GitBook. docs.odin.io belongs to a different company."
+        },
+        "mcp": {
+          "status": "none",
+          "notes": "None found as of 2026-11-07."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Deal and document notifications by email (help center)."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "distributions",
+        "tax_documents",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://intercom.help/odinlovesyou/en/"
+      },
+      "notes": "Confidence: high that no public API/MCP exists; medium on document delivery (help articles: investor documents and legal agreements on deal pages; certificate within 2-3 weeks). MFA, exports and terms on automation not confirmed (help pages returned 404/redirect during research). Investor-side API: none found.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "bunch",
+      "name": "bunch",
+      "vendor": {
+        "name": "bunch capital GmbH",
+        "website": "https://www.bunch.capital",
+        "country": "DE"
+      },
+      "website": "https://www.bunch.capital",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity"
+      ],
+      "regions": [
+        "dach",
+        "europe",
+        "uk"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://app.bunch.capital/",
+          "notes": "Fully branded investor portal: drawdown notices (amount, deadline, wiring instructions), distributions, NAV, cash flows, KPIs, data room with watermarking, e-signature. SSO/MFA not published."
+        },
+        "api": {
+          "status": "none",
+          "notes": "API Evangelist profile (2026-10-06): no public API, developer portal or SDKs; agent readiness 0/100. Vendor site does not mention integrations."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "'Notices and updates' delivered to investors; mechanism not detailed."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "nav",
+        "performance",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://www.bunch.capital"
+      },
+      "notes": "Berlin-based, Series B May 2026. Confidence: high that no public API exists (third-party probe + vendor site). Quarterly reports as branded PDFs and dashboards. Terms and Conditions cl. 7.5: 'You may not scrape the Digital Platform for data or information or use similar extraction tools'; cl. 13.2 bars automated extraction; cl. 8 bars sharing login data and requires separate access for additional individuals; cl. 4.1.3 allows onboarding delegated 'Impersonator Users'. Investor-side API: none.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://www.bunch.capital/legal/terms-and-conditions",
+        "automation_policy": "prohibited",
+        "notes": "Scraping/automated extraction prohibited; delegates must be onboarded as separate users."
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "roundtable",
+      "name": "Roundtable",
+      "vendor": {
+        "name": "Roundtable (Roundtable SRL)",
+        "website": "https://www.roundtable.eu",
+        "country": "BE"
+      },
+      "website": "https://www.roundtable.eu",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity",
+        "real-estate"
+      ],
+      "regions": [
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://app.roundtable.eu",
+          "notes": "SPVs (French SAS/SC, Luxembourg SCSp) and EU funds; investor dashboard with documents, commitments, valuations; CSSF-registered EuVECA manager. MFA/SSO not published."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "Third-party software directories list 'API' among features; no developer docs found on roundtable.eu or docs.roundtable.eu."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Investor updates and invitations by email."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "distributions",
+        "performance",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://docs.roundtable.eu/en/"
+      },
+      "notes": "Confidence: medium on investor features (vendor homepage). API unconfirmed (directory listings only); status page and FATCA generator exist, suggesting some tooling. Terms (Platform ToS, Deal-by-Deal ToS) not reviewed for automation language. Investor-side API: unknown.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "titanbay",
+      "name": "Titanbay",
+      "vendor": {
+        "name": "Titanbay Ltd / Titanbay Ireland Limited",
+        "website": "https://www.titanbay.com",
+        "country": "GB"
+      },
+      "website": "https://www.titanbay.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "infrastructure",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "uk",
+        "europe",
+        "dach"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "B2B2C: white-labelled platform for private banks, wealth managers and MFOs (Wealth Solutions); fund dashboard covers onboarding, capital calls, NAVs, reporting. End-investor login details not published."
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "partner"
+          ],
+          "notes": "Press releases (2026) state 'standard connections via API, FIX, or SWIFT' for banks/wealth managers; vendor site shows FIX 5.0 in TradeEngine. No public developer docs."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "nav",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_email": "sales@titanbay.com",
+        "support_url": "https://www.titanbay.com/contact"
+      },
+      "notes": "Confidence: medium that partner integrations (API/FIX/SWIFT) exist (press-release and Wealth Mosaic profile evidence, weaker than docs). Heads of Germany and Switzerland appointed 2026 (DACH expansion). No investor-side API; access is via the distributing bank/wealth manager. Terms not reviewed.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "yieldstreet",
+      "name": "Yieldstreet (Willow Wealth)",
+      "vendor": {
+        "name": "YieldStreet Inc.",
+        "website": "https://www.yieldstreet.com",
+        "country": "US"
+      },
+      "website": "https://www.yieldstreet.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-credit",
+        "real-estate",
+        "private-equity",
+        "venture-capital",
+        "other"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "sso": [
+            "none"
+          ],
+          "mfa": [
+            "totp",
+            "sms"
+          ],
+          "notes": "Security page states 2FA is mandatory for all users; methods: authenticator app (Authy) or SMS. Statements, tax documents in account; export beyond PDF not confirmed."
+        },
+        "api": {
+          "status": "none",
+          "notes": "No developer docs; API Tracker listing is an empty template. docs.yield.xyz is an unrelated crypto company."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "none"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Distribution and document notices by email."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "distributions",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://intercom.help/yieldstreet/en/"
+      },
+      "notes": "As of 2026-11-07, yieldstreet.com, /security and /terms 301-redirect to willowwealth.com (?utm_source=yieldstreet), indicating a rebrand to Willow Wealth; the Willow pages returned 403 so the rename statement could not be read. Confidence: high on mandatory 2FA (help center + security page). High that no API exists. Terms automation clauses unknown (page not retrievable). Investor-side API: none.",
+      "updated": "2026-11-07",
+      "terms": {
+        "tos_url": "https://www.willowwealth.com/terms/",
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "subscribe",
+      "name": "+SUBSCRIBE",
+      "vendor": {
+        "name": "Subscribe Technologies, Inc.",
+        "website": "https://subscribeplatform.com",
+        "country": "US"
+      },
+      "website": "https://subscribeplatform.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "hedge-fund",
+        "other"
+      ],
+      "regions": [
+        "north-america",
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Investors and advisors maintain a reusable 'investment passport'; post-trade they track capital calls, retrieve tax documents and view portfolio reporting. MFA/SSO not published."
+        },
+        "api": {
+          "status": "partner-only",
+          "style": "rest",
+          "docs_url": "https://docs.subscribeplatform.com/",
+          "audience": [
+            "partner",
+            "fund-admin",
+            "gp"
+          ],
+          "notes": "Developer docs site exists (quickstart for authenticated requests) but returned 403 to anonymous fetch on 2026-11-07, i.e. gated. Platform described as API-based with white-label embedding for service providers/institutions; custodian integrations with Fidelity, Schwab Advisor Services, Goldman Sachs Custody (Jan 2025)."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Capital call and document notices."
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_portal": "https://docs.subscribeplatform.com/"
+      },
+      "notes": "Confidence: high that a developer documentation site exists; its content (auth, resources) could not be read (403). Medium that API access is for institutions, fund managers and service providers rather than end investors (third-party Altss profile + vendor marketing). Investor-side API: unknown, likely none. Terms not reviewed.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "alto",
+      "name": "Alto (Alto IRA)",
+      "vendor": {
+        "name": "Alto Solutions, Inc.",
+        "website": "https://www.altoira.com",
+        "country": "US"
+      },
+      "website": "https://www.altoira.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "other"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Self-directed IRA custodian/platform; investors view holdings and documents in investor portal; issuers manage capital calls/distributions from an issuer dashboard. MFA methods not confirmed (help center not retrievable)."
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "partner",
+            "gp"
+          ],
+          "notes": "Issuer/platform integration API for embedding IRA funding flows (Canopy, Prosper integrations). Vendor: 'Access to Alto's API integration is currently reviewed on a case-by-case basis'; 4-6 week integrations. No public docs; no investor-side data API."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "tax_documents",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_portal": "https://altoira.com/issuer-integration",
+        "support_url": "https://help.altoira.com"
+      },
+      "notes": "Confidence: high that API is partner-only and issuer/platform-oriented (vendor integration page). Investor-side API: none. 2FA and export formats unconfirmed. Terms not reviewed.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "securitize",
+      "name": "Securitize",
+      "vendor": {
+        "name": "Securitize, Inc.",
+        "website": "https://securitize.io",
+        "country": "US"
+      },
+      "website": "https://id.securitize.io",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "private-credit",
+        "real-estate",
+        "other"
+      ],
+      "regions": [
+        "north-america",
+        "global",
+        "apac"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://id.securitize.io/",
+          "notes": "Securitize iD investor login; MFA methods not confirmed from public docs."
+        },
+        "api": {
+          "status": "available",
+          "style": "rest",
+          "docs_url": "https://securitize.io/apis",
+          "auth": [
+            "oauth2-authorization-code",
+            "api-key"
+          ],
+          "audience": [
+            "partner",
+            "gp"
+          ],
+          "sandbox": true,
+          "notes": "Public docs: Connect API (OAuth provider 'Log in with Securitize iD'; with investor access token + app secret an integrating app can list the investor's documents and get temporary download links: GET https://sec-id-api.securitize.io/v1/{clientId}/investor/documents), Domain API (issuers/brokers: investors, KYC, documents, investments, transactions, issuances; sandbox public-api.sandbox.securitize.io), Webhooks API, APAC API (api-key). Credentials are issued to applications/issuers, not to investors directly."
+        },
+        "mcp": {
+          "status": "available",
+          "endpoint": "https://mcp.securitize.io",
+          "transport": [
+            "streamable-http"
+          ],
+          "auth": [
+            "none"
+          ],
+          "maintainer": "vendor",
+          "notes": "Per API Evangelist profile (2026-08-05): public, unauthenticated 'Securitize Connector' MCP server with 5 tools; not verified against vendor docs; not in official MCP registry."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "available",
+          "docs_url": "https://documenter.getpostman.com/view/16645978/UVsEVopd",
+          "notes": "Webhook API: KYC/KYB, accreditation and subscription-agreement updates (issuer-facing)."
+        },
+        "email_notifications": {
+          "status": "available"
+        },
+        "export_formats": [
+          "pdf",
+          "json"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "distributions",
+        "subscriptions",
+        "kyc",
+        "cap_table",
+        "tax_documents"
+      ],
+      "standards": [
+        "oauth2",
+        "openapi"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_portal": "https://securitize.io/apis",
+        "support_url": "https://developersupport.securitize.io/hc/en-us"
+      },
+      "notes": "Confidence: high on public API docs (vendor GitBook/Postman). The Connect API's investor-documents endpoints return identity/KYC documents (docType passport etc.), not fund statements; fund-level reports/distributions are managed through the issuer Domain API/Control Panel. Investor-side API: indirect only (an app acting with the investor's OAuth token). MCP server existence from third-party profile only. Terms not reviewed.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "republic",
+      "name": "Republic",
+      "vendor": {
+        "name": "OpenDeal Inc. (Republic)",
+        "website": "https://republic.com",
+        "country": "US"
+      },
+      "website": "https://republic.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "venture-capital",
+        "real-estate",
+        "other"
+      ],
+      "regions": [
+        "north-america",
+        "europe",
+        "uk"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Retail/accredited crowdfunding marketplace (FINRA funding portal; Republic Europe ex-Seedrs). Republic Europe offers LP funds and 'LP Access Fund' feeder vehicles with online execution via nominee; investors see these in their Republic portfolio. No dedicated LP portal documented. MFA not confirmed."
+        },
+        "api": {
+          "status": "none",
+          "notes": "No developer docs or API found."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "none"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "available"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "distributions",
+        "tax_documents",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Inclusion is conditional: evidence of a true LP portal is thin. Republic Europe markets LP fund access with low minimums through nominee feeder structures (academy pages), and Republic Capital runs venture funds, but no LP-specific portal, API or export documentation was found (republic.com returned 403 to fetch). Maintainers may drop this entry. Investor-side API: none.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "addepar-client-portal",
+      "name": "Addepar Client Portal",
+      "vendor": {
+        "name": "Addepar, Inc.",
+        "website": "https://addepar.com",
+        "country": "US"
+      },
+      "website": "https://addepar.com",
+      "category": "reporting-platform",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "real-estate",
+        "hedge-fund",
+        "other"
+      ],
+      "regions": [
+        "north-america",
+        "global",
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "sso": [
+            "none"
+          ],
+          "notes": "Firm-branded Client Portal (firmdomain.addepar.com): clients sign in with email/password, view holdings, allocations, performance and files published by the advisor; file vault includes advisor- and client-uploaded files. MFA methods not confirmed in public docs; API Tracker lists SSO/social login without detail."
+        },
+        "api": {
+          "status": "available",
+          "style": "rest",
+          "base_url": "https://api.addepar.com/",
+          "docs_url": "https://developers.addepar.com/docs",
+          "auth": [
+            "basic",
+            "oauth2-authorization-code"
+          ],
+          "audience": [
+            "partner",
+            "fund-admin"
+          ],
+          "sandbox": true,
+          "notes": "JSON:API REST with published OpenAPI spec. Keys created by firm administrators (Firm Settings > API Access Key); OAuth clients via partners@addepar.com. Resources: portfolio query/views, transactions, positions, entities, Files (/v1/files list/download), Generated Reports, Client Portal publish (/v1/portal/publish_files, scopes FILE_WRITE, PUBLISH_FILE). Environments: firmdomain.addepar.com/api, api.addepar.com (3rd parties), clientdev, partner sandbox. End investors (portal users) cannot obtain keys; access is firm-level."
+        },
+        "mcp": {
+          "status": "beta",
+          "endpoint": "https://mcp.addepar.com/",
+          "auth": [
+            "oauth2"
+          ],
+          "maintainer": "vendor",
+          "docs_url": "https://claude.com/connectors/addepar",
+          "notes": "Official Addepar MCP server, Anthropic-verified Claude connector added August 2026, documentation marks it closed beta. Sign in with an Addepar account; permission aware. 15 tools including get_private_fund_cash_movements and get_upcoming_private_fund_capital_activity (capital calls, distributions, NAVs, unfunded). Aimed at advisor firm users; end-client access not stated."
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "publish_files API can notify clients when files are published."
+        },
+        "export_formats": [
+          "pdf",
+          "xlsx",
+          "json"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "performance",
+        "nav",
+        "fund_reports",
+        "tax_documents",
+        "other"
+      ],
+      "standards": [
+        "openapi",
+        "oauth2"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_email": "partners@addepar.com",
+        "developer_portal": "https://developers.addepar.com"
+      },
+      "notes": "Treated here as a portal (Client Portal), not as an aggregator. Confidence: high on API facts (vendor developer portal). The documented API is for the firm (advisor/family office) that licenses Addepar; the end investor viewing a Client Portal has no documented self-serve API or MCP. A family office that is itself the Addepar licensee gets full API access to positions and files. Rate limits unspecified (increase on request). Terms not reviewed. Correction 2026-11-07: vendor MCP server exists (closed beta), see access.mcp.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "arch",
+      "name": "Arch",
+      "vendor": {
+        "name": "Arch Labs, Inc.",
+        "website": "https://arch.com",
+        "country": "US"
+      },
+      "website": "https://arch.com",
+      "category": "reporting-platform",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "real-estate",
+        "hedge-fund",
+        "fund-of-funds",
+        "other"
+      ],
+      "regions": [
+        "north-america"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://arch.com/portal",
+          "notes": "Client portal consolidating statements, capital calls, distributions and K-1s; digest emails of account updates and upcoming capital calls. MFA not published (trust.arch.com)."
+        },
+        "api": {
+          "status": "available",
+          "style": "rest",
+          "base_url": "https://arch.co/client-api/v0",
+          "docs_url": "https://arch.co/client-api/api-docs/",
+          "auth": [
+            "jwt",
+            "oauth2-client-credentials"
+          ],
+          "audience": [
+            "lp",
+            "fund-admin",
+            "partner"
+          ],
+          "notes": "Arch Client API (JSON REST, OpenAPI definitions per resource): Accounts, Activities, Cash Flows, Holdings, Investing Entities, Issuing Entities, Lookthroughs, Offerings, Tasks, Tax Documents, Users, User Roles, Firms, Addepar. Client-credential JWT bearer tokens. Available to Arch clients (family offices, wealth managers, institutional allocators, accounting firms). Docs site is a JS app; content not readable anonymously. Vendor also cites delivery via SFTP drop-offs and flat files (older site copy)."
+        },
+        "mcp": {
+          "status": "none",
+          "notes": "No MCP server found (API Evangelist 2026-07; official registry empty)."
+        },
+        "sftp": {
+          "status": "partner-only",
+          "notes": "Earlier arch.co site: 'delivers data to downstream systems via API integrations, SFTP dropoffs, flat files, or Open Data Program' (not on current arch.com page)."
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "available",
+          "notes": "Digest email: account updates, upcoming capital calls, document summaries."
+        },
+        "export_formats": [
+          "pdf",
+          "csv",
+          "xlsx",
+          "json"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "nav",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "other"
+      ],
+      "standards": [
+        "openapi"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "developer_portal": "https://arch.co/client-api/api-docs/",
+        "support_url": "https://arch.com/contact"
+      },
+      "notes": "Classification: Arch is an AGGREGATOR / digital admin layer, not a GP-issued LP portal. It pulls 'statements, capital calls, and K-1s from portals and inboxes' on behalf of its clients (700+ customers, 50,000+ funds) and exposes the normalized data via its Client API and integrations (Addepar etc.). Confidence: high on API existence and resource list (API Evangelist index of OpenAPI files, 2026-07; vendor docs URL confirmed live but JS-rendered). Medium on SFTP/flat-file delivery (older vendor copy). Investor-side API: yes for the client organisation (investor or their delegate), gated by a paid subscription; auth is client-credentials JWT.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "liqid",
+      "name": "LIQID",
+      "vendor": {
+        "name": "LIQID Investments GmbH",
+        "website": "https://www.liqid.de",
+        "country": "DE"
+      },
+      "website": "https://www.liqid.de",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "dach"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://authentication.liqid.de/login",
+          "sso": [
+            "oidc"
+          ],
+          "notes": "Auth0-backed login with OIDC discovery at authentication.liqid.de (customer login, not enterprise SSO). Web dashboard plus mobile app. MFA methods not published. Products: NXT (ELTIF, from EUR 10-20k) and PRO (PE/VC fund-of-funds, from EUR 100-200k)."
+        },
+        "api": {
+          "status": "none",
+          "notes": "api.liqid.de exists but returns 401 on all probed paths; developer.liqid.de/docs.liqid.de do not resolve; no developer program (API Evangelist probe 2026-08-25)."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "none"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "available"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "performance",
+        "tax_documents",
+        "fund_reports",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Added as DACH platform. Confidence: high that no public API/MCP exists (third-party probe + vendor site). Upvest provides API infrastructure for LIQID's ELTIF, but that is B2B plumbing, not investor access. Investor-side API: none. Terms page not retrievable (404 at tested URL); automation policy unknown.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "privatize",
+      "name": "Privatize",
+      "vendor": {
+        "name": "Privatize Group GmbH",
+        "website": "https://www.privatizegroup.com",
+        "country": "DE"
+      },
+      "website": "https://www.privatizegroup.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "infrastructure",
+        "real-estate",
+        "private-credit"
+      ],
+      "regions": [
+        "dach"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Frankfurt-based B2B2C private-markets platform for banks (white-label), asset managers/MFOs and financial advisors; ELTIFs from EUR 1,000; digital subscription; custody via partner banks (DAB BNP Paribas, Fondsdepot Bank, UBS, V-Bank). Login/MFA not published."
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No API or developer documentation found; site says funds are 'seamlessly integrated in client accounts' via partner custody banks."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "subscriptions",
+        "kyc",
+        "fund_reports"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "contact": {
+        "support_url": "https://www.privatizegroup.com/"
+      },
+      "notes": "Added as DACH platform. Confidence: low-medium overall; vendor site is marketing only. Positions are typically booked in the investor's custody account at a partner bank, so position data may be reachable via the bank rather than Privatize. Investor-side API: unknown. Terms not retrievable.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    },
+    {
+      "id": "nao",
+      "name": "NAO",
+      "vendor": {
+        "name": "NAO Co-Investment GmbH",
+        "website": "https://www.investnao.com",
+        "country": "DE"
+      },
+      "website": "https://www.investnao.com",
+      "category": "marketplace",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "infrastructure",
+        "hedge-fund",
+        "other"
+      ],
+      "regions": [
+        "dach",
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Mobile-app-first retail platform (from EUR 1, savings plans); brokerage via DonauCapital Wertpapier GmbH, custody at Baader Bank. Web login exists; MFA not published."
+        },
+        "api": {
+          "status": "none",
+          "notes": "No API, developer or B2B integration mentioned anywhere."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "none"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "performance",
+        "tax_documents",
+        "subscriptions",
+        "kyc"
+      ],
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Added as DACH platform. Confidence: medium (vendor site, app store). Retail co-investment app; positions are custodied at Baader Bank, so bank statements/data may be the practical data path. Investor-side API: none. Terms not reviewed.",
+      "updated": "2026-11-07",
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "icapital",
+      "difficulty": 4,
+      "rationale": "No public API; partner-only integration docs; ToS expressly prohibits automated systems and intelligent agents except authorized APIs; documents reachable only via web or via an advisor/custodian integration.",
+      "investor_side_api": false,
+      "sources": [
+        "https://providers.apievangelist.com/providers/icapital-network/",
+        "https://icapital.com/terms-of-service/",
+        "https://www.businesswire.com/news/home/20260430357138/en/",
+        "https://sacra.com/c/icapital-network/"
+      ]
+    },
+    {
+      "id": "cais",
+      "difficulty": 4,
+      "rationale": "Advisor-only platform; MCP server in limited release for select advisors; data feed to Tamarac requires setup fee; no public API docs; end investor has no direct programmatic path.",
+      "investor_side_api": false,
+      "sources": [
+        "https://www.investmentnews.com/alternatives/cais-embeds-claude-ai-into-advisor-workflows-for-alternatives-intelligence/266654",
+        "https://testhelp.tamaracinc.com/help/content/tamarac_reporting/integrations/alternative_investments_integrations/cais_integration.htm",
+        "https://www.caisgroup.com/terms-of-use"
+      ]
+    },
+    {
+      "id": "moonfare",
+      "difficulty": 4,
+      "rationale": "Default 2FA web login; partner API only for distributing institutions (marketing claims, no docs); investor gets PDFs and email notices.",
+      "investor_side_api": false,
+      "sources": [
+        "https://www.moonfare.com/security",
+        "https://www.moonfare.com/institutions-type-wealth-manager-and-bank",
+        "https://www.fundcraft.lu/?p=1965"
+      ]
+    },
+    {
+      "id": "angellist-venture",
+      "difficulty": 3,
+      "rationale": "Vendor MCP server (AngelList Link) exposes documents, capital calls, distributions and capital accounts read-only but only to GPs; LPs limited to web (optional TOTP 2FA) with PDF/CSV tax exports; LP MCP and API announced as planned.",
+      "investor_side_api": false,
+      "sources": [
+        "https://angellist.com/link",
+        "https://claude.com/marketplace/connectors/angellist",
+        "https://help.angellist.com/hc/en-us/articles/47543225581965-AngelList-Link-Data-Privacy",
+        "https://help.angellist.com/hc/en-us/articles/32869705627789-Where-do-I-find-my-tax-documents-and-financial-reports",
+        "https://help.angellist.com/hc/en-us/articles/32633716806029-I-m-logged-in-how-do-I-enable-2-factor-authentication-2FA",
+        "https://support.angellist.com/data-room/integrations/API"
+      ]
+    },
+    {
+      "id": "sydecar",
+      "difficulty": 4,
+      "rationale": "Magic-link email login; K-1s downloadable in Tax Center; no developer docs; website ToS prohibits robots/spiders and account sharing.",
+      "investor_side_api": false,
+      "sources": [
+        "https://help.sydecar.io/where-do-i-view-my-tax-documents",
+        "https://sydecar.io/blog/product-update-q1-26",
+        "https://www.sydecar.io/legal/terms-of-service",
+        "https://sydecar.io/llms.txt"
+      ]
+    },
+    {
+      "id": "allocate",
+      "difficulty": 4,
+      "rationale": "Undocumented vendor MCP endpoint behind customer sign-in; no public API; advisor-oriented product; terms silent on automation.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://www.mcpbundles.com/skills/allocate-mcp-71834ad0de",
+        "https://providers.apievangelist.com/providers/allocate/",
+        "https://allocate.co/",
+        "https://allocate.co/legal"
+      ]
+    },
+    {
+      "id": "vauban-carta",
+      "difficulty": 3,
+      "rationale": "Carta MCP server with OAuth scoped to the signed-in user's permissions and a partner-gated REST API/Data Warehouse exist; LP eligibility for MCP undocumented; LP portal offers PDF/XLSX and capital call emails.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://www.scalekit.com/blog/carta-mcp-vs-api",
+        "https://mcpservers.org/remote-mcp-servers/carta",
+        "https://docs.carta.com/api-platform/docs/carta-mcp",
+        "https://carta.com/explore/fund-erp/lp-portal/",
+        "https://support.carta.com/kb/en/vauban-434264",
+        "https://carta-com-marketing.netlify.app/wp-content/uploads/2023/12/LP-Onboarding-Guide.pdf"
+      ]
+    },
+    {
+      "id": "odin",
+      "difficulty": 4,
+      "rationale": "Web portal only; documents on deal pages and by email; no API, MCP or export documentation; MFA unknown.",
+      "investor_side_api": false,
+      "sources": [
+        "https://www.joinodin.com/",
+        "https://intercom.help/odinlovesyou/en/articles/6394501-where-are-my-investment-documents-and-legal-agreements",
+        "https://odinlovesyou.gitbook.io/resources/investor-guide/welcome-to-odin"
+      ]
+    },
+    {
+      "id": "bunch",
+      "difficulty": 4,
+      "rationale": "Branded web portal with PDFs; no API/MCP; terms prohibit scraping and automated extraction; delegates must be onboarded as separate users.",
+      "investor_side_api": false,
+      "sources": [
+        "https://bunch.capital/investor-portal",
+        "https://providers.apievangelist.com/providers/bunch/",
+        "https://www.bunch.capital/legal/terms-and-conditions"
+      ]
+    },
+    {
+      "id": "roundtable",
+      "difficulty": 4,
+      "rationale": "Investor dashboard with documents; API only claimed in third-party directories; no developer docs; MFA unknown.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://www.roundtable.eu/",
+        "https://docs.roundtable.eu/en/",
+        "https://www.softwareadvice.com/product/530824-Roundtable/"
+      ]
+    },
+    {
+      "id": "titanbay",
+      "difficulty": 4,
+      "rationale": "B2B infrastructure with API/FIX/SWIFT connectivity claimed in press releases for banks and wealth managers; no public docs; end investor accesses via distributor.",
+      "investor_side_api": false,
+      "sources": [
+        "https://www.titanbay.com/",
+        "https://www.thewealthmosaic.com/vendors/titanbay/titanbay-wealth-solutions/",
+        "https://www.fintechfutures.com/press-releases/titanbay-appoints-julius-kolberg-as-head-of-germany"
+      ]
+    },
+    {
+      "id": "yieldstreet",
+      "difficulty": 4,
+      "rationale": "Mandatory 2FA web login, no API/MCP/SFTP, PDF documents only; site redirecting to Willow Wealth so terms could not be verified.",
+      "investor_side_api": false,
+      "sources": [
+        "https://intercom.help/yieldstreet/en/articles/6565173-how-do-i-update-my-user-account-or-investor-account-details",
+        "https://www.yieldstreet.com/support/article/what-are-the-best-ways-to-keep-my-account-secure/",
+        "https://apitracker.io/a/yieldstreet/apis"
+      ]
+    },
+    {
+      "id": "subscribe",
+      "difficulty": 3,
+      "rationale": "Developer documentation site exists but is gated; API aimed at institutions, fund managers and service providers; investors track capital calls and tax documents in web portal.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://docs.subscribeplatform.com/",
+        "https://altss.com/profile/subscribe.md",
+        "https://subscribeplatform.com/blackrock-implements-subscribe-alternative-investments-platform/"
+      ]
+    },
+    {
+      "id": "alto",
+      "difficulty": 4,
+      "rationale": "API is partner-only (issuers/platforms, case-by-case) and about funding flows, not investor data retrieval; investor uses web portal.",
+      "investor_side_api": false,
+      "sources": [
+        "https://altoira.com/issuer-integration",
+        "https://www.finextra.com/pressarticle/96594/self-directed-ira-platform-alto-unveils-capital-raise-platform"
+      ]
+    },
+    {
+      "id": "securitize",
+      "difficulty": 3,
+      "rationale": "Well-documented public APIs with OAuth and sandbox; an app can retrieve an investor's documents with the investor's OAuth token, but credentials go to applications/issuers and fund reporting data sits in the issuer Domain API; third-party reports a public MCP server.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://sec-connect-api-docs.securitize.io/investor-documents",
+        "https://securitize.io/apis",
+        "https://providers.apievangelist.com/providers/securitize/",
+        "https://domain-api-docs.securitize.io/"
+      ]
+    },
+    {
+      "id": "republic",
+      "difficulty": 4,
+      "rationale": "Crowdfunding marketplace with nominee LP fund access in Europe; no LP-specific portal, API or export documented; inclusion conditional.",
+      "investor_side_api": false,
+      "sources": [
+        "https://europe.republic.com/academy/fund-feeder-vehicles",
+        "https://republic.com/",
+        "https://apps.apple.com/us/app/republic-private-investing/id1475230022"
+      ]
+    },
+    {
+      "id": "addepar-client-portal",
+      "difficulty": 3,
+      "rationale": "Fully documented REST API with OpenAPI, Files and Portfolio endpoints, but keys are issued only to the licensing firm; a Client Portal end user has no self-serve API or MCP; firm-level family offices rate 2.",
+      "investor_side_api": false,
+      "sources": [
+        "https://developers.addepar.com/docs/resource-overview",
+        "https://developers.addepar.com/docs/faqs",
+        "https://developers.addepar.com/docs/urls",
+        "https://developers.addepar.com/docs/client-portal",
+        "https://developers.addepar.com/docs/tools-sdks"
+      ]
+    },
+    {
+      "id": "arch",
+      "difficulty": 2,
+      "rationale": "Aggregator, not a GP portal: documented Client API (OpenAPI, JWT client credentials) exposing holdings, cash flows, activities and tax documents to the investor organisation or its delegate, plus SFTP/flat-file delivery; requires paid Arch subscription and docs are not readable anonymously.",
+      "investor_side_api": true,
+      "sources": [
+        "https://providers.apievangelist.com/providers/arch/",
+        "https://arch.co/client-api/api-docs/",
+        "https://arch.com/solutions.html",
+        "https://www.wealthmanagement.com/advisor-support-platforms/alts-platform-arch-raises-52m-in-series-b-round"
+      ]
+    },
+    {
+      "id": "liqid",
+      "difficulty": 4,
+      "rationale": "Web/app only with Auth0 OIDC login; backend API not exposed; no developer program; export options unknown.",
+      "investor_side_api": false,
+      "sources": [
+        "https://providers.apievangelist.com/providers/liqid/",
+        "https://www.liqid.de/private-equity",
+        "https://upvest.co/blog/liqid-enters-partnership-with-upvest-for-its-eltif-offering"
+      ]
+    },
+    {
+      "id": "privatize",
+      "difficulty": 4,
+      "rationale": "B2B2C marketing site only; no API, export or login documentation; positions booked at partner custody banks.",
+      "investor_side_api": "unknown",
+      "sources": [
+        "https://www.privatizegroup.com/",
+        "https://www.cash-online.de/a/finum-private-finance-und-privatize-kooperieren-694744/",
+        "https://austria.dealroom.co/companies/privatize"
+      ]
+    },
+    {
+      "id": "nao",
+      "difficulty": 4,
+      "rationale": "Retail app-first platform; no API, B2B integration or export documentation; custody at Baader Bank.",
+      "investor_side_api": false,
+      "sources": [
+        "https://www.investnao.com/en/home",
+        "https://apps.apple.com/app/id1658953108"
+      ]
+    }
+  ]
+}

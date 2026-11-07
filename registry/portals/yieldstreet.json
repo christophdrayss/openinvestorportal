@@ -1,0 +1,78 @@
+{
+  "id": "yieldstreet",
+  "name": "Yieldstreet (Willow Wealth)",
+  "vendor": {
+    "name": "YieldStreet Inc.",
+    "website": "https://www.yieldstreet.com",
+    "country": "US"
+  },
+  "website": "https://www.yieldstreet.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-credit",
+    "real-estate",
+    "private-equity",
+    "venture-capital",
+    "other"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "none"
+      ],
+      "mfa": [
+        "totp",
+        "sms"
+      ],
+      "notes": "Security page states 2FA is mandatory for all users; methods: authenticator app (Authy) or SMS. Statements, tax documents in account; export beyond PDF not confirmed."
+    },
+    "api": {
+      "status": "none",
+      "notes": "No developer docs; API Tracker listing is an empty template. docs.yield.xyz is an unrelated crypto company."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Distribution and document notices by email."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://intercom.help/yieldstreet/en/"
+  },
+  "notes": "As of 2026-11-07, yieldstreet.com, /security and /terms 301-redirect to willowwealth.com (?utm_source=yieldstreet), indicating a rebrand to Willow Wealth; the Willow pages returned 403 so the rename statement could not be read. Confidence: high on mandatory 2FA (help center + security page). High that no API exists. Terms automation clauses unknown (page not retrievable). Investor-side API: none.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://www.willowwealth.com/terms/",
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "efront-investment-cafe",
+  "name": "eFront Investment Café",
+  "vendor": {
+    "name": "BlackRock eFront",
+    "website": "https://www.efront.com",
+    "country": "US"
+  },
+  "website": "https://www.efront.com/alternative-investment-software/efront-investment-cafe/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "infrastructure",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "europe",
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Hosted browser portal, deployed per GP or administrator, so investors meet many separate instances. SSO and MFA not stated."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp",
+        "fund-admin"
+      ],
+      "notes": "Press material cites API capabilities for sync with the eFront back office. No public docs. Also distributed by Apex Group."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available"
+    },
+    "export_formats": [
+      "pdf",
+      "xlsx"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "fund_reports",
+    "subscriptions",
+    "performance"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "support_url": "https://www.efront.com/en/contact"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "BlackRock-owned since 2019. Widely used by European GPs and administrators, including Aztec Group for its investor reporting portal. 56m+ documents shared with investors per vendor. No LP-side programmatic access identified. See registry/deployments.json for known deployments.",
+  "updated": "2026-11-07"
+}

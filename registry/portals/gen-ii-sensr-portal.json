@@ -1,0 +1,62 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "gen-ii-sensr-portal",
+  "name": "Gen II Sensr Portal",
+  "vendor": {
+    "name": "Gen II Fund Services",
+    "website": "https://gen2fund.com",
+    "country": "US"
+  },
+  "website": "https://gen2fund.com/technology",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "venture-capital"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Investor portal and data room; login URL and MFA not published in the sources reviewed."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No LP API described. Sensr DataBridge is a separate no-code data feed from Gen II to client (GP) systems."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "fund_reports",
+    "subscriptions"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Gen II's proprietary investor portal and data room, formerly Update Capital, renamed Sensr Portal in May 2024 (high confidence). February 2026 release adds an AI layer: natural-language search and summaries of capital call and distribution notices and quarterly and annual reports, Q&A on performance and capital balances, investor-specific alerts, ring-fenced to each investor's data, connected to Gen II's general ledger. Funded digital subscription platform links to it."
+}

@@ -1,0 +1,200 @@
+openapi: 3.1.0
+info:
+  title: OIPP Portal API (Open Investor Portal Protocol)
+  version: 0.1.0-draft
+  description: |
+    The read-only API an investor portal implements to join OpenInvestorPortal.
+
+    Authentication is peer to peer. Every request carries:
+    - `Authorization: OIPP <investor_id>`
+    - `OIPP-Link: <jwt>` a link certificate signed by OpenInvestorPortal (24h lifetime) that binds
+      investor_id, the investor public key, this portal (aud) and the granted scopes
+    - `Signature-Input` / `Signature` per RFC 9421 (HTTP Message Signatures) over
+      `@method`, `@target-uri`, `content-digest` and `created`, signed with the investor key
+
+    The portal verifies the certificate against the OpenInvestorPortal JWKS (cached), the request
+    signature against the key in the certificate, and checks the hourly revocation list. No call to
+    OpenInvestorPortal is made per request. Payloads follow the ILPA templates where one exists.
+servers:
+  - url: https://{portal}/oipp/v1
+    variables: { portal: { default: portal.example.com } }
+security:
+  - oippSignature: []
+paths:
+  /.well-known/oipp:
+    servers: [{ url: https://{portal}/oipp, variables: { portal: { default: portal.example.com } } }]
+    get:
+      security: []
+      summary: Discovery document
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [version, auth, capabilities, jwks_uri]
+                properties:
+                  version: { type: string, example: "0.1" }
+                  auth: { type: array, items: { type: string, enum: [oipp-signature, oauth2] } }
+                  capabilities: { type: array, items: { $ref: "#/components/schemas/Capability" } }
+                  jwks_uri: { type: string, format: uri, description: Portal keys for response signatures }
+                  link_url: { type: string, format: uri, description: Where an investor links their key }
+                  trust_anchors: { type: array, items: { type: string, format: uri }, example: ["https://openinvestorportal.org/.well-known/jwks.json"] }
+  /accounts:
+    get:
+      summary: Investor accounts (commitments) on this portal
+      responses:
+        "200": { content: { application/json: { schema: { type: object, properties: { accounts: { type: array, items: { $ref: "#/components/schemas/Account" } } } } } } }
+  /documents:
+    get:
+      summary: Document metadata
+      parameters:
+        - { name: account_id, in: query, schema: { type: string } }
+        - { name: type, in: query, schema: { $ref: "#/components/schemas/DocumentType" } }
+        - { name: since, in: query, schema: { type: string, format: date-time } }
+        - { $ref: "#/components/parameters/cursor" }
+      responses:
+        "200": { content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/Page" }, { type: object, properties: { documents: { type: array, items: { $ref: "#/components/schemas/Document" } } } }] } } } }
+  /documents/{id}/content:
+    get:
+      summary: Download a document
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses:
+        "200": { description: Binary content, content: { application/pdf: {}, application/octet-stream: {} } }
+        "302": { description: Redirect to a short-lived signed URL }
+  /capital-calls:
+    get:
+      summary: Capital call notices (ILPA capital call template)
+      parameters: [{ name: account_id, in: query, schema: { type: string } }, { name: since, in: query, schema: { type: string, format: date } }, { $ref: "#/components/parameters/cursor" }]
+      responses:
+        "200": { content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/Page" }, { type: object, properties: { capital_calls: { type: array, items: { $ref: "#/components/schemas/CapitalCall" } } } }] } } } }
+  /distributions:
+    get:
+      summary: Distribution notices (ILPA distribution template)
+      parameters: [{ name: account_id, in: query, schema: { type: string } }, { name: since, in: query, schema: { type: string, format: date } }, { $ref: "#/components/parameters/cursor" }]
+      responses:
+        "200": { content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/Page" }, { type: object, properties: { distributions: { type: array, items: { $ref: "#/components/schemas/Distribution" } } } }] } } } }
+  /capital-account-statements:
+    get:
+      summary: Capital account statements (ILPA reporting template)
+      parameters: [{ name: account_id, in: query, schema: { type: string } }, { name: period_end, in: query, schema: { type: string, format: date } }, { $ref: "#/components/parameters/cursor" }]
+      responses:
+        "200": { content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/Page" }, { type: object, properties: { statements: { type: array, items: { $ref: "#/components/schemas/CapitalAccountStatement" } } } }] } } } }
+  /notifications:
+    get:
+      summary: Change feed since a cursor (replaces email alerts)
+      parameters: [{ $ref: "#/components/parameters/cursor" }]
+      responses:
+        "200": { content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/Page" }, { type: object, properties: { events: { type: array, items: { $ref: "#/components/schemas/Event" } } } }] } } } }
+
+components:
+  securitySchemes:
+    oippSignature:
+      type: http
+      scheme: OIPP
+      description: investor_id in Authorization, link certificate in OIPP-Link, RFC 9421 signature headers.
+  parameters:
+    cursor: { name: cursor, in: query, schema: { type: string }, description: Opaque pagination cursor from a previous response }
+  schemas:
+    Capability:
+      type: string
+      enum: [accounts, documents, capital_calls, distributions, capital_account_statements, notifications]
+    DocumentType:
+      type: string
+      enum: [capital_call, distribution, capital_account_statement, quarterly_report, annual_report, tax, legal, kyc, other]
+    Page:
+      type: object
+      properties: { next_cursor: { type: [string, "null"] } }
+    Money:
+      type: object
+      required: [value, currency]
+      properties: { value: { type: number }, currency: { type: string, pattern: "^[A-Z]{3}$" } }
+    Account:
+      type: object
+      required: [id, fund_name, investor_name, commitment]
+      properties:
+        id: { type: string }
+        fund_name: { type: string }
+        fund_lei: { type: string, description: Legal Entity Identifier of the fund if known }
+        vehicle_name: { type: string }
+        investor_name: { type: string, description: The legal entity holding the commitment }
+        commitment: { $ref: "#/components/schemas/Money" }
+        vintage_year: { type: integer }
+        asset_class: { type: string }
+    Document:
+      type: object
+      required: [id, account_id, type, title, published_at]
+      properties:
+        id: { type: string }
+        account_id: { type: string }
+        type: { $ref: "#/components/schemas/DocumentType" }
+        title: { type: string }
+        published_at: { type: string, format: date-time }
+        period_end: { type: string, format: date }
+        mime_type: { type: string }
+        size_bytes: { type: integer }
+        sha256: { type: string }
+        content_url: { type: string, format: uri }
+    CapitalCall:
+      type: object
+      required: [id, account_id, notice_date, due_date, total_due]
+      properties:
+        id: { type: string }
+        account_id: { type: string }
+        notice_date: { type: string, format: date }
+        due_date: { type: string, format: date }
+        total_due: { $ref: "#/components/schemas/Money" }
+        breakdown:
+          type: object
+          description: ILPA capital call template line items
+          properties:
+            investments: { $ref: "#/components/schemas/Money" }
+            management_fees: { $ref: "#/components/schemas/Money" }
+            partnership_expenses: { $ref: "#/components/schemas/Money" }
+            other: { $ref: "#/components/schemas/Money" }
+        bank_instructions_document_id: { type: string, description: Reference to the notice PDF; bank details are never inlined }
+        document_id: { type: string }
+    Distribution:
+      type: object
+      required: [id, account_id, notice_date, payment_date, total]
+      properties:
+        id: { type: string }
+        account_id: { type: string }
+        notice_date: { type: string, format: date }
+        payment_date: { type: string, format: date }
+        total: { $ref: "#/components/schemas/Money" }
+        breakdown:
+          type: object
+          properties:
+            return_of_capital: { $ref: "#/components/schemas/Money" }
+            realized_gain: { $ref: "#/components/schemas/Money" }
+            income: { $ref: "#/components/schemas/Money" }
+            recallable: { $ref: "#/components/schemas/Money" }
+            withholding_tax: { $ref: "#/components/schemas/Money" }
+        document_id: { type: string }
+    CapitalAccountStatement:
+      type: object
+      required: [id, account_id, period_end, ending_balance]
+      properties:
+        id: { type: string }
+        account_id: { type: string }
+        period_start: { type: string, format: date }
+        period_end: { type: string, format: date }
+        beginning_balance: { $ref: "#/components/schemas/Money" }
+        contributions: { $ref: "#/components/schemas/Money" }
+        distributions: { $ref: "#/components/schemas/Money" }
+        net_income: { $ref: "#/components/schemas/Money" }
+        unrealized_gain: { $ref: "#/components/schemas/Money" }
+        management_fees: { $ref: "#/components/schemas/Money" }
+        ending_balance: { $ref: "#/components/schemas/Money" }
+        unfunded_commitment: { $ref: "#/components/schemas/Money" }
+        document_id: { type: string }
+    Event:
+      type: object
+      required: [id, type, occurred_at]
+      properties:
+        id: { type: string }
+        type: { type: string, enum: [document.published, capital_call.issued, distribution.issued, statement.published, account.updated, link.revoked] }
+        occurred_at: { type: string, format: date-time }
+        account_id: { type: string }
+        resource_id: { type: string }

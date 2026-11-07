@@ -1,0 +1,70 @@
+{
+  "id": "sp-global-ilevel",
+  "name": "S&P Global iLEVEL",
+  "vendor": {
+    "name": "S&P Global Market Intelligence",
+    "website": "https://www.spglobal.com",
+    "country": "US"
+  },
+  "website": "https://www.spglobal.com/en/products/topics/private-markets",
+  "category": "reporting-platform",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "infrastructure",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Portfolio monitoring for GPs and LPs, with the Prism LP portal for sharing documents."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "audience": [
+        "gp",
+        "lp",
+        "fund-admin"
+      ],
+      "notes": "Customer-only REST API used by integration vendors. No public docs."
+    },
+    "mcp": {
+      "status": "partner-only",
+      "maintainer": "vendor",
+      "docs_url": "https://press.spglobal.com/2026-10-22-S-P-Global-Expands-AI-Powered-Capabilities-Across-Private-Markets",
+      "notes": "MCP server for iLEVEL customers announced October 2026. No public endpoint or docs."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "performance",
+    "nav",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Many LPs are iLEVEL customers themselves, in which case API and MCP are available under their own contract.",
+  "updated": "2026-11-07"
+}

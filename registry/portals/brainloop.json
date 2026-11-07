@@ -1,0 +1,54 @@
+{
+  "id": "brainloop",
+  "name": "Brainloop Secure Dataroom",
+  "vendor": {
+    "name": "Brainloop GmbH",
+    "website": "https://www.brainloop.com",
+    "country": "DE"
+  },
+  "website": "https://www.brainloop.com",
+  "category": "data-room",
+  "regions": [
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "IT security page: various two-factor authentication options (methods not listed); Information Rights Management integration; MS Office integration. SSO not mentioned."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API mentioned on the homepage or security page."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "No terms of service link on the pages fetched."
+  },
+  "contact": {
+    "support_url": "https://support.brainloop.com/login"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Brainloop GmbH, Munich, with branches in Austria and Switzerland (site footer, copyright 2026). Parent company not stated on the site. Strong security posture (2FA, IRM, audit trail). Unknown: API, export rules.",
+  "updated": "2026-11-07"
+}

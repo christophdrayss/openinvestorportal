@@ -1,0 +1,31 @@
+{
+  "portals": [
+    {
+      "id": "flow",
+      "name": "Flow Investor Portal",
+      "vendor": { "name": "Flow (an Apex Group company)", "website": "https://flowinc.com" },
+      "website": "https://flowinc.com/investor-portal",
+      "category": "lp-portal",
+      "asset_classes": ["venture-capital", "private-equity", "real-estate", "other"],
+      "regions": ["north-america", "global"],
+      "access": {
+        "web": { "status": "available", "login_url": "https://flowinc.app/login", "notes": "Email and password login for funds, investments and documents. SSO and 2FA not mentioned on public pages; security page lists user account locking." },
+        "api": { "status": "partner-only", "style": "rest", "docs_url": "https://developers.flowinc.app/quickstart/index.html", "auth": ["jwt"], "audience": ["gp", "partner"], "notes": "Flow Customer API: REST with JWT bearer tokens issued on request via Support. Resources: Funds, Investors, Investments for the customer's organisation. Documents, capital calls, distributions and webhooks not documented. LP access not described." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "available", "notes": "Messaging, tasks and customizable notifications." }
+      },
+      "capabilities": ["documents", "capital_calls", "distributions", "nav", "tax_documents", "subscriptions", "messaging", "fund_reports"],
+      "terms": { "tos_url": "https://flowinc.com/terms-of-use", "automation_policy": "prohibited", "notes": "Section 14 prohibits accessing the website by automated or non-human means, including bots and scripts. Section 6 allows account holders to grant access to designated representatives and third-party service providers." },
+      "contact": { "developer_portal": "https://developers.flowinc.app/", "support_url": "https://trust.flowinc.com/" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Fund management platform for SPVs, VC, PE and real estate managers, law firms and fund administrators, now part of Apex Group. Modules: investor portal, automated capital calls, fund reporting, virtual data rooms, digital K-1 distribution. SOC 2 Type II. High confidence on API existence and auth (vendor docs, 2026-11-07); low on LP-side access.",
+      "updated": "2026-11-07"
+    }
+  ],
+  "assessments": [
+    { "id": "flow", "difficulty": 3, "rationale": "Documented REST API with JWT tokens exists but is issued to the GP organisation on request and covers funds, investors and investments, not documents. LP side is a password web login. Terms prohibit bots, but explicitly allow delegated access to representatives and service providers.", "lp_side_api": "unknown", "sources": ["https://flowinc.com/", "https://flowinc.com/investor-portal", "https://developers.flowinc.app/quickstart/index.html", "https://flowinc.com/terms-of-use", "https://flowinc.app/login"] }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "subscribe",
+  "name": "+SUBSCRIBE",
+  "vendor": {
+    "name": "Subscribe Technologies, Inc.",
+    "website": "https://subscribeplatform.com",
+    "country": "US"
+  },
+  "website": "https://subscribeplatform.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "hedge-fund",
+    "other"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Investors and advisors maintain a reusable 'investment passport'; post-trade they track capital calls, retrieve tax documents and view portfolio reporting. MFA/SSO not published."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "docs_url": "https://docs.subscribeplatform.com/",
+      "audience": [
+        "partner",
+        "fund-admin",
+        "gp"
+      ],
+      "notes": "Developer docs site exists (quickstart for authenticated requests) but returned 403 to anonymous fetch on 2026-11-07, i.e. gated. Platform described as API-based with white-label embedding for service providers/institutions; custodian integrations with Fidelity, Schwab Advisor Services, Goldman Sachs Custody (Jan 2025)."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Capital call and document notices."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_portal": "https://docs.subscribeplatform.com/"
+  },
+  "notes": "Confidence: high that a developer documentation site exists; its content (auth, resources) could not be read (403). Medium that API access is for institutions, fund managers and service providers rather than end investors (third-party Altss profile + vendor marketing). Investor-side API: unknown, likely none. Terms not reviewed.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

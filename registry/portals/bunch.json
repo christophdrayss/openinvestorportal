@@ -1,0 +1,73 @@
+{
+  "id": "bunch",
+  "name": "bunch",
+  "vendor": {
+    "name": "bunch capital GmbH",
+    "website": "https://www.bunch.capital",
+    "country": "DE"
+  },
+  "website": "https://www.bunch.capital",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity"
+  ],
+  "regions": [
+    "dach",
+    "europe",
+    "uk"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://app.bunch.capital/",
+      "notes": "Fully branded investor portal: drawdown notices (amount, deadline, wiring instructions), distributions, NAV, cash flows, KPIs, data room with watermarking, e-signature. SSO/MFA not published."
+    },
+    "api": {
+      "status": "none",
+      "notes": "API Evangelist profile (2026-10-06): no public API, developer portal or SDKs; agent readiness 0/100. Vendor site does not mention integrations."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "'Notices and updates' delivered to investors; mechanism not detailed."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "nav",
+    "performance",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "support_url": "https://www.bunch.capital"
+  },
+  "notes": "Berlin-based, Series B May 2026. Confidence: high that no public API exists (third-party probe + vendor site). Quarterly reports as branded PDFs and dashboards. Terms and Conditions cl. 7.5: 'You may not scrape the Digital Platform for data or information or use similar extraction tools'; cl. 13.2 bars automated extraction; cl. 8 bars sharing login data and requires separate access for additional individuals; cl. 4.1.3 allows onboarding delegated 'Impersonator Users'. Investor-side API: none.",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://www.bunch.capital/legal/terms-and-conditions",
+    "automation_policy": "prohibited",
+    "notes": "Scraping/automated extraction prohibited; delegates must be onboarded as separate users."
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

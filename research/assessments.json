@@ -1,0 +1,748 @@
+{
+  "datasite": {
+    "id": "datasite",
+    "difficulty": 3,
+    "recipient_side_api": "unknown",
+    "rationale": "Self-serve developer portal (OAuth 2, API keys) and a vendor MCP server scoped to the user's own permissions, which may cover invited users. Not stated whether buy-side invitees are eligible, and MCP needs account enablement.",
+    "sources": [
+      "https://www.datasite.com/en/resources/datasite-apis",
+      "https://www.datasite.com/en/resources/ai-at-datasite/datasite-mcp",
+      "https://www.datasite.com/en/legal/terms-of-use",
+      "https://developer.datasite.com/"
+    ],
+    "group": "data-rooms"
+  },
+  "ideals-vdr": {
+    "id": "ideals-vdr",
+    "difficulty": 3,
+    "recipient_side_api": "unknown",
+    "rationale": "The API is an enterprise paid add-on for account owners and managers. Admins can enable the vendor MCP per user group within existing permissions, so a GP could in principle enable it for investors; not confirmed. Terms prohibit unapproved tools.",
+    "sources": [
+      "https://www.idealsvdr.com/api-integrations/",
+      "https://www.idealsvdr.com/mcp/",
+      "https://www.idealsvdr.com/terms-of-use/"
+    ],
+    "group": "data-rooms"
+  },
+  "ansarada": {
+    "id": "ansarada",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "No public API. Read-only metadata MCP, enabled per room on request and scoped to user permissions; no document content, and guest eligibility not stated. Otherwise web login with MFA.",
+    "sources": [
+      "https://www.ansarada.com/data-room/mcp",
+      "https://www.ansarada.com/data-room",
+      "https://www.ansarada.com/integrations",
+      "https://help.ansarada.com/en/collections/19710635-integrations"
+    ],
+    "group": "data-rooms"
+  },
+  "firmex": {
+    "id": "firmex",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "No API, MCP or integrations found on vendor pages; knowledge base blocked. Web login only as far as known.",
+    "sources": [
+      "https://www.firmex.com/",
+      "https://www.firmex.com/legal-policies/"
+    ],
+    "group": "data-rooms"
+  },
+  "docsend": {
+    "id": "docsend",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "The vendor remote MCP (beta) and the Zapier and Salesforce integrations serve DocSend account users. Visitors get email-verified links and Space update emails; no visitor API documented.",
+    "sources": [
+      "https://help.dropbox.com/integrations/connect-docsend-mcp-server",
+      "https://help.dropbox.com/organize/dropbox-docsend-space-data-room-notifications",
+      "https://help.dropbox.com/view-edit/download-dropbox-docsend-content",
+      "https://help.dropbox.com/docsend"
+    ],
+    "group": "data-rooms"
+  },
+  "digify": {
+    "id": "digify",
+    "difficulty": 4,
+    "recipient_side_api": false,
+    "rationale": "Documented sender-side REST API (basic-auth keys) and View, Print and Download webhooks; the API manages recipients rather than serving them. Recipients use DRM-protected links.",
+    "sources": [
+      "https://digify.com/data-room-api.html",
+      "https://help.digify.com/en/articles/761282-digify-api-overview",
+      "https://help.digify.com/en/articles/3556613-digify-webhook",
+      "https://digify.com/"
+    ],
+    "group": "data-rooms"
+  },
+  "smartroom": {
+    "id": "smartroom",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "The vendor claims an API but publishes no docs; recipient access is web only as far as known.",
+    "sources": [
+      "https://smartroom.com/",
+      "https://smartroom.com/products/smartroom-virtual-data-room/"
+    ],
+    "group": "data-rooms"
+  },
+  "drooms": {
+    "id": "drooms",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "No API or MCP mentioned; SSO and 2FA listed; download permissions set per user and document.",
+    "sources": [
+      "https://drooms.com/en/",
+      "https://drooms.com/drooms-security/",
+      "https://drooms.com/information_for_ai_llms/"
+    ],
+    "group": "data-rooms"
+  },
+  "netfiles": {
+    "id": "netfiles",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "No API or interface mentioned on the site or in the terms; Teams integration only. The terms do not address automation.",
+    "sources": [
+      "https://www.netfiles.com/de",
+      "https://www.netfiles.com/de/rechtliche-informationen/nutzungsbedingungen"
+    ],
+    "group": "data-rooms"
+  },
+  "brainloop": {
+    "id": "brainloop",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "Security-focused room with 2FA and IRM; no API mentioned. View-only behaviour not confirmed, so not rated 5.",
+    "sources": [
+      "https://www.brainloop.com/",
+      "https://www.brainloop.com/de-de/it-security/"
+    ],
+    "group": "data-rooms"
+  },
+  "intralinks-vdrpro": {
+    "id": "intralinks-vdrpro",
+    "difficulty": 4,
+    "recipient_side_api": "unknown",
+    "rationale": "Customer APIs are available through sales. The terms explicitly prohibit bots, spiders and RPA on the platform, so recipient automation is limited to official channels.",
+    "sources": [
+      "https://www.intralinks.com/products/virtual-data-room",
+      "https://www.intralinks.com/why-intralinks/apis-deployment",
+      "https://www.intralinks.com/terms-of-use"
+    ],
+    "group": "data-rooms"
+  },
+  "flow": {
+    "id": "flow",
+    "difficulty": 3,
+    "rationale": "Documented REST API with JWT tokens exists but is issued to the GP organisation on request and covers funds, investors and investments, not documents. LP side is a password web login. Terms prohibit bots, but explicitly allow delegated access to representatives and service providers.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://flowinc.com/",
+      "https://flowinc.com/investor-portal",
+      "https://developers.flowinc.app/quickstart/index.html",
+      "https://flowinc.com/terms-of-use",
+      "https://flowinc.app/login"
+    ],
+    "group": "flow"
+  },
+  "capinteract-lp-interact": {
+    "id": "capinteract-lp-interact",
+    "difficulty": 4,
+    "rationale": "White-label web portal with MFA; no API, SFTP or feed documented for investors.",
+    "lp_side_api": false,
+    "sources": [
+      "https://www.capinteract.com/",
+      "https://www.apexgroup.com/technology-platforms/apex-investor-portal/"
+    ],
+    "group": "fund-admins-2"
+  },
+  "alter-domus-corpro": {
+    "id": "alter-domus-corpro",
+    "difficulty": 4,
+    "rationale": "Proprietary web portal; API connectivity offered to clients (GPs), none documented for LPs.",
+    "lp_side_api": false,
+    "sources": [
+      "https://jobs.workinlithuania.com/job-offers/10809-client-portal-delivery-specialist-non-tech",
+      "https://business.mammothtimes.com/mammothtimes/article/bizwire-2024-1-23-alter-domus-solidifies-its-experience-in-major-migrations-with-creation-of-a-dedicated-key-client-partnerships-team-as-private-markets-firms-reach-operational-tipping-point",
+      "https://alterdomus.com/wp-content/uploads/2024/07/AD0062-AD-European-Agency-Factsheet.pdf"
+    ],
+    "group": "fund-admins-2"
+  },
+  "citcoone": {
+    "id": "citcoone",
+    "difficulty": 4,
+    "rationale": "Proprietary web portal behind an OAuth2/OIDC login at login.citco.com; no public API.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.citco.com/our-clients/investors",
+      "https://www.citco.com/insights/citcoone-enhanced-with-online-transactions-feature",
+      "https://www.alternativeswatch.com/2023/10/31/citco-upgrades-online-capital-raising-service/"
+    ],
+    "group": "fund-admins-2"
+  },
+  "gen-ii-sensr-portal": {
+    "id": "gen-ii-sensr-portal",
+    "difficulty": 4,
+    "rationale": "Proprietary web portal with AI Q&A; DataBridge feeds go to GP systems, nothing documented for LPs.",
+    "lp_side_api": false,
+    "sources": [
+      "https://gen2fund.com/news/gen-ii-transforms-sensr-portal-into-first-of-its-kind-ai-powered-investor-portal-for-the-private-markets/",
+      "https://gen2fund.com/news/gen-ii-announces-the-rebranding-of-its-portal-to-sensr-portal/"
+    ],
+    "group": "fund-admins-2"
+  },
+  "iq-eq-cosmos": {
+    "id": "iq-eq-cosmos",
+    "difficulty": 3,
+    "rationale": "Dashboards export to PDF, PPT, Excel and CSV; no API documented.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://iqeq.com/services/iqeq-cosmos",
+      "https://the-drawdown.com/article/iq-eq-launches-investor-solutions-offering"
+    ],
+    "group": "fund-admins-2"
+  },
+  "csc-viewpoint": {
+    "id": "csc-viewpoint",
+    "difficulty": 4,
+    "rationale": "Web portal only per public material; no API or exports documented.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://cscglobal.com/service/press/press-csc-global-financial-markets-acquires-pef-services-llc/"
+    ],
+    "group": "fund-admins-2"
+  },
+  "vistra-vfunds": {
+    "id": "vistra-vfunds",
+    "difficulty": 5,
+    "rationale": "Web portal with SSO and MFA; dashboards allow downloads; no API documented.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.vistra.com/vfunds",
+      "https://hedgeweek.com/vistra-launches-vfunds-20"
+    ],
+    "group": "fund-admins-2"
+  },
+  "yardi-investment-manager": {
+    "id": "yardi-investment-manager",
+    "difficulty": 4,
+    "rationale": "Branded investor web portal; investor-side access channels not checked.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://prnewswire.com/news-releases/standish-management-enhances-client-service-with-yardi-investment-manager-301510923.html",
+      "https://www.apexgroup.com/client-portals/"
+    ],
+    "group": "fund-admins-2"
+  },
+  "goji": {
+    "id": "goji",
+    "difficulty": 4,
+    "rationale": "Onboarding and communications platform; investor data access channels not checked.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.ocorian.com/service/investor-services",
+      "https://www.ocorian.com/press-releases/ocorian-partners-goji-offer-fully-digitalised-investor-journey-private-fund-managers"
+    ],
+    "group": "fund-admins-2"
+  },
+  "finventions-investment-portal": {
+    "id": "finventions-investment-portal",
+    "difficulty": 4,
+    "rationale": "Password-only web portal with interactive CSV and PDF export; no API, SFTP or notification feed documented.",
+    "lp_side_api": false,
+    "sources": [
+      "https://www.finventions.de/investment-portal/",
+      "https://hip.hansainvest.com/apex/f?p=FIP:LOGIN",
+      "https://haip.hal-privatbank.com/haip/",
+      "https://www.cash-online.de/a/hansainvest-bringt-daten-tool-fuer-asset-manager-377766/"
+    ],
+    "group": "fund-admins"
+  },
+  "universal-investment-powerportal": {
+    "id": "universal-investment-powerportal",
+    "difficulty": 4,
+    "rationale": "Rich reporting portal for institutional investors but no published API, SFTP or export documentation.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://universal-investment.com/en/institutional-investors/reporting/",
+      "https://powerportal.universal-investment.com/"
+    ],
+    "group": "fund-admins"
+  },
+  "quantium": {
+    "id": "quantium",
+    "difficulty": 4,
+    "rationale": "Web portal for LPs; vendor advertises a GP-side API and data warehouse but no public developer documentation and no known LP-side API.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://quantium.pe"
+    ],
+    "group": "gp-software-dach"
+  },
+  "fundrbird": {
+    "id": "fundrbird",
+    "difficulty": 4,
+    "rationale": "Web portal for LPs; GP-side BI API mentioned on the vendor site, nothing documented for investors.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://fundrbird.com"
+    ],
+    "group": "gp-software-dach"
+  },
+  "fundpanel": {
+    "id": "fundpanel",
+    "difficulty": 4,
+    "rationale": "Web portal only as far as public material shows; no API or developer mention on aduroadvisors.com or fundpanel.io.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.aduroadvisors.com",
+      "https://fundpanel.io"
+    ],
+    "group": "gp-software-dach"
+  },
+  "juniper-square": {
+    "id": "juniper-square",
+    "difficulty": 4,
+    "rationale": "LP side is web login with 2FA only. GP-side REST API, webhooks, SFTP and a read-only MCP server exist but are not offered to investors. Terms prohibit automated queries without written permission.",
+    "lp_side_api": false,
+    "sources": [
+      "https://www.junipersquare.com/platform/investor-portal",
+      "https://www.junipersquare.com/gpx/apis-and-integrations",
+      "https://www.junipersquare.com/gpx/headless",
+      "https://www.junipersquare.com/terms-and-policies/end-user-terms-of-use"
+    ],
+    "group": "lp-software"
+  },
+  "carta": {
+    "id": "carta",
+    "difficulty": 3,
+    "rationale": "Publicly documented OAuth API with sandbox and a vendor MCP server, both oriented to fund managers and partners. LP access to own commitments via API or MCP unconfirmed. Email notices give a machine-readable trigger.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://docs.carta.com/api-platform/guides/getting-started/introduction/",
+      "https://claude.com/connectors/carta",
+      "https://support.carta.com/kb/en/limited-partners-425509"
+    ],
+    "group": "lp-software"
+  },
+  "allvue-investor-portal": {
+    "id": "allvue-investor-portal",
+    "difficulty": 4,
+    "rationale": "Web portal only for LPs. APIs are GP-side and undocumented publicly.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://allvuesystems.com/solutions/investor-portal",
+      "https://www.allvuesystems.com/solutions/nexius-data-platform/"
+    ],
+    "group": "lp-software"
+  },
+  "efront-investment-cafe": {
+    "id": "efront-investment-cafe",
+    "difficulty": 4,
+    "rationale": "Hosted web portal per GP or administrator. API is back-office integration for GPs. No public docs, no MCP.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.efront.com/alternative-investment-software/efront-investment-cafe/",
+      "https://www.apexgroup.com/technology-platforms/investor-portal/"
+    ],
+    "group": "lp-software"
+  },
+  "dynamo-investor-portal": {
+    "id": "dynamo-investor-portal",
+    "difficulty": 4,
+    "rationale": "Web portal with email notifications. Vendor API for GP customers only, no public docs.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.alternativeswatch.com/2024/06/28/dynamo-software-launches-ir-platform-upgrade-investor-portal-v-3-0/",
+      "https://slashdot.org/software/p/Dynamo/"
+    ],
+    "group": "lp-software"
+  },
+  "backstop-client-portal": {
+    "id": "backstop-client-portal",
+    "difficulty": 4,
+    "rationale": "Web-only for investors. Licensed REST APIs serve Backstop's own customers.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://ionanalytics.com/backstop/services/client-portal/",
+      "https://ionanalytics.com/backstop/services/data-services/"
+    ],
+    "group": "lp-software"
+  },
+  "altvia-sharesecure": {
+    "id": "altvia-sharesecure",
+    "difficulty": 4,
+    "rationale": "LP portal with 2FA and email notifications. No public API. MCP for GP teams only.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://altvia.com/vdr-portal/",
+      "https://briefglance.com/articles/altvia-links-private-markets-to-ai-with-open-standard-bridge"
+    ],
+    "group": "lp-software"
+  },
+  "fis-digital-data-exchange": {
+    "id": "fis-digital-data-exchange",
+    "difficulty": 4,
+    "rationale": "Web portal. API and file utility integration is GP and administrator side.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.fisglobal.com/en/products/fis-private-capital-suite/fis-digital-data-exchange"
+    ],
+    "group": "lp-software"
+  },
+  "sp-global-ilevel": {
+    "id": "sp-global-ilevel",
+    "difficulty": 4,
+    "rationale": "Customer-only REST API and new MCP server for iLEVEL subscribers. LP access via the Prism portal unverified.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://press.spglobal.com/2026-10-22-S-P-Global-Expands-AI-Powered-Capabilities-Across-Private-Markets",
+      "https://docs.nexla.com/user-guides/connectors/ilevel_api/overview"
+    ],
+    "group": "lp-software"
+  },
+  "ssc-globeop-investor-portal": {
+    "id": "ssc-globeop-investor-portal",
+    "difficulty": 4,
+    "rationale": "Web portal with PDF statements. No API, SFTP or MCP information published.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.ssctech.com/solutions/investor-services"
+    ],
+    "group": "lp-software"
+  },
+  "intralinks-fundcentre": {
+    "id": "intralinks-fundcentre",
+    "difficulty": 4,
+    "rationale": "GP-side API behind engagement. LP side is web login. Terms prohibit bots and API-key sharing.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.intralinks.com/products/fundcentre/reporting",
+      "https://www.intralinks.com/why-intralinks/apis-deployment",
+      "https://www.intralinks.com/terms-of-use"
+    ],
+    "group": "lp-software"
+  },
+  "investorflow-investor-portal": {
+    "id": "investorflow-investor-portal",
+    "difficulty": 4,
+    "rationale": "Web portal with configurable email notices. No public API. Terms prohibit scraping.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.investorflow.com/solutions/applications/investor-services/",
+      "https://www.investorflow.com/terms-of-use/"
+    ],
+    "group": "lp-software"
+  },
+  "cash-flow-portal": {
+    "id": "cash-flow-portal",
+    "difficulty": 4,
+    "rationale": "Vendor MCP server for sponsors. LP side is web login. Terms prohibit access outside supported interfaces.",
+    "lp_side_api": "unknown",
+    "sources": [
+      "https://www.cashflowportal.com/demo/mcp-server",
+      "https://www.cashflowportal.com/terms"
+    ],
+    "group": "lp-software"
+  },
+  "chronograph-lp": {
+    "id": "chronograph-lp",
+    "difficulty": 2,
+    "rationale": "The LP is the customer: GraphQL and REST API with keys and sandbox, Snowflake share, Excel exports, vendor MCP server. Not fully self-serve.",
+    "lp_side_api": true,
+    "sources": [
+      "https://www.chronograph.pe/limited-partners/",
+      "https://www.chronograph.pe/mcp-connectors/",
+      "https://claude.com/connectors/chronograph"
+    ],
+    "group": "lp-software"
+  },
+  "msci-private-i": {
+    "id": "msci-private-i",
+    "difficulty": 3,
+    "rationale": "Data and Analytics APIs for authorised LP clients, no public docs, no MCP.",
+    "lp_side_api": true,
+    "sources": [
+      "https://www.msci.com/our-solutions/private-capital/private-i"
+    ],
+    "group": "lp-software"
+  },
+  "papermark": {
+    "id": "papermark",
+    "difficulty": 2,
+    "rationale": "Owner side is the best in class: public REST API with OpenAPI, scoped tokens, CLI and a vendor MCP server from a EUR 59 plan. Not a 1 because nothing is offered to the invited LP, who still reaches documents through browser links.",
+    "recipient_side_api": false,
+    "sources": [
+      "https://www.papermark.com/",
+      "https://www.papermark.com/pricing",
+      "https://www.papermark.com/docs",
+      "https://www.papermark.com/docs/api",
+      "https://www.papermark.com/docs/mcp",
+      "https://github.com/mfts/papermark"
+    ],
+    "group": "papermark"
+  },
+  "icapital": {
+    "id": "icapital",
+    "difficulty": 4,
+    "rationale": "No public API; partner-only integration docs; ToS expressly prohibits automated systems and intelligent agents except authorized APIs; documents reachable only via web or via an advisor/custodian integration.",
+    "investor_side_api": false,
+    "sources": [
+      "https://providers.apievangelist.com/providers/icapital-network/",
+      "https://icapital.com/terms-of-service/",
+      "https://www.businesswire.com/news/home/20260430357138/en/",
+      "https://sacra.com/c/icapital-network/"
+    ],
+    "group": "platforms"
+  },
+  "cais": {
+    "id": "cais",
+    "difficulty": 4,
+    "rationale": "Advisor-only platform; MCP server in limited release for select advisors; data feed to Tamarac requires setup fee; no public API docs; end investor has no direct programmatic path.",
+    "investor_side_api": false,
+    "sources": [
+      "https://www.investmentnews.com/alternatives/cais-embeds-claude-ai-into-advisor-workflows-for-alternatives-intelligence/266654",
+      "https://testhelp.tamaracinc.com/help/content/tamarac_reporting/integrations/alternative_investments_integrations/cais_integration.htm",
+      "https://www.caisgroup.com/terms-of-use"
+    ],
+    "group": "platforms"
+  },
+  "moonfare": {
+    "id": "moonfare",
+    "difficulty": 4,
+    "rationale": "Default 2FA web login; partner API only for distributing institutions (marketing claims, no docs); investor gets PDFs and email notices.",
+    "investor_side_api": false,
+    "sources": [
+      "https://www.moonfare.com/security",
+      "https://www.moonfare.com/institutions-type-wealth-manager-and-bank",
+      "https://www.fundcraft.lu/?p=1965"
+    ],
+    "group": "platforms"
+  },
+  "angellist-venture": {
+    "id": "angellist-venture",
+    "difficulty": 3,
+    "rationale": "Vendor MCP server (AngelList Link) exposes documents, capital calls, distributions and capital accounts read-only but only to GPs; LPs limited to web (optional TOTP 2FA) with PDF/CSV tax exports; LP MCP and API announced as planned.",
+    "investor_side_api": false,
+    "sources": [
+      "https://angellist.com/link",
+      "https://claude.com/marketplace/connectors/angellist",
+      "https://help.angellist.com/hc/en-us/articles/47543225581965-AngelList-Link-Data-Privacy",
+      "https://help.angellist.com/hc/en-us/articles/32869705627789-Where-do-I-find-my-tax-documents-and-financial-reports",
+      "https://help.angellist.com/hc/en-us/articles/32633716806029-I-m-logged-in-how-do-I-enable-2-factor-authentication-2FA",
+      "https://support.angellist.com/data-room/integrations/API"
+    ],
+    "group": "platforms"
+  },
+  "sydecar": {
+    "id": "sydecar",
+    "difficulty": 4,
+    "rationale": "Magic-link email login; K-1s downloadable in Tax Center; no developer docs; website ToS prohibits robots/spiders and account sharing.",
+    "investor_side_api": false,
+    "sources": [
+      "https://help.sydecar.io/where-do-i-view-my-tax-documents",
+      "https://sydecar.io/blog/product-update-q1-26",
+      "https://www.sydecar.io/legal/terms-of-service",
+      "https://sydecar.io/llms.txt"
+    ],
+    "group": "platforms"
+  },
+  "allocate": {
+    "id": "allocate",
+    "difficulty": 4,
+    "rationale": "Undocumented vendor MCP endpoint behind customer sign-in; no public API; advisor-oriented product; terms silent on automation.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://www.mcpbundles.com/skills/allocate-mcp-71834ad0de",
+      "https://providers.apievangelist.com/providers/allocate/",
+      "https://allocate.co/",
+      "https://allocate.co/legal"
+    ],
+    "group": "platforms"
+  },
+  "vauban-carta": {
+    "id": "vauban-carta",
+    "difficulty": 3,
+    "rationale": "Carta MCP server with OAuth scoped to the signed-in user's permissions and a partner-gated REST API/Data Warehouse exist; LP eligibility for MCP undocumented; LP portal offers PDF/XLSX and capital call emails.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://www.scalekit.com/blog/carta-mcp-vs-api",
+      "https://mcpservers.org/remote-mcp-servers/carta",
+      "https://docs.carta.com/api-platform/docs/carta-mcp",
+      "https://carta.com/explore/fund-erp/lp-portal/",
+      "https://support.carta.com/kb/en/vauban-434264",
+      "https://carta-com-marketing.netlify.app/wp-content/uploads/2023/12/LP-Onboarding-Guide.pdf"
+    ],
+    "group": "platforms"
+  },
+  "odin": {
+    "id": "odin",
+    "difficulty": 4,
+    "rationale": "Web portal only; documents on deal pages and by email; no API, MCP or export documentation; MFA unknown.",
+    "investor_side_api": false,
+    "sources": [
+      "https://www.joinodin.com/",
+      "https://intercom.help/odinlovesyou/en/articles/6394501-where-are-my-investment-documents-and-legal-agreements",
+      "https://odinlovesyou.gitbook.io/resources/investor-guide/welcome-to-odin"
+    ],
+    "group": "platforms"
+  },
+  "bunch": {
+    "id": "bunch",
+    "difficulty": 4,
+    "rationale": "Branded web portal with PDFs; no API/MCP; terms prohibit scraping and automated extraction; delegates must be onboarded as separate users.",
+    "investor_side_api": false,
+    "sources": [
+      "https://bunch.capital/investor-portal",
+      "https://providers.apievangelist.com/providers/bunch/",
+      "https://www.bunch.capital/legal/terms-and-conditions"
+    ],
+    "group": "platforms"
+  },
+  "roundtable": {
+    "id": "roundtable",
+    "difficulty": 4,
+    "rationale": "Investor dashboard with documents; API only claimed in third-party directories; no developer docs; MFA unknown.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://www.roundtable.eu/",
+      "https://docs.roundtable.eu/en/",
+      "https://www.softwareadvice.com/product/530824-Roundtable/"
+    ],
+    "group": "platforms"
+  },
+  "titanbay": {
+    "id": "titanbay",
+    "difficulty": 4,
+    "rationale": "B2B infrastructure with API/FIX/SWIFT connectivity claimed in press releases for banks and wealth managers; no public docs; end investor accesses via distributor.",
+    "investor_side_api": false,
+    "sources": [
+      "https://www.titanbay.com/",
+      "https://www.thewealthmosaic.com/vendors/titanbay/titanbay-wealth-solutions/",
+      "https://www.fintechfutures.com/press-releases/titanbay-appoints-julius-kolberg-as-head-of-germany"
+    ],
+    "group": "platforms"
+  },
+  "yieldstreet": {
+    "id": "yieldstreet",
+    "difficulty": 4,
+    "rationale": "Mandatory 2FA web login, no API/MCP/SFTP, PDF documents only; site redirecting to Willow Wealth so terms could not be verified.",
+    "investor_side_api": false,
+    "sources": [
+      "https://intercom.help/yieldstreet/en/articles/6565173-how-do-i-update-my-user-account-or-investor-account-details",
+      "https://www.yieldstreet.com/support/article/what-are-the-best-ways-to-keep-my-account-secure/",
+      "https://apitracker.io/a/yieldstreet/apis"
+    ],
+    "group": "platforms"
+  },
+  "subscribe": {
+    "id": "subscribe",
+    "difficulty": 3,
+    "rationale": "Developer documentation site exists but is gated; API aimed at institutions, fund managers and service providers; investors track capital calls and tax documents in web portal.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://docs.subscribeplatform.com/",
+      "https://altss.com/profile/subscribe.md",
+      "https://subscribeplatform.com/blackrock-implements-subscribe-alternative-investments-platform/"
+    ],
+    "group": "platforms"
+  },
+  "alto": {
+    "id": "alto",
+    "difficulty": 4,
+    "rationale": "API is partner-only (issuers/platforms, case-by-case) and about funding flows, not investor data retrieval; investor uses web portal.",
+    "investor_side_api": false,
+    "sources": [
+      "https://altoira.com/issuer-integration",
+      "https://www.finextra.com/pressarticle/96594/self-directed-ira-platform-alto-unveils-capital-raise-platform"
+    ],
+    "group": "platforms"
+  },
+  "securitize": {
+    "id": "securitize",
+    "difficulty": 3,
+    "rationale": "Well-documented public APIs with OAuth and sandbox; an app can retrieve an investor's documents with the investor's OAuth token, but credentials go to applications/issuers and fund reporting data sits in the issuer Domain API; third-party reports a public MCP server.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://sec-connect-api-docs.securitize.io/investor-documents",
+      "https://securitize.io/apis",
+      "https://providers.apievangelist.com/providers/securitize/",
+      "https://domain-api-docs.securitize.io/"
+    ],
+    "group": "platforms"
+  },
+  "republic": {
+    "id": "republic",
+    "difficulty": 4,
+    "rationale": "Crowdfunding marketplace with nominee LP fund access in Europe; no LP-specific portal, API or export documented; inclusion conditional.",
+    "investor_side_api": false,
+    "sources": [
+      "https://europe.republic.com/academy/fund-feeder-vehicles",
+      "https://republic.com/",
+      "https://apps.apple.com/us/app/republic-private-investing/id1475230022"
+    ],
+    "group": "platforms"
+  },
+  "addepar-client-portal": {
+    "id": "addepar-client-portal",
+    "difficulty": 3,
+    "rationale": "Fully documented REST API with OpenAPI, Files and Portfolio endpoints, but keys are issued only to the licensing firm; a Client Portal end user has no self-serve API or MCP; firm-level family offices rate 2.",
+    "investor_side_api": false,
+    "sources": [
+      "https://developers.addepar.com/docs/resource-overview",
+      "https://developers.addepar.com/docs/faqs",
+      "https://developers.addepar.com/docs/urls",
+      "https://developers.addepar.com/docs/client-portal",
+      "https://developers.addepar.com/docs/tools-sdks"
+    ],
+    "group": "platforms"
+  },
+  "arch": {
+    "id": "arch",
+    "difficulty": 2,
+    "rationale": "Aggregator, not a GP portal: documented Client API (OpenAPI, JWT client credentials) exposing holdings, cash flows, activities and tax documents to the investor organisation or its delegate, plus SFTP/flat-file delivery; requires paid Arch subscription and docs are not readable anonymously.",
+    "investor_side_api": true,
+    "sources": [
+      "https://providers.apievangelist.com/providers/arch/",
+      "https://arch.co/client-api/api-docs/",
+      "https://arch.com/solutions.html",
+      "https://www.wealthmanagement.com/advisor-support-platforms/alts-platform-arch-raises-52m-in-series-b-round"
+    ],
+    "group": "platforms"
+  },
+  "liqid": {
+    "id": "liqid",
+    "difficulty": 4,
+    "rationale": "Web/app only with Auth0 OIDC login; backend API not exposed; no developer program; export options unknown.",
+    "investor_side_api": false,
+    "sources": [
+      "https://providers.apievangelist.com/providers/liqid/",
+      "https://www.liqid.de/private-equity",
+      "https://upvest.co/blog/liqid-enters-partnership-with-upvest-for-its-eltif-offering"
+    ],
+    "group": "platforms"
+  },
+  "privatize": {
+    "id": "privatize",
+    "difficulty": 4,
+    "rationale": "B2B2C marketing site only; no API, export or login documentation; positions booked at partner custody banks.",
+    "investor_side_api": "unknown",
+    "sources": [
+      "https://www.privatizegroup.com/",
+      "https://www.cash-online.de/a/finum-private-finance-und-privatize-kooperieren-694744/",
+      "https://austria.dealroom.co/companies/privatize"
+    ],
+    "group": "platforms"
+  },
+  "nao": {
+    "id": "nao",
+    "difficulty": 4,
+    "rationale": "Retail app-first platform; no API, B2B integration or export documentation; custody at Baader Bank.",
+    "investor_side_api": false,
+    "sources": [
+      "https://www.investnao.com/en/home",
+      "https://apps.apple.com/app/id1658953108"
+    ],
+    "group": "platforms"
+  }
+}

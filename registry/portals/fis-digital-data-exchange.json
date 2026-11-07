@@ -1,0 +1,71 @@
+{
+  "id": "fis-digital-data-exchange",
+  "name": "FIS Digital Data Exchange",
+  "vendor": {
+    "name": "FIS",
+    "website": "https://www.fisglobal.com",
+    "country": "US"
+  },
+  "website": "https://www.fisglobal.com/en/products/fis-private-capital-suite/fis-digital-data-exchange",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Self-service, brandable portal with e-signing, documents and capital event monitoring."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp",
+        "fund-admin"
+      ],
+      "notes": "Private Capital Suite (formerly Investran) integrates via API or File Utility, GP and administrator side."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "performance",
+    "subscriptions",
+    "fund_reports"
+  ],
+  "terms": {
+    "tos_url": "https://www.fisglobal.com/terms-of-use",
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "developer_portal": "https://developer.fisglobal.com/",
+    "support_url": "https://www.fisglobal.com/contact-us"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Investor portal companion to FIS Private Capital Suite (Investran), re-platformed as cloud SaaS in 2025. No LP-side programmatic access identified.",
+  "updated": "2026-11-07"
+}

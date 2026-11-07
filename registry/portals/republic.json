@@ -1,0 +1,64 @@
+{
+  "id": "republic",
+  "name": "Republic",
+  "vendor": {
+    "name": "OpenDeal Inc. (Republic)",
+    "website": "https://republic.com",
+    "country": "US"
+  },
+  "website": "https://republic.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "venture-capital",
+    "real-estate",
+    "other"
+  ],
+  "regions": [
+    "north-america",
+    "europe",
+    "uk"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Retail/accredited crowdfunding marketplace (FINRA funding portal; Republic Europe ex-Seedrs). Republic Europe offers LP funds and 'LP Access Fund' feeder vehicles with online execution via nominee; investors see these in their Republic portfolio. No dedicated LP portal documented. MFA not confirmed."
+    },
+    "api": {
+      "status": "none",
+      "notes": "No developer docs or API found."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "available"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "tax_documents",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Inclusion is conditional: evidence of a true LP portal is thin. Republic Europe markets LP fund access with low minimums through nominee feeder structures (academy pages), and Republic Capital runs venture funds, but no LP-specific portal, API or export documentation was found (republic.com returned 403 to fetch). Maintainers may drop this entry. Investor-side API: none.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

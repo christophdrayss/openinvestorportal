@@ -1,0 +1,43 @@
+name: pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run check
+      # A CNAME file in the repo root switches the site to that custom domain; otherwise <owner>.github.io/<repo>.
+      - name: Build static site
+        run: |
+          if [ -f CNAME ]; then
+            export SITE_URL="https://$(tr -d '[:space:]' < CNAME)" BASE_PATH=""
+          else
+            export SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
+          fi
+          echo "SITE_URL=$SITE_URL"
+          node scripts/build-site.mjs
+          [ -f CNAME ] && cp CNAME dist/site/CNAME || true
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist/site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,56 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "yardi-investment-manager",
+  "name": "Yardi Investment Manager",
+  "vendor": {
+    "name": "Yardi Systems",
+    "website": "https://www.yardi.com",
+    "country": "US"
+  },
+  "website": "https://www.yardi.com/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "real-estate"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Branded investor portal; the Apex deployment uses a Yardi identity login on yardione.com."
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "performance",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Real estate investment management software with a branded investor portal for investment metrics, capital activity and reports (high confidence, Standish Management 2022 press release). Deployments: Standish Real Estate (confirmed); Apex Group lists a Yardi portal for Yardi clients. Facts beyond the press release not checked (low confidence)."
+}

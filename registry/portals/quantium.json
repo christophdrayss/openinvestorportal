@@ -1,0 +1,67 @@
+{
+  "id": "quantium",
+  "name": "Quantium Investor Portal",
+  "vendor": {
+    "name": "Quantium Technology",
+    "website": "https://quantium.pe"
+  },
+  "website": "https://quantium.pe",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "europe",
+    "apac"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp"
+      ],
+      "notes": "Vendor site lists 'API and Data Warehouse' for its GP clients. No public developer documentation found. LP-side access unknown."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "performance",
+    "fund_reports"
+  ],
+  "standards": [
+    "ilpa-reporting-template"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Private markets software suite (fund accounting, portfolio management, investor relations) with an investor portal module used by European GPs. Vendor claims ILPA-compliant reporting, real-time investor portal, 'API and Data Warehouse' and fund administrator integrations (vendor marketing, medium confidence). See registry/deployments.json for known GP deployments.",
+  "updated": "2026-11-07"
+}

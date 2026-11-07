@@ -1,0 +1,57 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "csc-viewpoint",
+  "name": "CSC ViewPoint",
+  "vendor": {
+    "name": "CSC",
+    "website": "https://www.cscglobal.com",
+    "country": "US"
+  },
+  "website": "https://cscglobal.com/funds/fund-administration/",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "real-estate"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Login URL not identified; the general CSC login is login.cscglobal.com."
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "performance",
+    "fund_reports",
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Investor and GP portal built by PEF Services, acquired by CSC in June 2021 (high confidence, CSC press release): purpose-built portal with real-time access to investment performance data from the fund's official books and records. Whether it is still the default LP portal across CSC versus FIS Data Exchange is not confirmed (low confidence)."
+}

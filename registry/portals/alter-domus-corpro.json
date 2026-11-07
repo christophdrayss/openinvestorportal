@@ -1,0 +1,63 @@
+{
+  "verification": {
+    "status": "unverified"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "updated": "2026-11-07",
+  "id": "alter-domus-corpro",
+  "name": "Alter Domus CorPro",
+  "vendor": {
+    "name": "Alter Domus",
+    "website": "https://www.alterdomus.com",
+    "country": "LU"
+  },
+  "website": "https://www.alterdomus.com/",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "infrastructure"
+  ],
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Proprietary client and investor portal. Login URL not captured (alterdomus.com was under maintenance on 2026-11-07)."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "gp"
+      ],
+      "notes": "2024 press release says information reaches clients through the CorPro client portal or direct API connectivity. Client (GP) side; no LP-side API found."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "fund_reports"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "notes": "Alter Domus' proprietary client and investor portal for fund administration across private equity, debt capital markets and real estate (high confidence, Alter Domus job posting). In loan agency, CorPro shows borrowers and lenders live daily accruals and lender positions (high confidence, Alter Domus factsheet). Development capacity in Vilnius. Capabilities listed are typical fund-admin portal content (medium confidence). Separate investor onboarding product Alter Domus Intelligence is built with SUBSCRIBE."
+}

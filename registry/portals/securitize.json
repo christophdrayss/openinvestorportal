@@ -1,0 +1,98 @@
+{
+  "id": "securitize",
+  "name": "Securitize",
+  "vendor": {
+    "name": "Securitize, Inc.",
+    "website": "https://securitize.io",
+    "country": "US"
+  },
+  "website": "https://id.securitize.io",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "other"
+  ],
+  "regions": [
+    "north-america",
+    "global",
+    "apac"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://id.securitize.io/",
+      "notes": "Securitize iD investor login; MFA methods not confirmed from public docs."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "docs_url": "https://securitize.io/apis",
+      "auth": [
+        "oauth2-authorization-code",
+        "api-key"
+      ],
+      "audience": [
+        "partner",
+        "gp"
+      ],
+      "sandbox": true,
+      "notes": "Public docs: Connect API (OAuth provider 'Log in with Securitize iD'; with investor access token + app secret an integrating app can list the investor's documents and get temporary download links: GET https://sec-id-api.securitize.io/v1/{clientId}/investor/documents), Domain API (issuers/brokers: investors, KYC, documents, investments, transactions, issuances; sandbox public-api.sandbox.securitize.io), Webhooks API, APAC API (api-key). Credentials are issued to applications/issuers, not to investors directly."
+    },
+    "mcp": {
+      "status": "available",
+      "endpoint": "https://mcp.securitize.io",
+      "transport": [
+        "streamable-http"
+      ],
+      "auth": [
+        "none"
+      ],
+      "maintainer": "vendor",
+      "notes": "Per API Evangelist profile (2026-08-05): public, unauthenticated 'Securitize Connector' MCP server with 5 tools; not verified against vendor docs; not in official MCP registry."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "available",
+      "docs_url": "https://documenter.getpostman.com/view/16645978/UVsEVopd",
+      "notes": "Webhook API: KYC/KYB, accreditation and subscription-agreement updates (issuer-facing)."
+    },
+    "email_notifications": {
+      "status": "available"
+    },
+    "export_formats": [
+      "pdf",
+      "json"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "distributions",
+    "subscriptions",
+    "kyc",
+    "cap_table",
+    "tax_documents"
+  ],
+  "standards": [
+    "oauth2",
+    "openapi"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_portal": "https://securitize.io/apis",
+    "support_url": "https://developersupport.securitize.io/hc/en-us"
+  },
+  "notes": "Confidence: high on public API docs (vendor GitBook/Postman). The Connect API's investor-documents endpoints return identity/KYC documents (docType passport etc.), not fund statements; fund-level reports/distributions are managed through the issuer Domain API/Control Panel. Investor-side API: indirect only (an app acting with the investor's OAuth token). MCP server existence from third-party profile only. Terms not reviewed.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

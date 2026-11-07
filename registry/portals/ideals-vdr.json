@@ -1,0 +1,67 @@
+{
+  "id": "ideals-vdr",
+  "name": "Ideals Virtual Data Room",
+  "vendor": {
+    "name": "Ideals",
+    "website": "https://www.idealsvdr.com"
+  },
+  "website": "https://www.idealsvdr.com",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Vendor FAQ says multi-factor authentication is used; methods and SSO not confirmed."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "docs_url": "https://gateway.idealsvdr.com/api-docs",
+      "auth": [
+        "api-key"
+      ],
+      "audience": [
+        "gp"
+      ],
+      "notes": "Paid API add-on for enterprise clients ('Request API add-on'). Personal API keys tied to one user, with custom expiry, revocable; corporate account owners and managers with permission can use it. Covers user management, project creation, invitations, bulk document upload and download, reporting, activity logs, archiving. Docs portal content not readable by the researcher."
+    },
+    "mcp": {
+      "status": "available",
+      "maintainer": "vendor",
+      "docs_url": "https://www.idealsvdr.com/mcp/",
+      "notes": "Vendor MCP connector for Claude, ChatGPT and Copilot. Admins enable it in Settings > Integrations for relevant user groups; the AI sees only what the user is authorised to access. Capabilities include folder setup, bidder access, Q&A, search and summarise, activity tracking (implies write). Endpoint, transport, auth and plan not published. Not stated whether guest or bidder groups can be enabled."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown",
+      "notes": "Not mentioned on the API page."
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "tos_url": "https://www.idealsvdr.com/terms-of-use/",
+    "automation_policy": "prohibited",
+    "notes": "Section 3 bars access 'by any means other than through the means provided by Ideals', third-party software that mines or collects information, and any integration or AI tool 'that has not been approved'. Section 12: APIs, integrations and MCP features must be enabled by the account owner or administrator and used within assigned permissions."
+  },
+  "contact": {
+    "developer_portal": "https://gateway.idealsvdr.com/api-docs",
+    "support_url": "https://helpcenter.idealsvdr.com/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: API is an enterprise paid add-on with per-user keys; vendor MCP connector controlled by room admins per user group; terms prohibit unapproved tools and other means of access. Unknown: whether a GP can enable MCP for investor (guest) groups; SSO, SFTP, webhooks.",
+  "updated": "2026-11-07"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "drooms",
+  "name": "Drooms Virtual Data Room",
+  "vendor": {
+    "name": "Drooms",
+    "website": "https://drooms.com",
+    "country": "DE"
+  },
+  "website": "https://drooms.com/en/",
+  "category": "data-room",
+  "regions": [
+    "europe",
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Security page lists SSO and two-factor authentication; methods and protocol not stated. Print and storage (download) permissions are set per user and document."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Not mentioned on the homepage, the security page or the vendor's 'information for AI and LLMs' page."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "No terms of service link on the pages fetched; only a legal notice and a privacy policy."
+  },
+  "contact": {
+    "support_url": "https://drooms.com/drooms-security/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Headquartered in Frankfurt and Zug, founded 2001, ISO 27001 and 27018 certified. Drooms Certified Archive delivers completed rooms digitally or on USB. Unknown: API, MCP, bulk download for recipients.",
+  "updated": "2026-11-07"
+}

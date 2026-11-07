@@ -1,0 +1,62 @@
+{
+  "id": "ansarada",
+  "name": "Ansarada Data Room",
+  "vendor": {
+    "name": "Ansarada",
+    "website": "https://www.ansarada.com",
+    "country": "AU"
+  },
+  "website": "https://www.ansarada.com/data-room",
+  "category": "data-room",
+  "regions": [
+    "global",
+    "apac",
+    "middle-east"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "mfa": [
+        "totp"
+      ],
+      "notes": "Vendor page states SSO and MFA options including authenticator-based MFA; SSO protocol and other MFA methods not confirmed."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Integrations page says integrations are being built; the help-centre Integrations collection lists only Harvey AI and Legora. No public API docs found."
+    },
+    "mcp": {
+      "status": "partner-only",
+      "maintainer": "vendor",
+      "docs_url": "https://www.ansarada.com/data-room/mcp",
+      "notes": "Vendor MCP at host mcp.ansarada.com, added as a custom connector in Claude, ChatGPT or other MCP clients; sign in with Ansarada credentials and accept a consent screen. Read-only: permitted rooms, folder structure, document lists and metadata; no document content. Enabled per data room on request via account manager or support. Users see only what their room permissions allow; guest eligibility not stated. Transport not stated."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "https://www.ansarada.com/terms returned 404; terms not reviewed."
+  },
+  "contact": {
+    "support_url": "https://help.ansarada.com/en/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: vendor read-only metadata MCP server, enabled per room on request. Remote Doc-Destruct can revoke access after download; data retained up to 90 days post-close unless extended. Unknown: public API, whether invited guests (e.g. LPs) can connect the MCP server, bulk download, terms. Low confidence (not verified this session): Ansarada was reportedly acquired by Datasite in 2024.",
+  "updated": "2026-11-07"
+}

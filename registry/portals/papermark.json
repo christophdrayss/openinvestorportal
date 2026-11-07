@@ -1,0 +1,98 @@
+{
+  "id": "papermark",
+  "name": "Papermark",
+  "vendor": {
+    "name": "Papermark",
+    "website": "https://www.papermark.com"
+  },
+  "website": "https://www.papermark.com",
+  "category": "data-room",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "other"
+  ],
+  "regions": [
+    "global",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "sso": [
+        "saml"
+      ],
+      "notes": "Data rooms with NDA gating, dynamic watermarking, granular permissions, Q&A, page-level analytics and custom domains. SSO on Data Rooms Premium and Enterprise. Recipients open links in the browser, often with email verification."
+    },
+    "api": {
+      "status": "available",
+      "style": "rest",
+      "base_url": "https://api.papermark.com/v1",
+      "docs_url": "https://www.papermark.com/docs/api",
+      "openapi_url": "https://www.papermark.com/docs/openapi.json",
+      "auth": [
+        "api-key",
+        "oauth2-authorization-code"
+      ],
+      "audience": [
+        "gp"
+      ],
+      "notes": "Public REST API with bearer tokens (pm_live_...), scoped tokens and an OAuth 2.1 device flow. Datarooms, documents, links, visitors and analytics. Included from the Business plan (EUR 59 per month annual). Owner-side: no operations documented for a recipient."
+    },
+    "mcp": {
+      "status": "available",
+      "endpoint": "https://mcp.papermark.com/mcp",
+      "transport": [
+        "streamable-http",
+        "stdio"
+      ],
+      "auth": [
+        "oauth2",
+        "api-key"
+      ],
+      "source_url": "https://github.com/papermark",
+      "maintainer": "vendor",
+      "docs_url": "https://www.papermark.com/docs/mcp",
+      "notes": "Vendor MCP server, hosted (OAuth 2.0 with dynamic client registration and PKCE) and as the npm package @papermark/mcp-server (token via PAPERMARK_TOKEN). About 65 tools across datarooms, documents, links, folders, branding, visitors, analytics. Version 0.1.0, alpha. Acts as the owner's user."
+    },
+    "sftp": {
+      "status": "none"
+    },
+    "webhooks": {
+      "status": "planned",
+      "notes": "Listed as planned in the API docs."
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Owners are notified of views; recipients receive share links by email."
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "fund_reports",
+    "other"
+  ],
+  "standards": [
+    "openapi",
+    "oauth2",
+    "saml-sso"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "developer_portal": "https://www.papermark.com/docs",
+    "support_url": "https://www.papermark.com/security"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Open source data room (AGPLv3, github.com/mfts/papermark, about 9.3k stars) with a hosted SaaS and self-hosting on the Enterprise plan. Next.js, Postgres, S3. SOC 2 Type II, ISO 27001, GDPR, EU hosting per vendor. Used by GPs for fundraising data rooms and investor document sharing. The most programmable data room in the registry for the owner side: public REST API, OpenAPI spec, CLI and a vendor MCP server. Recipient-side programmatic access is not offered, so an LP still opens links in the browser. Because it is open source, it is a natural first implementation target for an OIPP endpoint. High confidence (vendor docs and GitHub, 2026-11-07).",
+  "updated": "2026-11-07"
+}

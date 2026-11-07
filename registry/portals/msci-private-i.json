@@ -1,0 +1,68 @@
+{
+  "id": "msci-private-i",
+  "name": "MSCI Private i (Burgiss)",
+  "vendor": {
+    "name": "MSCI",
+    "website": "https://www.msci.com",
+    "country": "US"
+  },
+  "website": "https://www.msci.com/our-solutions/private-capital/private-i",
+  "category": "reporting-platform",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "private-credit",
+    "real-estate",
+    "infrastructure",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "lp",
+        "gp"
+      ],
+      "notes": "Private i Data API and Analytics API for authorised clients."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "performance",
+    "capital_calls",
+    "distributions",
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "developer_portal": "https://developer.msci.com/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "LP-side book of record and benchmarking platform (Burgiss, Caissa), not a GP portal. 30,100 funds covered per vendor.",
+  "updated": "2026-11-07"
+}

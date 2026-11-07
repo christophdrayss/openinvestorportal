@@ -1,0 +1,57 @@
+{
+  "id": "intralinks-vdrpro",
+  "name": "Intralinks VDRPro",
+  "vendor": {
+    "name": "SS&C Intralinks",
+    "website": "https://www.intralinks.com",
+    "country": "US"
+  },
+  "website": "https://www.intralinks.com/products/virtual-data-room",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "VDRPro mobile app available. SSO and MFA not stated on the product page."
+    },
+    "api": {
+      "status": "partner-only",
+      "docs_url": "https://www.intralinks.com/why-intralinks/apis-deployment",
+      "notes": "APIs for content, users, sessions and administration, with a Swagger documentation portal; access via Contact Sales. The page does not tie them to VDRPro explicitly; auth not stated. developers.intralinks.com refused the connection."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown",
+      "notes": "'Real-time alerts' listed as an API use case."
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "tos_url": "https://www.intralinks.com/terms-of-use",
+    "automation_policy": "prohibited",
+    "notes": "Bars using 'any automated process or service (such as a bot, a spider...' to access the Service, and automated retrieval, scripting or API calls that cause excessive usage; API keys may not be shared with third parties. The Service monitors for non-human access such as RPA and periodic caching. Applies to the hosted platform, not just the website."
+  },
+  "contact": {
+    "support_url": "https://www.intralinks.com/contact/client-services"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: terms prohibit bots and RPA on the platform. Medium confidence: customer APIs exist via sales. Distinct from Intralinks FundCentre (already in the registry). Unknown: MCP, SSO, MFA, bulk download.",
+  "updated": "2026-11-07"
+}

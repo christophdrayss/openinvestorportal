@@ -1,0 +1,336 @@
+[
+  {
+    "operator": "Armira",
+    "operator_website": "https://www.armira.de",
+    "portal_name": "Armira Investor Portal",
+    "product": "quantium",
+    "country": "DE",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "VSquared Ventures",
+    "operator_website": "https://www.vsquared.vc",
+    "portal_name": "VSquared Ventures Investor Portal",
+    "product": "quantium",
+    "country": "DE",
+    "confidence": "confirmed",
+    "notes": "Fundrbird in the back office."
+  },
+  {
+    "operator": "Lakestar",
+    "operator_website": "https://www.lakestar.com",
+    "administrator": "Aztec Group",
+    "portal_name": "Lakestar Investor Reporting Portal",
+    "product": "efront-investment-cafe",
+    "country": "CH",
+    "confidence": "confirmed",
+    "notes": "Aztec Group runs its investor reporting portal on eFront."
+  },
+  {
+    "operator": "Lakestar",
+    "operator_website": "https://www.lakestar.com",
+    "portal_name": "Lakestar Investor Café",
+    "product": "efront-investment-cafe",
+    "country": "CH",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "Target Global",
+    "operator_website": "https://www.targetglobal.vc",
+    "portal_name": "Target Global Investor Portal",
+    "product": null,
+    "country": "DE",
+    "confidence": "unknown"
+  },
+  {
+    "operator": "Avala Capital",
+    "operator_website": "https://avalacapital.com",
+    "portal_name": "Avala Capital Investor Portal",
+    "product": null,
+    "country": "DE",
+    "confidence": "unknown"
+  },
+  {
+    "operator": "Funds administered by Aduro Advisors",
+    "administrator": "Aduro Advisors",
+    "portal_name": "Fund Panel",
+    "product": "fundpanel",
+    "country": "US",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "Funds administered by Hauck Aufhäuser Lampe (Luxembourg)",
+    "administrator": "Hauck Aufhäuser Lampe",
+    "portal_name": "HAL Investment Portal Luxembourg",
+    "product": "finventions-investment-portal",
+    "country": "LU",
+    "confidence": "likely",
+    "notes": "Inferred from identical Oracle APEX application id and Finventions customer list."
+  },
+  {
+    "operator": "Funds administered by HANSAINVEST",
+    "administrator": "HANSAINVEST",
+    "portal_name": "HANSAINVEST Informationsportal (HIP)",
+    "product": "finventions-investment-portal",
+    "country": "DE",
+    "confidence": "likely",
+    "notes": "Trade press (2017) names Finventions as the platform."
+  },
+  {
+    "operator": "Funds administered by Universal Investment",
+    "administrator": "Universal Investment",
+    "portal_name": "PowerPortal",
+    "product": "universal-investment-powerportal",
+    "country": "DE",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "Funds administered by Juniper Square",
+    "administrator": "Juniper Square",
+    "portal_name": "Juniper Square Investor Portal",
+    "product": "juniper-square",
+    "country": "US",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "Funds administered by Carta",
+    "administrator": "Carta",
+    "portal_name": "Carta LP Portal",
+    "product": "carta",
+    "country": "US",
+    "confidence": "confirmed"
+  },
+  {
+    "operator": "Funds administered by Alter Domus",
+    "administrator": "Alter Domus",
+    "portal_name": "CorPro",
+    "product": "alter-domus-corpro",
+    "country": "LU",
+    "confidence": "confirmed",
+    "notes": "Alter Domus describes CorPro as its proprietary client and investor portal for fund administration (https://jobs.workinlithuania.com/job-offers/10809-client-portal-delivery-specialist-non-tech); clients get data via CorPro or direct API (https://business.mammothtimes.com/mammothtimes/article/bizwire-2024-1-23-alter-domus-solidifies-its-experience-in-major-migrations-with-creation-of-a-dedicated-key-client-partnerships-team-as-private-markets-firms-reach-operational-tipping-point)."
+  },
+  {
+    "operator": "Funds administered by Apex Group",
+    "administrator": "Apex Group",
+    "portal_name": "Investment Café",
+    "product": "efront-investment-cafe",
+    "country": "BM",
+    "confidence": "confirmed",
+    "notes": "Apex client portals page lists Investment Café at icx.efrontcloud.com/@2429/apexgroup (https://www.apexgroup.com/client-portals/); Apex-eFront partnership since 2019 (https://www.apexgroup.com/technology-platforms/investor-portal/)."
+  },
+  {
+    "operator": "Funds administered by Apex Group",
+    "administrator": "Apex Group",
+    "portal_name": "Apex investor portal",
+    "product": "capinteract-lp-interact",
+    "country": "BM",
+    "confidence": "confirmed",
+    "notes": "Apex product page states the Apex investor portal is 'Powered by CapInteract' (https://www.apexgroup.com/technology-platforms/apex-investor-portal/)."
+  },
+  {
+    "operator": "Funds administered by Apex Group",
+    "administrator": "Apex Group",
+    "portal_name": "Flow Investor Portal",
+    "product": "flow",
+    "country": "BM",
+    "confidence": "likely",
+    "notes": "Apex acquired Flow (investor portal, data rooms, onboarding) in April 2025 (https://www.newsfilecorp.com/release/247608); Flow now describes itself as an Apex Group company. Not listed on the Apex client portals page (https://www.apexgroup.com/client-portals/)."
+  },
+  {
+    "operator": "Funds administered by Apex Group",
+    "administrator": "Apex Group",
+    "portal_name": "Apex Connect",
+    "product": null,
+    "country": "BM",
+    "confidence": "unknown",
+    "notes": "Hedge fund manager and investor portal at apexconnect.apexfs.com; underlying software not stated (https://www.apexgroup.com/client-portals/)."
+  },
+  {
+    "operator": "Funds administered by Sanne (now Apex Group)",
+    "administrator": "Sanne (now Apex Group)",
+    "portal_name": "Apex Connect (legacy Sanne clients)",
+    "product": null,
+    "country": "JE",
+    "confidence": "unknown",
+    "notes": "Apex lists a separate Apex Connect at connect2.apexgroup.com for legacy Sanne clients; underlying software not stated (https://www.apexgroup.com/client-portals/)."
+  },
+  {
+    "operator": "Funds administered by IQ-EQ",
+    "administrator": "IQ-EQ",
+    "portal_name": "IQ-EQ Cosmos",
+    "product": "iq-eq-cosmos",
+    "country": "LU",
+    "confidence": "confirmed",
+    "notes": "In-house reporting platform with GP and LP modules, built over Investran, Allvue and Paxus (https://iqeq.com/services/iqeq-cosmos)."
+  },
+  {
+    "operator": "Funds administered by Citco",
+    "administrator": "Citco",
+    "portal_name": "CitcoOne",
+    "product": "citcoone",
+    "confidence": "confirmed",
+    "notes": "Citco investor page presents CitcoOne; Client Login goes to citcoone.citco.com (https://www.citco.com/our-clients/investors)."
+  },
+  {
+    "operator": "Funds administered by Gen II Fund Services",
+    "administrator": "Gen II Fund Services",
+    "portal_name": "Sensr Portal",
+    "product": "gen-ii-sensr-portal",
+    "country": "US",
+    "confidence": "confirmed",
+    "notes": "Gen II proprietary investor portal, formerly Update Capital (https://gen2fund.com/news/gen-ii-transforms-sensr-portal-into-first-of-its-kind-ai-powered-investor-portal-for-the-private-markets/; https://gen2fund.com/news/gen-ii-announces-the-rebranding-of-its-portal-to-sensr-portal/)."
+  },
+  {
+    "operator": "Funds administered by Langham Hall",
+    "administrator": "Langham Hall",
+    "portal_name": "Langham Hall investor portal",
+    "product": null,
+    "country": "GB",
+    "confidence": "unknown",
+    "notes": "Langham Hall technology page names only its Wolfram-built fund accounting and reporting platform (ILPA-style LP reports); no LP portal or vendor named (https://www.langhamhall.com/technology)."
+  },
+  {
+    "operator": "Funds administered by Vistra",
+    "administrator": "Vistra",
+    "portal_name": "VFunds",
+    "product": "vistra-vfunds",
+    "country": "HK",
+    "confidence": "confirmed",
+    "notes": "Vistra-branded portal at my.vistra.com (https://www.vistra.com/vfunds); VFunds 2.0 reported as powered by Eleven, vendor not identified (https://hedgeweek.com/vistra-launches-vfunds-20)."
+  },
+  {
+    "operator": "Funds administered by TMF Group",
+    "administrator": "TMF Group",
+    "portal_name": "TMF Group investor portal",
+    "product": null,
+    "country": "NL",
+    "confidence": "unknown",
+    "notes": "TMF OneView (https://www.tmf-group.com/en/services/fund/) is a GP-side fund intelligence and reporting platform; a TMF job ad mentions working with third-party investor portal software companies. LP portal product not identified."
+  },
+  {
+    "operator": "Funds administered by Ocorian",
+    "administrator": "Ocorian",
+    "portal_name": "Investment Café",
+    "product": "efront-investment-cafe",
+    "country": "JE",
+    "confidence": "confirmed",
+    "notes": "Ocorian names Investment Café as its investor portal (https://www.ocorian.com/service/investor-services); eFront partnership 2022 (https://www.mondaq.com/PressRelease/86414/Ocorian-Partners-With-Blackrocks-Efront-Suite-For-Its-Global-Funds-Administration-Platform)."
+  },
+  {
+    "operator": "Funds administered by Ocorian",
+    "administrator": "Ocorian",
+    "portal_name": "Goji",
+    "product": "goji",
+    "country": "JE",
+    "confidence": "confirmed",
+    "notes": "Ocorian names Goji alongside Investment Café for investor access, onboarding and communications (https://www.ocorian.com/service/investor-services; https://www.ocorian.com/press-releases/ocorian-partners-goji-offer-fully-digitalised-investor-journey-private-fund-managers)."
+  },
+  {
+    "operator": "Funds administered by JTC",
+    "administrator": "JTC",
+    "portal_name": "JTC investor portal",
+    "product": null,
+    "country": "JE",
+    "confidence": "unknown",
+    "notes": "JTC funds page says it uses unnamed third-party technology and investor portals (https://www.jtcgroup.com/funds). US JTC ONE (July 2026) uses Asset Class's platform including investor portals, but the LP portal product is not named (https://ffnews.com/news/jtc-and-asset-class-launch-jtc-one-to-modernize-us-fund-administration)."
+  },
+  {
+    "operator": "Funds administered by CSC",
+    "administrator": "CSC",
+    "portal_name": "ViewPoint",
+    "product": "csc-viewpoint",
+    "country": "US",
+    "confidence": "confirmed",
+    "notes": "ViewPoint investor and GP portal came with CSC's 2021 acquisition of PEF Services (https://cscglobal.com/service/press/press-csc-global-financial-markets-acquires-pef-services-llc/)."
+  },
+  {
+    "operator": "Funds administered by CSC",
+    "administrator": "CSC",
+    "portal_name": "Data Exchange",
+    "product": "fis-digital-data-exchange",
+    "country": "US",
+    "confidence": "likely",
+    "notes": "CSC press release on selecting FIS names Investran and Data Exchange, an investor portal for analytics and reporting (https://cscglobal.com/service/press/press-csc-selects-fis-as-administration-services-provider/). Current use per client not confirmed."
+  },
+  {
+    "operator": "Funds administered by Waystone",
+    "administrator": "Waystone",
+    "portal_name": "Waystone investor portal",
+    "product": null,
+    "country": "IE",
+    "confidence": "unknown",
+    "notes": "No LP portal described on https://www.waystone.com/. Not identified."
+  },
+  {
+    "operator": "Funds administered by Northern Trust",
+    "administrator": "Northern Trust",
+    "portal_name": "Northern Trust private equity investor reporting",
+    "product": "fis-digital-data-exchange",
+    "country": "US",
+    "confidence": "likely",
+    "notes": "2018 Northern Trust release: PE fund administration reporting built with FIS Data Exchange Reporting and Analytics (https://www.businesswire.com/news/home/20180723005118/en/). Front Office Solutions is an allocator-side data platform, not an LP portal of administered funds. Hedge Fund Services launched its own investor portal in 2020 (https://www.businesswire.com/news/home/20201109005414/en/)."
+  },
+  {
+    "operator": "Funds administered by State Street",
+    "administrator": "State Street",
+    "portal_name": "State Street investor portal",
+    "product": null,
+    "country": "US",
+    "confidence": "unknown",
+    "notes": "Alpha for Private Markets (Mercatus acquisition 2021) is a manager-side front-to-back platform (https://www.privatefundscfo.com/state-street-buys-mercatus-platform-to-automate-private-markets/). No LP portal for administered funds identified."
+  },
+  {
+    "operator": "Funds administered by BNY",
+    "administrator": "BNY",
+    "portal_name": "BNY investor portal",
+    "product": null,
+    "country": "US",
+    "confidence": "unknown",
+    "notes": "BNY PE fund services page names no LP portal (https://www.bny.com/corporate/global/en/solutions/securities-services/private-equity-fund-services.html); client access lists NEXEN for institutional clients, not individual investors."
+  },
+  {
+    "operator": "Funds administered by SEI",
+    "administrator": "SEI",
+    "portal_name": "SEI investor portal",
+    "product": null,
+    "country": "US",
+    "confidence": "unknown",
+    "notes": "SEI client logins list SEI Access (altigo.io) for alternative fund managers and SEI Access Marketplace for wealth managers, no LP login (https://www.seic.com/ent/client-site-logins-and-contact-information). Archway is a family office platform (sale to Aquiline reported 2025), not an LP portal."
+  },
+  {
+    "operator": "Funds administered by Standish Management",
+    "administrator": "Standish Management",
+    "portal_name": "Standish investor portal",
+    "product": "allvue-investor-portal",
+    "country": "US",
+    "confidence": "likely",
+    "notes": "2020 Allvue case study: Standish chose Allvue's fund administration suite including a customizable investor portal (https://www.allvuesystems.com/wp-content/uploads/2020/11/Standish-Mgmt-Case-Study-11.2020.pdf)."
+  },
+  {
+    "operator": "Funds administered by Standish Management",
+    "administrator": "Standish Management",
+    "portal_name": "Standish Real Estate investor portal",
+    "product": "yardi-investment-manager",
+    "country": "US",
+    "confidence": "confirmed",
+    "notes": "Standish Real Estate adopted Yardi Investment Manager to give clients a branded investor portal (https://prnewswire.com/news-releases/standish-management-enhances-client-service-with-yardi-investment-manager-301510923.html)."
+  },
+  {
+    "operator": "Funds administered by Ultimus LeverPoint",
+    "administrator": "Ultimus LeverPoint",
+    "portal_name": "Ultimus LeverPoint client portal",
+    "product": null,
+    "country": "US",
+    "confidence": "unknown",
+    "notes": "Ultimus describes a secure digital investor portal but names no product or vendor (https://www.ultimusfundsolutions.com/our-services/private-funds/); 2021 enhanced client portal release (https://www.globenewswire.com/news-release/2021/02/02/2168275/0/en/Ultimus-LeverPoint-Introduces-Enhanced-Client-Portal-Technology-Tools.html)."
+  },
+  {
+    "operator": "Funds administered by Maples Group",
+    "administrator": "Maples Group",
+    "portal_name": "InvestorVision",
+    "product": "intralinks-fundcentre",
+    "country": "KY",
+    "confidence": "likely",
+    "notes": "Maples lists SS&C InvestorVision as its investor portal (https://maples.com/services/fund-services/technology/ssc-investorvision); Intralinks says InvestorVision is offered standalone or as part of FundCentre (https://www.intralinks.com/investorvision-investor-reporting)."
+  }
+]

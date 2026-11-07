@@ -1,0 +1,74 @@
+{
+  "id": "titanbay",
+  "name": "Titanbay",
+  "vendor": {
+    "name": "Titanbay Ltd / Titanbay Ireland Limited",
+    "website": "https://www.titanbay.com",
+    "country": "GB"
+  },
+  "website": "https://www.titanbay.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "infrastructure",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "uk",
+    "europe",
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "B2B2C: white-labelled platform for private banks, wealth managers and MFOs (Wealth Solutions); fund dashboard covers onboarding, capital calls, NAVs, reporting. End-investor login details not published."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "partner"
+      ],
+      "notes": "Press releases (2026) state 'standard connections via API, FIX, or SWIFT' for banks/wealth managers; vendor site shows FIX 5.0 in TradeEngine. No public developer docs."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "nav",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_email": "sales@titanbay.com",
+    "support_url": "https://www.titanbay.com/contact"
+  },
+  "notes": "Confidence: medium that partner integrations (API/FIX/SWIFT) exist (press-release and Wealth Mosaic profile evidence, weaker than docs). Heads of Germany and Switzerland appointed 2026 (DACH expansion). No investor-side API; access is via the distributing bank/wealth manager. Terms not reviewed.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

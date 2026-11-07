@@ -1,0 +1,351 @@
+{
+  "portals": [
+    {
+      "id": "datasite",
+      "name": "Datasite Diligence",
+      "vendor": { "name": "Datasite", "website": "https://www.datasite.com", "country": "US" },
+      "website": "https://www.datasite.com/en/",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "SSO and MFA methods not confirmed from vendor pages fetched (security page returned 404)." },
+        "api": {
+          "status": "available",
+          "style": "rest",
+          "docs_url": "https://developer.datasite.com/",
+          "auth": ["api-key", "other"],
+          "notes": "Vendor page 'Datasite APIs': growing catalog covering document upload, membership and permission controls, project retrieval and metadata, Q&A integration. Auth: 'OAuth 2' (grant type not stated) and custom API keys. Start with a free account or Datasite login at developer.datasite.com (redirects to app.global.datasite.com/dev-portal, a JS app the researcher could not read). Separate API terms referenced in the terms of use. Whether buy-side invitees can use it is not stated."
+        },
+        "mcp": {
+          "status": "partner-only",
+          "maintainer": "vendor",
+          "docs_url": "https://www.datasite.com/en/resources/ai-at-datasite/datasite-mcp",
+          "notes": "Vendor 'Datasite MCP' for Claude, ChatGPT, Microsoft Copilot and Blueflame AI. Sign in with Datasite credentials, scoped to existing permissions; the account must be 'enabled for MCP'. Tools described: create projects, folder structures, invite users, semantic search, upload, draft Q&A, gap analysis. Endpoint, transport and GA status not published. Positioned with Datasite Connect."
+        },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "standards": ["oauth2"],
+      "terms": {
+        "tos_url": "https://www.datasite.com/en/legal/terms-of-use",
+        "automation_policy": "unknown",
+        "notes": "Terms of use bar circumventing security protocols and reverse engineering, and limit use to authorized projects; bots and scraping not named. API users are bound by separate API terms (not reviewed). Services agreement at /en/legal/services-agreement not reviewed."
+      },
+      "contact": {
+        "developer_email": "developer@datasite.com",
+        "developer_portal": "https://developer.datasite.com/",
+        "support_url": "https://www.datasite.com/en/contact/support"
+      },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Medium confidence: public developer portal with self-serve signup and OAuth 2 or API keys (from vendor marketing page; portal content not readable). Medium confidence: vendor MCP server exists, enabled per account. Unknown: whether a buyer or LP invited to a project can use the API or MCP for their own access; SSO, MFA, webhooks, SFTP, bulk download. Third-party unofficial wrappers appeared in search results and are not considered here.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "ideals-vdr",
+      "name": "Ideals Virtual Data Room",
+      "vendor": { "name": "Ideals", "website": "https://www.idealsvdr.com" },
+      "website": "https://www.idealsvdr.com",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "Vendor FAQ says multi-factor authentication is used; methods and SSO not confirmed." },
+        "api": {
+          "status": "partner-only",
+          "style": "rest",
+          "docs_url": "https://gateway.idealsvdr.com/api-docs",
+          "auth": ["api-key"],
+          "audience": ["gp"],
+          "notes": "Paid API add-on for enterprise clients ('Request API add-on'). Personal API keys tied to one user, with custom expiry, revocable; corporate account owners and managers with permission can use it. Covers user management, project creation, invitations, bulk document upload and download, reporting, activity logs, archiving. Docs portal content not readable by the researcher."
+        },
+        "mcp": {
+          "status": "available",
+          "maintainer": "vendor",
+          "docs_url": "https://www.idealsvdr.com/mcp/",
+          "notes": "Vendor MCP connector for Claude, ChatGPT and Copilot. Admins enable it in Settings > Integrations for relevant user groups; the AI sees only what the user is authorised to access. Capabilities include folder setup, bidder access, Q&A, search and summarise, activity tracking (implies write). Endpoint, transport, auth and plan not published. Not stated whether guest or bidder groups can be enabled."
+        },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown", "notes": "Not mentioned on the API page." },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": {
+        "tos_url": "https://www.idealsvdr.com/terms-of-use/",
+        "automation_policy": "prohibited",
+        "notes": "Section 3 bars access 'by any means other than through the means provided by Ideals', third-party software that mines or collects information, and any integration or AI tool 'that has not been approved'. Section 12: APIs, integrations and MCP features must be enabled by the account owner or administrator and used within assigned permissions."
+      },
+      "contact": { "developer_portal": "https://gateway.idealsvdr.com/api-docs", "support_url": "https://helpcenter.idealsvdr.com/" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "High confidence: API is an enterprise paid add-on with per-user keys; vendor MCP connector controlled by room admins per user group; terms prohibit unapproved tools and other means of access. Unknown: whether a GP can enable MCP for investor (guest) groups; SSO, SFTP, webhooks.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "ansarada",
+      "name": "Ansarada Data Room",
+      "vendor": { "name": "Ansarada", "website": "https://www.ansarada.com", "country": "AU" },
+      "website": "https://www.ansarada.com/data-room",
+      "category": "data-room",
+      "regions": ["global", "apac", "middle-east"],
+      "access": {
+        "web": { "status": "available", "mfa": ["totp"], "notes": "Vendor page states SSO and MFA options including authenticator-based MFA; SSO protocol and other MFA methods not confirmed." },
+        "api": { "status": "unknown", "notes": "Integrations page says integrations are being built; the help-centre Integrations collection lists only Harvey AI and Legora. No public API docs found." },
+        "mcp": {
+          "status": "partner-only",
+          "maintainer": "vendor",
+          "docs_url": "https://www.ansarada.com/data-room/mcp",
+          "notes": "Vendor MCP at host mcp.ansarada.com, added as a custom connector in Claude, ChatGPT or other MCP clients; sign in with Ansarada credentials and accept a consent screen. Read-only: permitted rooms, folder structure, document lists and metadata; no document content. Enabled per data room on request via account manager or support. Users see only what their room permissions allow; guest eligibility not stated. Transport not stated."
+        },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "https://www.ansarada.com/terms returned 404; terms not reviewed." },
+      "contact": { "support_url": "https://help.ansarada.com/en/" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "High confidence: vendor read-only metadata MCP server, enabled per room on request. Remote Doc-Destruct can revoke access after download; data retained up to 90 days post-close unless extended. Unknown: public API, whether invited guests (e.g. LPs) can connect the MCP server, bulk download, terms. Low confidence (not verified this session): Ansarada was reportedly acquired by Datasite in 2024.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "firmex",
+      "name": "Firmex Virtual Data Room",
+      "vendor": { "name": "Firmex", "website": "https://www.firmex.com", "country": "CA" },
+      "website": "https://www.firmex.com",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "SSO and 2FA not mentioned on homepage; support knowledge base returned 403." },
+        "api": { "status": "unknown", "notes": "No API mentioned on homepage or legal pages." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": {
+        "tos_url": "https://www.firmex.com/legal-policies/",
+        "automation_policy": "tolerated",
+        "notes": "Terms of use bar reverse engineering, unauthorised scans, load tests and penetration tests, and sharing credentials; automated access, bots and scraping are not addressed. Bot-blocking not checked; subscriber agreements not reviewed."
+      },
+      "contact": { "support_url": "https://support.firmex.com/hc/en-us" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Little information: the vendor pages fetched mention no API, integrations, SSO, 2FA, MCP or SFTP. Knowledge base blocked (403). Treat as web-only until confirmed.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "docsend",
+      "name": "Dropbox DocSend Spaces (data rooms)",
+      "vendor": { "name": "Dropbox", "website": "https://www.dropbox.com", "country": "US" },
+      "website": "https://www.docsend.com",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "SSO for DocSend account users is documented (help.dropbox.com/account-access/dropbox-docsend-single-sign-on-sso); protocol not confirmed. Viewers can be required to verify their email (email authentication). 2FA not found."
+        },
+        "api": { "status": "unknown", "notes": "No API article found in DocSend help; docsend.com returned 403. Zapier and Salesforce integrations exist." },
+        "mcp": {
+          "status": "beta",
+          "endpoint": "https://docsend.com/mcp",
+          "auth": ["oauth2"],
+          "maintainer": "vendor",
+          "docs_url": "https://help.dropbox.com/integrations/connect-docsend-mcp-server",
+          "notes": "Vendor remote MCP server (Beta) for ChatGPT, Claude, Codex CLI and Copilot Studio; OAuth 2.0 with dynamic discovery. Read and write: list and manage Spaces, upload, read and summarise documents, contacts, visits, audit log, grant link access. Plans: Standard, Advanced, Advanced Data Rooms, Enterprise; admins toggle it under Settings > Company > AI use. For DocSend account users; viewer use not stated. Transport not stated."
+        },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": {
+          "status": "available",
+          "docs_url": "https://help.dropbox.com/organize/dropbox-docsend-space-data-room-notifications",
+          "notes": "Visitors on email-verified links get Space update emails (manual on Standard; automated new-content or new-version emails on Advanced and Advanced Data Rooms), with unsubscribe."
+        },
+        "export_formats": ["other"]
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "Terms not reviewed (docsend.com returned 403)." },
+      "contact": { "support_url": "https://help.dropbox.com/docsend" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "High confidence: vendor remote MCP in beta for account users; Space update emails to visitors; owners can download a Space or folders as ZIP; visitors can export the Space index (Advanced Data Rooms). Unknown: public REST API, webhooks, visitor bulk-download rules, terms on automation.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "digify",
+      "name": "Digify Data Room",
+      "vendor": { "name": "Digify", "website": "https://digify.com" },
+      "website": "https://digify.com",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "Homepage cites SSO; 2FA not mentioned. Recipients view via links that can require email verification or an NDA." },
+        "api": {
+          "status": "available",
+          "style": "rest",
+          "docs_url": "https://developer.digify.com/",
+          "auth": ["basic"],
+          "audience": ["gp"],
+          "notes": "Keys created in the in-app Developer Portal (Key ID as username, Secret as password over HTTPS); keys inherit the creating user's permissions. Covers files, links, recipients, data rooms (rooms, folders, invitations, permissions) and analytics. Required plan not stated. Sandbox account on request. Sender side only; no recipient API described."
+        },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": {
+          "status": "available",
+          "docs_url": "https://help.digify.com/en/articles/3556613-digify-webhook",
+          "notes": "JSON POST with basic auth for View, Print and Download events, including recipient name and email depending on access type."
+        },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "Legal page https://digify.com/legal.html not reviewed." },
+      "contact": { "developer_portal": "https://developer.digify.com/", "support_url": "https://help.digify.com/en/collections/3480983-api" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "High confidence: documented sender-side REST API with basic-auth keys, plus webhooks; Zapier connector (8,000+ apps). Unknown: plan gating, MCP, recipient bulk download (the product is DRM-focused, with watermarking and revocation), terms on automation.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "smartroom",
+      "name": "SmartRoom Virtual Data Room",
+      "vendor": { "name": "SmartRoom", "website": "https://smartroom.com" },
+      "website": "https://smartroom.com/products/smartroom-virtual-data-room/",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "SSO and 2FA not mentioned on vendor pages. SmartLock can revoke access to downloaded documents." },
+        "api": { "status": "unknown", "notes": "Homepage claims an 'accessible API' to connect other applications; no documentation or access route published." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown", "notes": "Scheduled activity reports and alerts for room owners; end-user notifications not described." }
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "No terms found on the pages fetched." },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Medium confidence: the vendor claims an API but publishes no docs. User import from Office 365, Salesforce and DealCloud; document import from Box; DocuSign for NDAs; hosted on Azure. Mentions BMC Group corporate networks. Unknown: everything on the recipient side.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "drooms",
+      "name": "Drooms Virtual Data Room",
+      "vendor": { "name": "Drooms", "website": "https://drooms.com", "country": "DE" },
+      "website": "https://drooms.com/en/",
+      "category": "data-room",
+      "regions": ["europe", "dach"],
+      "access": {
+        "web": { "status": "available", "notes": "Security page lists SSO and two-factor authentication; methods and protocol not stated. Print and storage (download) permissions are set per user and document." },
+        "api": { "status": "unknown", "notes": "Not mentioned on the homepage, the security page or the vendor's 'information for AI and LLMs' page." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "No terms of service link on the pages fetched; only a legal notice and a privacy policy." },
+      "contact": { "support_url": "https://drooms.com/drooms-security/" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Headquartered in Frankfurt and Zug, founded 2001, ISO 27001 and 27018 certified. Drooms Certified Archive delivers completed rooms digitally or on USB. Unknown: API, MCP, bulk download for recipients.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "netfiles",
+      "name": "netfiles Datenraum",
+      "vendor": { "name": "netfiles", "website": "https://www.netfiles.com/de", "country": "DE" },
+      "website": "https://www.netfiles.com/de",
+      "category": "data-room",
+      "regions": ["dach"],
+      "access": {
+        "web": { "status": "available", "notes": "SSO and 2FA not mentioned on homepage. A Microsoft Teams integration is offered." },
+        "api": { "status": "unknown", "notes": "No API, WebDAV or interface (Schnittstelle) mentioned on the homepage or in the terms." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown", "notes": "Homepage shows an 'E-Mail Empfangsbestaetigung' (email receipt confirmation) feature without detail." }
+      },
+      "capabilities": ["documents"],
+      "terms": {
+        "tos_url": "https://www.netfiles.com/de/rechtliche-informationen/nutzungsbedingungen",
+        "automation_policy": "tolerated",
+        "notes": "Nutzungsbedingungen bar running applications that could impair or alter netfiles (para 3(1)(g)) and limit an account to the named invited user (para 1(3)); bots and scraping are not addressed. Bot-blocking not checked. AGB at /de/rechtliche-informationen/agb."
+      },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "German company with headquarters, development and hosting in Germany (vendor statement). netfiles.de redirects to netfiles.com/de. Unknown: API, 2FA, export.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "brainloop",
+      "name": "Brainloop Secure Dataroom",
+      "vendor": { "name": "Brainloop GmbH", "website": "https://www.brainloop.com", "country": "DE" },
+      "website": "https://www.brainloop.com",
+      "category": "data-room",
+      "regions": ["dach"],
+      "access": {
+        "web": { "status": "available", "notes": "IT security page: various two-factor authentication options (methods not listed); Information Rights Management integration; MS Office integration. SSO not mentioned." },
+        "api": { "status": "unknown", "notes": "No API mentioned on the homepage or security page." },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown" },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": { "automation_policy": "unknown", "notes": "No terms of service link on the pages fetched." },
+      "contact": { "support_url": "https://support.brainloop.com/login" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "Brainloop GmbH, Munich, with branches in Austria and Switzerland (site footer, copyright 2026). Parent company not stated on the site. Strong security posture (2FA, IRM, audit trail). Unknown: API, export rules.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "intralinks-vdrpro",
+      "name": "Intralinks VDRPro",
+      "vendor": { "name": "SS&C Intralinks", "website": "https://www.intralinks.com", "country": "US" },
+      "website": "https://www.intralinks.com/products/virtual-data-room",
+      "category": "data-room",
+      "regions": ["global"],
+      "access": {
+        "web": { "status": "available", "notes": "VDRPro mobile app available. SSO and MFA not stated on the product page." },
+        "api": {
+          "status": "partner-only",
+          "docs_url": "https://www.intralinks.com/why-intralinks/apis-deployment",
+          "notes": "APIs for content, users, sessions and administration, with a Swagger documentation portal; access via Contact Sales. The page does not tie them to VDRPro explicitly; auth not stated. developers.intralinks.com refused the connection."
+        },
+        "mcp": { "status": "unknown" },
+        "sftp": { "status": "unknown" },
+        "webhooks": { "status": "unknown", "notes": "'Real-time alerts' listed as an API use case." },
+        "email_notifications": { "status": "unknown" }
+      },
+      "capabilities": ["documents"],
+      "terms": {
+        "tos_url": "https://www.intralinks.com/terms-of-use",
+        "automation_policy": "prohibited",
+        "notes": "Bars using 'any automated process or service (such as a bot, a spider...' to access the Service, and automated retrieval, scripting or API calls that cause excessive usage; API keys may not be shared with third parties. The Service monitors for non-human access such as RPA and periodic caching. Applies to the hosted platform, not just the website."
+      },
+      "contact": { "support_url": "https://www.intralinks.com/contact/client-services" },
+      "oipp": { "status": "none" },
+      "verification": { "status": "unverified" },
+      "notes": "High confidence: terms prohibit bots and RPA on the platform. Medium confidence: customer APIs exist via sales. Distinct from Intralinks FundCentre (already in the registry). Unknown: MCP, SSO, MFA, bulk download.",
+      "updated": "2026-11-07"
+    }
+  ],
+  "assessments": [
+    { "id": "datasite", "difficulty": 3, "recipient_side_api": "unknown", "rationale": "Self-serve developer portal (OAuth 2, API keys) and a vendor MCP server scoped to the user's own permissions, which may cover invited users. Not stated whether buy-side invitees are eligible, and MCP needs account enablement.", "sources": ["https://www.datasite.com/en/resources/datasite-apis", "https://www.datasite.com/en/resources/ai-at-datasite/datasite-mcp", "https://www.datasite.com/en/legal/terms-of-use", "https://developer.datasite.com/"] },
+    { "id": "ideals-vdr", "difficulty": 3, "recipient_side_api": "unknown", "rationale": "The API is an enterprise paid add-on for account owners and managers. Admins can enable the vendor MCP per user group within existing permissions, so a GP could in principle enable it for investors; not confirmed. Terms prohibit unapproved tools.", "sources": ["https://www.idealsvdr.com/api-integrations/", "https://www.idealsvdr.com/mcp/", "https://www.idealsvdr.com/terms-of-use/"] },
+    { "id": "ansarada", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "No public API. Read-only metadata MCP, enabled per room on request and scoped to user permissions; no document content, and guest eligibility not stated. Otherwise web login with MFA.", "sources": ["https://www.ansarada.com/data-room/mcp", "https://www.ansarada.com/data-room", "https://www.ansarada.com/integrations", "https://help.ansarada.com/en/collections/19710635-integrations"] },
+    { "id": "firmex", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "No API, MCP or integrations found on vendor pages; knowledge base blocked. Web login only as far as known.", "sources": ["https://www.firmex.com/", "https://www.firmex.com/legal-policies/"] },
+    { "id": "docsend", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "The vendor remote MCP (beta) and the Zapier and Salesforce integrations serve DocSend account users. Visitors get email-verified links and Space update emails; no visitor API documented.", "sources": ["https://help.dropbox.com/integrations/connect-docsend-mcp-server", "https://help.dropbox.com/organize/dropbox-docsend-space-data-room-notifications", "https://help.dropbox.com/view-edit/download-dropbox-docsend-content", "https://help.dropbox.com/docsend"] },
+    { "id": "digify", "difficulty": 4, "recipient_side_api": false, "rationale": "Documented sender-side REST API (basic-auth keys) and View, Print and Download webhooks; the API manages recipients rather than serving them. Recipients use DRM-protected links.", "sources": ["https://digify.com/data-room-api.html", "https://help.digify.com/en/articles/761282-digify-api-overview", "https://help.digify.com/en/articles/3556613-digify-webhook", "https://digify.com/"] },
+    { "id": "smartroom", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "The vendor claims an API but publishes no docs; recipient access is web only as far as known.", "sources": ["https://smartroom.com/", "https://smartroom.com/products/smartroom-virtual-data-room/"] },
+    { "id": "drooms", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "No API or MCP mentioned; SSO and 2FA listed; download permissions set per user and document.", "sources": ["https://drooms.com/en/", "https://drooms.com/drooms-security/", "https://drooms.com/information_for_ai_llms/"] },
+    { "id": "netfiles", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "No API or interface mentioned on the site or in the terms; Teams integration only. The terms do not address automation.", "sources": ["https://www.netfiles.com/de", "https://www.netfiles.com/de/rechtliche-informationen/nutzungsbedingungen"] },
+    { "id": "brainloop", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "Security-focused room with 2FA and IRM; no API mentioned. View-only behaviour not confirmed, so not rated 5.", "sources": ["https://www.brainloop.com/", "https://www.brainloop.com/de-de/it-security/"] },
+    { "id": "intralinks-vdrpro", "difficulty": 4, "recipient_side_api": "unknown", "rationale": "Customer APIs are available through sales. The terms explicitly prohibit bots, spiders and RPA on the platform, so recipient automation is limited to official channels.", "sources": ["https://www.intralinks.com/products/virtual-data-room", "https://www.intralinks.com/why-intralinks/apis-deployment", "https://www.intralinks.com/terms-of-use"] }
+  ]
+}

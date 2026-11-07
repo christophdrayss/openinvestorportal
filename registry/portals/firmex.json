@@ -1,0 +1,55 @@
+{
+  "id": "firmex",
+  "name": "Firmex Virtual Data Room",
+  "vendor": {
+    "name": "Firmex",
+    "website": "https://www.firmex.com",
+    "country": "CA"
+  },
+  "website": "https://www.firmex.com",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "SSO and 2FA not mentioned on homepage; support knowledge base returned 403."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API mentioned on homepage or legal pages."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "tos_url": "https://www.firmex.com/legal-policies/",
+    "automation_policy": "tolerated",
+    "notes": "Terms of use bar reverse engineering, unauthorised scans, load tests and penetration tests, and sharing credentials; automated access, bots and scraping are not addressed. Bot-blocking not checked; subscriber agreements not reviewed."
+  },
+  "contact": {
+    "support_url": "https://support.firmex.com/hc/en-us"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Little information: the vendor pages fetched mention no API, integrations, SSO, 2FA, MCP or SFTP. Knowledge base blocked (403). Treat as web-only until confirmed.",
+  "updated": "2026-11-07"
+}

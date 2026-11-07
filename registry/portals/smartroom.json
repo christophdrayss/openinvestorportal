@@ -1,0 +1,51 @@
+{
+  "id": "smartroom",
+  "name": "SmartRoom Virtual Data Room",
+  "vendor": {
+    "name": "SmartRoom",
+    "website": "https://smartroom.com"
+  },
+  "website": "https://smartroom.com/products/smartroom-virtual-data-room/",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "SSO and 2FA not mentioned on vendor pages. SmartLock can revoke access to downloaded documents."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Homepage claims an 'accessible API' to connect other applications; no documentation or access route published."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown",
+      "notes": "Scheduled activity reports and alerts for room owners; end-user notifications not described."
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "No terms found on the pages fetched."
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Medium confidence: the vendor claims an API but publishes no docs. User import from Office 365, Salesforce and DealCloud; document import from Box; DocuSign for NDAs; hosted on Azure. Mentions BMC Group corporate networks. Unknown: everything on the recipient side.",
+  "updated": "2026-11-07"
+}

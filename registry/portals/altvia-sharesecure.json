@@ -1,0 +1,68 @@
+{
+  "id": "altvia-sharesecure",
+  "name": "Altvia ShareSecure",
+  "vendor": {
+    "name": "Altvia",
+    "website": "https://altvia.com",
+    "country": "US"
+  },
+  "website": "https://altvia.com/vdr-portal/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "venture-capital",
+    "fund-of-funds",
+    "real-estate"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://app.sharesecurely.com/signin",
+      "notes": "2FA, encryption, dynamic watermarks. SSO not mentioned."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "Salesforce-based. No public API docs."
+    },
+    "mcp": {
+      "status": "partner-only",
+      "maintainer": "vendor",
+      "notes": "Press (May 2026) reports MCP access for GP teams. Not confirmed on vendor site."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "LPs notified of capital calls, distributions and reports on posting."
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "fund_reports",
+    "performance",
+    "messaging"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "contact": {
+    "support_url": "https://altvia.com/get-support/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Combined data room and LP portal. No LP-side programmatic access identified.",
+  "updated": "2026-11-07"
+}

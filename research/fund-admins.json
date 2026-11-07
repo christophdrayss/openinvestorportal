@@ -1,0 +1,161 @@
+{
+  "portals": [
+    {
+      "id": "finventions-investment-portal",
+      "name": "Finventions Investment Portal",
+      "vendor": {
+        "name": "Finventions",
+        "website": "https://www.finventions.de",
+        "country": "DE"
+      },
+      "website": "https://www.finventions.de/investment-portal/",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "real-estate",
+        "private-equity",
+        "other"
+      ],
+      "regions": [
+        "dach"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "notes": "Oracle APEX application, username and password login on the deployments seen; no MFA or SSO visible before login."
+        },
+        "api": {
+          "status": "none",
+          "notes": "No external API described on vendor pages."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "csv",
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "fund_reports",
+        "nav",
+        "performance"
+      ],
+      "terms": {
+        "automation_policy": "unknown",
+        "notes": "Deployments show internal-use and no-reproduction notices for licensed market data."
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "White-label fund information and reporting portal on Oracle APEX used by German and Luxembourg service KVGs and administrators. Deployments: HANSAINVEST Informationsportal (HIP), HAL Investment Portal Luxembourg (likely). Aimed at fund initiators and institutional clients rather than retail LPs. Interactive reports offer CSV and PDF export.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "universal-investment-powerportal",
+      "name": "Universal Investment PowerPortal",
+      "vendor": {
+        "name": "Universal Investment",
+        "website": "https://www.universal-investment.com",
+        "country": "DE"
+      },
+      "website": "https://universal-investment.com/en/institutional-investors/reporting/",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "private-equity",
+        "real-estate",
+        "infrastructure",
+        "private-credit",
+        "other"
+      ],
+      "regions": [
+        "dach",
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available",
+          "login_url": "https://powerportal.universal-investment.com"
+        },
+        "api": {
+          "status": "unknown",
+          "notes": "No investor API, data feed or SFTP mentioned on public pages."
+        },
+        "mcp": {
+          "status": "none"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "webhooks": {
+          "status": "none"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "fund_reports",
+        "capital_calls",
+        "distributions",
+        "performance",
+        "nav",
+        "documents"
+      ],
+      "terms": {
+        "tos_url": "https://www.universal-investment.com/en/disclaimer/",
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "contact": {
+        "support_url": "https://www.universal-investment.com/en/contact/"
+      },
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Reporting platform for institutional investors in Universal Investment funds, more than 200 standard reports. Private markets module shows commitments, capital calls, distributions, IRR and multiples with look-through data (CEPRES, Burgiss). Regulatory outputs include Solvency II TPT and the VAG-BVI data sheet. Underlying software not disclosed.",
+      "updated": "2026-11-07"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "finventions-investment-portal",
+      "difficulty": 4,
+      "rationale": "Password-only web portal with interactive CSV and PDF export; no API, SFTP or notification feed documented.",
+      "lp_side_api": false,
+      "sources": [
+        "https://www.finventions.de/investment-portal/",
+        "https://hip.hansainvest.com/apex/f?p=FIP:LOGIN",
+        "https://haip.hal-privatbank.com/haip/",
+        "https://www.cash-online.de/a/hansainvest-bringt-daten-tool-fuer-asset-manager-377766/"
+      ]
+    },
+    {
+      "id": "universal-investment-powerportal",
+      "difficulty": 4,
+      "rationale": "Rich reporting portal for institutional investors but no published API, SFTP or export documentation.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://universal-investment.com/en/institutional-investors/reporting/",
+        "https://powerportal.universal-investment.com/"
+      ]
+    }
+  ]
+}

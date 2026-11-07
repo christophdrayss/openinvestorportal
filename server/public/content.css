@@ -1,0 +1,64 @@
+/* Shared styles for generated content pages (portals, administrators, comparisons, guides).
+   Builds on site.css variables. Page-specific tweaks go in the layout() css option. */
+main{display:block}
+.page-head{padding:48px 0 28px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#f7f8fa 100%)}
+.page-head h1{font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.025em;margin:14px 0 12px;max-width:860px}
+.page-head .lead{max-width:760px;margin:0}
+.page-head .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13.5px;color:var(--muted)}
+.page-head .title-row{display:flex;align-items:center;gap:16px}
+.page-head .title-row .plogo{width:44px;height:44px;border-radius:10px}
+section.tight{padding:40px 0}
+.crumbs{font-size:13px;color:var(--muted)}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.crumbs span{opacity:.5;margin:0 2px}
+.crumbs b{font-weight:500;color:var(--ink2)}
+.prose{max-width:760px;color:var(--ink2);font-size:16.5px;line-height:1.7}
+.prose h2{font-size:clamp(22px,2.6vw,28px);color:var(--ink);margin:44px 0 12px;letter-spacing:-.02em}
+.prose h3{font-size:18px;color:var(--ink);margin:28px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{padding-left:22px;margin:0 0 18px}
+.prose li{margin:6px 0}
+.prose a{color:var(--accent);text-underline-offset:3px}
+.prose strong{color:var(--ink)}
+.wide{max-width:none}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:24px 0}
+.facts div{background:#fff;padding:16px 18px}
+.facts dt,.facts .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.facts dd,.facts .v{margin:0;font-size:15px;color:var(--ink)}
+.callout{border:1px solid rgba(94,116,97,.35);background:rgba(156,175,136,.10);border-radius:10px;padding:16px 18px;margin:22px 0;color:var(--ink2);font-size:15px}
+.callout strong{color:var(--ink)}
+.callout.warn{border-color:rgba(154,52,18,.25);background:rgba(154,52,18,.05)}
+.channels{width:100%;border-collapse:collapse;margin:18px 0 8px;font-size:14.5px}
+.channels th,.channels td{text-align:left;vertical-align:top;padding:12px 12px;border-top:1px solid var(--line)}
+.channels th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.channels td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+.channels td.note{color:var(--ink2);font-size:14px}
+.cmp{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+.cmp th,.cmp td{text-align:left;vertical-align:top;padding:12px;border-top:1px solid var(--line)}
+.cmp thead th{border-top:0;font-size:15px;color:var(--ink)}
+.cmp tbody th{font-weight:600;color:var(--muted);font-size:13px;width:22%}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.link-card{display:block;text-decoration:none;transition:border-color .15s,transform .15s}
+.link-card:hover{border-color:rgba(11,18,32,.25);transform:translateY(-1px)}
+.link-card h3{margin:0 0 8px;font-size:17px}
+.link-card p{margin:0 0 12px;color:var(--ink2);font-size:14.5px}
+.link-card .more{font-size:13px;color:var(--accent);font-weight:600}
+.related{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.related h2{font-size:18px;margin:0 0 12px}
+.related ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 10px}
+.related li a{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:14px;color:var(--ink2);background:#fff}
+.related li a:hover{border-color:rgba(11,18,32,.25);color:var(--ink)}
+.sources{font-size:13px;color:var(--muted);word-break:break-word}
+.sources a{color:var(--muted)}
+.updated{font-size:13px;color:var(--muted)}
+.footlinks{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px}
+.footlinks a{text-decoration:none;color:var(--muted)}
+.footlinks a:hover{color:var(--ink)}
+nav ul a[aria-current="page"]{color:var(--ink)}
+.az{columns:3 240px;column-gap:32px;padding:0;margin:0;list-style:none}
+.az li{break-inside:avoid;padding:7px 0;border-top:1px solid var(--line);font-size:15px}
+.az li a{text-decoration:none}
+.az li a:hover{text-decoration:underline;text-underline-offset:3px}
+.az .sub{display:block;font-size:12.5px;color:var(--muted);margin:0}
+@media (max-width:860px){.page-head{padding:32px 0 20px}.cmp tbody th{width:34%}}

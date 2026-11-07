@@ -1,0 +1,53 @@
+{
+  "id": "fundpanel",
+  "name": "FundPanel Investor Portal (Aduro Advisors)",
+  "vendor": {
+    "name": "Aduro Advisors",
+    "website": "https://www.aduroadvisors.com",
+    "country": "US"
+  },
+  "website": "https://fundpanel.io",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "venture-capital"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available"
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "tax_documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Investor portal and analytics product of Aduro Advisors, a US fund administrator focused on venture firms. No API or developer resources mentioned on the vendor sites (checked 2026-11-07).",
+  "updated": "2026-11-07"
+}

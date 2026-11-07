@@ -1,0 +1,70 @@
+{
+  "id": "universal-investment-powerportal",
+  "name": "Universal Investment PowerPortal",
+  "vendor": {
+    "name": "Universal Investment",
+    "website": "https://www.universal-investment.com",
+    "country": "DE"
+  },
+  "website": "https://universal-investment.com/en/institutional-investors/reporting/",
+  "category": "fund-admin-portal",
+  "asset_classes": [
+    "private-equity",
+    "real-estate",
+    "infrastructure",
+    "private-credit",
+    "other"
+  ],
+  "regions": [
+    "dach",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://powerportal.universal-investment.com"
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No investor API, data feed or SFTP mentioned on public pages."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "none"
+    },
+    "email_notifications": {
+      "status": "unknown"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "fund_reports",
+    "capital_calls",
+    "distributions",
+    "performance",
+    "nav",
+    "documents"
+  ],
+  "terms": {
+    "tos_url": "https://www.universal-investment.com/en/disclaimer/",
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "contact": {
+    "support_url": "https://www.universal-investment.com/en/contact/"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Reporting platform for institutional investors in Universal Investment funds, more than 200 standard reports. Private markets module shows commitments, capital calls, distributions, IRR and multiples with look-through data (CEPRES, Burgiss). Regulatory outputs include Solvency II TPT and the VAG-BVI data sheet. Underlying software not disclosed.",
+  "updated": "2026-11-07"
+}

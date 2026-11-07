@@ -1,0 +1,70 @@
+{
+  "id": "investorflow-investor-portal",
+  "name": "InvestorFlow Investor Portal",
+  "vendor": {
+    "name": "InvestorFlow",
+    "website": "https://www.investorflow.com",
+    "country": "US"
+  },
+  "website": "https://www.investorflow.com/solutions/applications/investor-services/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "venture-capital",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "north-america",
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Branded LP portal, enterprise IAM with SSO and MFA, dynamic watermarks."
+    },
+    "api": {
+      "status": "unknown"
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "Notices via portal, email or both; LPs set preferences."
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "tax_documents",
+    "fund_reports",
+    "performance",
+    "subscriptions"
+  ],
+  "terms": {
+    "tos_url": "https://www.investorflow.com/terms-of-use/",
+    "automation_policy": "prohibited",
+    "notes": "No robots, spiders or scraping; accounts may not be shared."
+  },
+  "contact": {
+    "support_url": "https://www.investorflow.com/contact-us/"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "Salesforce-based. Ingests data from administrators such as SS&C, Citco, Apex and CSC.",
+  "updated": "2026-11-07"
+}

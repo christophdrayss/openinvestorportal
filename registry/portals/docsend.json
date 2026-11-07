@@ -1,0 +1,66 @@
+{
+  "id": "docsend",
+  "name": "Dropbox DocSend Spaces (data rooms)",
+  "vendor": {
+    "name": "Dropbox",
+    "website": "https://www.dropbox.com",
+    "country": "US"
+  },
+  "website": "https://www.docsend.com",
+  "category": "data-room",
+  "regions": [
+    "global"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "SSO for DocSend account users is documented (help.dropbox.com/account-access/dropbox-docsend-single-sign-on-sso); protocol not confirmed. Viewers can be required to verify their email (email authentication). 2FA not found."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API article found in DocSend help; docsend.com returned 403. Zapier and Salesforce integrations exist."
+    },
+    "mcp": {
+      "status": "beta",
+      "endpoint": "https://docsend.com/mcp",
+      "auth": [
+        "oauth2"
+      ],
+      "maintainer": "vendor",
+      "docs_url": "https://help.dropbox.com/integrations/connect-docsend-mcp-server",
+      "notes": "Vendor remote MCP server (Beta) for ChatGPT, Claude, Codex CLI and Copilot Studio; OAuth 2.0 with dynamic discovery. Read and write: list and manage Spaces, upload, read and summarise documents, contacts, visits, audit log, grant link access. Plans: Standard, Advanced, Advanced Data Rooms, Enterprise; admins toggle it under Settings > Company > AI use. For DocSend account users; viewer use not stated. Transport not stated."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "docs_url": "https://help.dropbox.com/organize/dropbox-docsend-space-data-room-notifications",
+      "notes": "Visitors on email-verified links get Space update emails (manual on Standard; automated new-content or new-version emails on Advanced and Advanced Data Rooms), with unsubscribe."
+    },
+    "export_formats": [
+      "other"
+    ]
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "automation_policy": "unknown",
+    "notes": "Terms not reviewed (docsend.com returned 403)."
+  },
+  "contact": {
+    "support_url": "https://help.dropbox.com/docsend"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "High confidence: vendor remote MCP in beta for account users; Space update emails to visitors; owners can download a Space or folders as ZIP; visitors can export the Space index (Advanced Data Rooms). Unknown: public REST API, webhooks, visitor bulk-download rules, terms on automation.",
+  "updated": "2026-11-07"
+}

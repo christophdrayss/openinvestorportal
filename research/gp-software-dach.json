@@ -1,0 +1,212 @@
+{
+  "portals": [
+    {
+      "id": "quantium",
+      "name": "Quantium Investor Portal",
+      "vendor": {
+        "name": "Quantium Technology",
+        "website": "https://quantium.pe"
+      },
+      "website": "https://quantium.pe",
+      "category": "lp-portal",
+      "asset_classes": [
+        "private-equity",
+        "venture-capital",
+        "private-credit",
+        "fund-of-funds"
+      ],
+      "regions": [
+        "global",
+        "europe",
+        "apac"
+      ],
+      "access": {
+        "web": {
+          "status": "available"
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "gp"
+          ],
+          "notes": "Vendor site lists 'API and Data Warehouse' for its GP clients. No public developer documentation found. LP-side access unknown."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        },
+        "export_formats": [
+          "pdf"
+        ]
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "performance",
+        "fund_reports"
+      ],
+      "standards": [
+        "ilpa-reporting-template"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Private markets software suite (fund accounting, portfolio management, investor relations) with an investor portal module used by European GPs. Vendor claims ILPA-compliant reporting, real-time investor portal, 'API and Data Warehouse' and fund administrator integrations (vendor marketing, medium confidence). See registry/deployments.json for known GP deployments.",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "fundrbird",
+      "name": "Fundrbird Investor Portal",
+      "vendor": {
+        "name": "Fundrbird",
+        "website": "https://fundrbird.com",
+        "country": "DE"
+      },
+      "website": "https://fundrbird.com",
+      "category": "lp-portal",
+      "asset_classes": [
+        "venture-capital",
+        "private-equity"
+      ],
+      "regions": [
+        "dach",
+        "europe"
+      ],
+      "access": {
+        "web": {
+          "status": "available"
+        },
+        "api": {
+          "status": "partner-only",
+          "audience": [
+            "gp"
+          ],
+          "notes": "Vendor site mentions an API for connecting fund data to BI tools, dashboards and data warehouses, aimed at the GP. No public documentation found. LP-side access unknown."
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "fund_reports"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "German operational software for PE and VC firms (fund accounting, reporting, compliance) with an investor portal module and a GP-facing data API (vendor site, medium confidence).",
+      "updated": "2026-11-07"
+    },
+    {
+      "id": "fundpanel",
+      "name": "FundPanel Investor Portal (Aduro Advisors)",
+      "vendor": {
+        "name": "Aduro Advisors",
+        "website": "https://www.aduroadvisors.com",
+        "country": "US"
+      },
+      "website": "https://fundpanel.io",
+      "category": "fund-admin-portal",
+      "asset_classes": [
+        "venture-capital"
+      ],
+      "regions": [
+        "north-america",
+        "global"
+      ],
+      "access": {
+        "web": {
+          "status": "available"
+        },
+        "api": {
+          "status": "unknown"
+        },
+        "mcp": {
+          "status": "unknown"
+        },
+        "sftp": {
+          "status": "unknown"
+        },
+        "email_notifications": {
+          "status": "unknown"
+        }
+      },
+      "capabilities": [
+        "documents",
+        "capital_calls",
+        "distributions",
+        "capital_account_statements",
+        "tax_documents"
+      ],
+      "terms": {
+        "automation_policy": "unknown"
+      },
+      "oipp": {
+        "status": "none"
+      },
+      "verification": {
+        "status": "unverified"
+      },
+      "notes": "Investor portal and analytics product of Aduro Advisors, a US fund administrator focused on venture firms. No API or developer resources mentioned on the vendor sites (checked 2026-11-07).",
+      "updated": "2026-11-07"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "quantium",
+      "difficulty": 4,
+      "rationale": "Web portal for LPs; vendor advertises a GP-side API and data warehouse but no public developer documentation and no known LP-side API.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://quantium.pe"
+      ]
+    },
+    {
+      "id": "fundrbird",
+      "difficulty": 4,
+      "rationale": "Web portal for LPs; GP-side BI API mentioned on the vendor site, nothing documented for investors.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://fundrbird.com"
+      ]
+    },
+    {
+      "id": "fundpanel",
+      "difficulty": 4,
+      "rationale": "Web portal only as far as public material shows; no API or developer mention on aduroadvisors.com or fundpanel.io.",
+      "lp_side_api": "unknown",
+      "sources": [
+        "https://www.aduroadvisors.com",
+        "https://fundpanel.io"
+      ]
+    }
+  ]
+}

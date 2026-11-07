@@ -1,0 +1,85 @@
+{
+  "id": "intralinks-fundcentre",
+  "name": "SS&C Intralinks FundCentre",
+  "vendor": {
+    "name": "SS&C Intralinks",
+    "website": "https://www.intralinks.com",
+    "country": "US"
+  },
+  "website": "https://www.intralinks.com/products/fundcentre/reporting",
+  "category": "lp-portal",
+  "asset_classes": [
+    "private-equity",
+    "hedge-fund",
+    "private-credit",
+    "real-estate",
+    "fund-of-funds"
+  ],
+  "regions": [
+    "global",
+    "north-america",
+    "europe"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "One Intralinks login across GPs (170k+ individuals). SSO via professional services. Link AI assistant answers LP questions over approved documents."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "auth": [
+        "api-key"
+      ],
+      "audience": [
+        "gp",
+        "fund-admin",
+        "partner"
+      ],
+      "notes": "Library of APIs with Swagger docs behind engagement. Keys are customer-specific and may not be shared."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "LPs notified on publication."
+    }
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "fund_reports",
+    "tax_documents",
+    "subscriptions",
+    "kyc",
+    "performance"
+  ],
+  "standards": [
+    "ilpa-reporting-template"
+  ],
+  "terms": {
+    "tos_url": "https://www.intralinks.com/terms-of-use",
+    "automation_policy": "prohibited",
+    "notes": "Terms prohibit bots, spiders, automated retrieval causing excessive usage, and sharing API keys or User IDs."
+  },
+  "contact": {
+    "developer_portal": "https://www.intralinks.com/why-intralinks/apis-deployment",
+    "support_url": "https://www.intralinks.com/contact-us"
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "The LP portal product of SS&C Intralinks (the deal data room is a separate product). ILPA templates built in. Carta LP Portfolio Analytics documents vendor-arranged API access to Intralinks for automated retrieval.",
+  "updated": "2026-11-07"
+}

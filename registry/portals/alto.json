@@ -1,0 +1,73 @@
+{
+  "id": "alto",
+  "name": "Alto (Alto IRA)",
+  "vendor": {
+    "name": "Alto Solutions, Inc.",
+    "website": "https://www.altoira.com",
+    "country": "US"
+  },
+  "website": "https://www.altoira.com",
+  "category": "marketplace",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity",
+    "private-credit",
+    "real-estate",
+    "other"
+  ],
+  "regions": [
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "Self-directed IRA custodian/platform; investors view holdings and documents in investor portal; issuers manage capital calls/distributions from an issuer dashboard. MFA methods not confirmed (help center not retrievable)."
+    },
+    "api": {
+      "status": "partner-only",
+      "audience": [
+        "partner",
+        "gp"
+      ],
+      "notes": "Issuer/platform integration API for embedding IRA funding flows (Canopy, Prosper integrations). Vendor: 'Access to Alto's API integration is currently reviewed on a case-by-case basis'; 4-6 week integrations. No public docs; no investor-side data API."
+    },
+    "mcp": {
+      "status": "none"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available"
+    },
+    "export_formats": [
+      "pdf"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "tax_documents",
+    "subscriptions",
+    "kyc"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_portal": "https://altoira.com/issuer-integration",
+    "support_url": "https://help.altoira.com"
+  },
+  "notes": "Confidence: high that API is partner-only and issuer/platform-oriented (vendor integration page). Investor-side API: none. 2FA and export formats unconfirmed. Terms not reviewed.",
+  "updated": "2026-11-07",
+  "terms": {
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

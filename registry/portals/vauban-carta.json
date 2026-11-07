@@ -1,0 +1,105 @@
+{
+  "id": "vauban-carta",
+  "name": "Vauban (Carta Fund Administration, UK/EU)",
+  "vendor": {
+    "name": "Carta (eShares, Inc.)",
+    "website": "https://carta.com",
+    "country": "US"
+  },
+  "website": "https://carta.com/uk/en/",
+  "category": "lp-portal",
+  "asset_classes": [
+    "venture-capital",
+    "private-equity"
+  ],
+  "regions": [
+    "uk",
+    "europe",
+    "north-america"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "login_url": "https://login.app.carta.com",
+      "sso": [
+        "none"
+      ],
+      "notes": "Vauban LPs now use Carta's LP portal (single login across commitments; capital accounts tab with PCAP ledger; capital call emails). Vauban help lives under support.carta.com/kb/en/vauban-434264. Note: vauban.io now redirects to an unrelated third-party site. MFA methods not confirmed."
+    },
+    "api": {
+      "status": "partner-only",
+      "style": "rest",
+      "docs_url": "https://docs.carta.com",
+      "auth": [
+        "oauth2-authorization-code",
+        "oauth2-client-credentials"
+      ],
+      "audience": [
+        "gp",
+        "partner"
+      ],
+      "rate_limits": "10 req/s, 300 req/min (per third-party summary of Carta docs)",
+      "sandbox": true,
+      "notes": "Carta API Platform: audience-gated suites (Investor suite targets fund operators; Portfolio suite targets personal-finance partners). Production access requires Carta review (1-2 weeks) after building in playground. Fund NAV/TVPI/LP capital accounts are served via the Data Warehouse, not the REST suites. No LP self-serve API."
+    },
+    "mcp": {
+      "status": "available",
+      "endpoint": "https://mcp.app.carta.com/mcp",
+      "transport": [
+        "streamable-http"
+      ],
+      "auth": [
+        "oauth2"
+      ],
+      "maintainer": "vendor",
+      "docs_url": "https://docs.carta.com/api-platform/docs/carta-mcp",
+      "notes": "Carta MCP: OAuth with existing Carta credentials, limited to data the signed-in account can view; Cap Table and Investors/Fund Admin surfaces (fund admin tools require firm data sharing enabled; scopes read_mcp_firms). Whether an LP-only Carta account can use the Investors tools is not documented. Docs URL returned 404 on fetch (may be behind nav)."
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "available",
+      "notes": "LP onboarding guide: email notification for capital calls; document upload notices."
+    },
+    "export_formats": [
+      "pdf",
+      "xlsx"
+    ]
+  },
+  "capabilities": [
+    "documents",
+    "capital_calls",
+    "distributions",
+    "capital_account_statements",
+    "nav",
+    "performance",
+    "tax_documents",
+    "fund_reports",
+    "subscriptions",
+    "kyc"
+  ],
+  "standards": [
+    "oauth2",
+    "saml-sso"
+  ],
+  "verification": {
+    "status": "unverified"
+  },
+  "contact": {
+    "developer_portal": "https://docs.carta.com",
+    "support_url": "https://support.carta.com/kb/en/vauban-434264"
+  },
+  "notes": "Vauban (acquired by Carta 2022) is operated as Carta's UK/EU fund administration; LP experience is the Carta LP portal. Confidence: high on Carta MCP server existence and OAuth model (vendor docs + multiple third-party summaries); high on partner-gated REST API. Medium on SSO (Carta documents SSO setup for fund-admin firms, not LPs). Investor-side API: not documented; the MCP server follows user permissions, so LP access is possible in principle but unconfirmed. Carta ToS not retrievable (403).",
+  "updated": "2026-11-07",
+  "terms": {
+    "tos_url": "https://carta.com/legal/terms-of-service/",
+    "automation_policy": "unknown"
+  },
+  "oipp": {
+    "status": "none"
+  }
+}

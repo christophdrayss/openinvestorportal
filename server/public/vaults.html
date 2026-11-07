@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managed Portal Vaults for Investor Documents | OpenInvestorPortal</title>
+<meta name="description" content="A managed vault for your investor portal keys and second factors, with documents, capital calls and statements delivered to SFTP, SharePoint, email or API.">
+<link rel="stylesheet" href="/site.css?v=3">
+<!--SEO_HEAD-->
+</head>
+<body>
+
+<!--NAV-->
+
+<header class="page-hero"><div class="wrap">
+  <span class="tag">Managed service</span>
+  <h1 style="font-size:clamp(34px,4.8vw,54px);margin-top:0">Managed Portal Vaults</h1>
+  <p class="lead">Everything the unified interface gives you, with nothing to run. We operate a dedicated vault for your portal keys and second factors, keep every link alive, and deliver your documents, capital calls and capital account statements to wherever your team works.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="#contact">Talk to us</a>
+    <a class="btn btn-secondary" href="#compare">Compare with self-managed</a>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="notice">
+    <strong>This is a custody service, and we say so.</strong> The open standard keeps keys and data on your side and is free. Managed Portal Vaults is the opposite choice, made deliberately: you hand the operational burden to us and we take on the obligations that come with it. Everything below describes how we carry them.
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">What is included</p>
+  <h2>Four things you stop doing</h2>
+  <p class="sub">A managed vault replaces the client software, the key handling, the second-factor juggling and the morning portal rounds.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Key custody in a dedicated vault</h3>
+      <p>Your investor key is generated inside a hardware security module in an environment provisioned for you alone. It is non-exportable: it can sign, it cannot leave. Every signature is logged with the request it authorised. When you leave, the key material is destroyed and we hand you the destruction record.</p>
+    </div>
+    <div class="card">
+      <h3>Second factors, handled</h3>
+      <p>Portals that still require one-time codes are linked with dedicated authenticator seeds held in the same vault. Where a portal only offers SMS, you get a dedicated number used for nothing else. Codes are consumed by the delivery pipeline and never shown to staff. Email-based codes are routed to a mailbox that exists only for your vault.</p>
+    </div>
+    <div class="card">
+      <h3>Document delivery, on your terms</h3>
+      <p>New documents, capital call notices, distribution notices and statements are collected from every linked portal and delivered to your SFTP server, SharePoint or Google Drive, your document management system, a mailbox, or our API. Normalised to the ILPA templates, filed by entity, fund and document type, with a daily reconciliation report.</p>
+    </div>
+    <div class="card">
+      <h3>A named operations contact</h3>
+      <p>A person on our side who knows your portfolio, re-links portals when a GP migrates to a new platform, chases missing statements, and answers within the business day. For portals that offer no programmatic access at all, that same team collects documents manually under a limited power of attorney you grant us.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <p class="kicker">Two ways to use the standard</p>
+  <h2>Self-managed or managed</h2>
+  <p class="sub">Same protocol, same registry, same document formats. The difference is who holds the keys and who does the work.</p>
+  <table class="compare">
+    <thead><tr><th></th><th>Self-managed, open</th><th>Managed Portal Vault</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td>Free, open source</td><td>Per legal entity per month, plus a per-portal fee</td></tr>
+      <tr><td>Where the key lives</td><td>Your device keychain or your own KMS</td><td>A hardware security module in a vault dedicated to you</td></tr>
+      <tr><td>Who signs requests</td><td>You</td><td>Your vault, on a schedule you set, every signature logged</td></tr>
+      <tr><td>Second factors</td><td>You, on your phone</td><td>Dedicated authenticator seeds and numbers inside the vault</td></tr>
+      <tr><td>Data path</td><td>Peer to peer, we never see it</td><td>Through your vault, encrypted at rest under your vault key, deleted after delivery unless you ask us to retain</td></tr>
+      <tr><td>Portals without an API</td><td>Local read-only connector on your machine</td><td>Vault-side connector, or manual collection by our team under power of attorney</td></tr>
+      <tr><td>Delivery</td><td>Your own tooling or MCP client</td><td>SFTP, SharePoint, Drive, DMS, email, API</td></tr>
+      <tr><td>Support</td><td>Community</td><td>Named contact, business-day response</td></tr>
+      <tr><td>Leaving</td><td>Delete your key</td><td>Key destroyed, destruction record and full export handed over</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Security and compliance</p>
+  <h2>How we carry the obligations</h2>
+  <div class="grid3">
+    <div class="card"><h3>Isolation per client</h3><p>Each vault is its own environment with its own key hierarchy, its own network identity and its own logs. A fault or a breach in one vault cannot reach another.</p></div>
+    <div class="card"><h3>Non-exportable keys</h3><p>Signing keys and authenticator seeds are created in the hardware module and never exist in plaintext outside it. Our staff cannot read them, export them or copy them to another vault.</p></div>
+    <div class="card"><h3>Read-only by design</h3><p>Vault links are scoped to reading documents and statements. No vault can acknowledge a capital call, sign a document or change a bank instruction on your behalf.</p></div>
+    <div class="card"><h3>Every action logged</h3><p>Each login, signature, download and delivery is written to an append-only log you can export at any time or stream to your own SIEM. Staff access to a vault requires a ticket and is itself logged.</p></div>
+    <div class="card"><h3>Built for regulated investors</h3><p>EU data residency, contractual audit rights, incident notification and exit assistance are part of the standard agreement, written to fit the ICT third-party requirements that insurers, pension funds and banks have to meet under DORA.</p></div>
+    <div class="card"><h3>Portal terms respected</h3><p>We link portals through OIPP where it exists, through sanctioned APIs where offered, and through consented automation only where the portal's terms allow it. Where they do not, our team collects documents manually. We never circumvent a portal's protections.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Onboarding</p>
+  <h2>Four steps to the first delivery</h2>
+  <div class="steps">
+    <div><h4>Agreement and verification</h4><p>Service agreement, data processing terms and verification of the legal entities you want us to act for.</p></div>
+    <div><h4>Portal inventory</h4><p>We list every portal across your positions from the registry and your subscription documents, and agree a delivery schedule and destination.</p></div>
+    <div><h4>Linking</h4><p>Your vault is provisioned. On a call with you, each portal is linked to the vault key, or a limited power of attorney is set up for portals without programmatic access.</p></div>
+    <div><h4>Delivery starts</h4><p>Documents begin to arrive in your destination within the first cycle. You receive the first reconciliation report and your operations contact.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Questions we get</p>
+  <h2>Plain answers</h2>
+  <div class="faq">
+    <details><summary>Do you see our documents?</summary><p>Yes. In a managed vault documents pass through infrastructure we operate. They are encrypted at rest under your vault key, deleted after delivery unless you ask us to retain them, and staff cannot open a vault without a logged ticket. If that is not acceptable, the self-managed standard is the right choice and it is free.</p></details>
+    <details><summary>Can we take the keys with us?</summary><p>Investor keys are non-exportable by design, so no. On exit we generate a new key under your control, re-link your portals to it, and destroy the vault key with a signed destruction record. Nothing about your portal accounts changes.</p></details>
+    <details><summary>Who is this for?</summary><p>Family offices, fund-of-funds teams, insurers and pension funds, and fund administrators who want programmatic access to every portal without running software or managing keys. If you have an engineering team, start with the open standard.</p></details>
+    <details><summary>What about portals that forbid automation?</summary><p>We do not automate them. Our operations team collects documents manually under a limited power of attorney, on the same schedule, into the same delivery. The registry marks these portals so you know which ones they are.</p></details>
+    <details><summary>Where is the vault hosted?</summary><p>In the European Union. Other regions are available on request for clients with residency requirements elsewhere.</p></details>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="teaser">
+    <div>
+      <p class="kicker">Talk to us</p>
+      <h2 style="font-size:clamp(24px,3vw,32px)">Tell us about your portfolio</h2>
+      <p class="sub" style="margin-bottom:22px">How many legal entities, roughly how many portals, and where you want documents to land. We come back within one business day with a proposal.</p>
+      <a class="btn btn-primary" href="mailto:vaults@openinvestorportal.org?subject=Managed%20Portal%20Vaults">Email vaults@openinvestorportal.org</a>
+    </div>
+    <ul>
+      <li>Pricing per legal entity and per portal</li>
+      <li>Pilot with a subset of portals first</li>
+      <li>Security documentation available under NDA</li>
+      <li>Open standard remains free and separate</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>OpenInvestorPortal · open registry and protocol for investor portal access · Managed Portal Vaults is an optional paid service</div>
+  <div><a href="/" style="text-decoration:none">Home</a> · <a href="/portals" style="text-decoration:none">Registry</a> · <a href="/#api" style="text-decoration:none">API</a></div>
+</div></footer>
+
+</body>
+</html>

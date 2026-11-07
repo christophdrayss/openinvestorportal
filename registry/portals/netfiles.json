@@ -1,0 +1,53 @@
+{
+  "id": "netfiles",
+  "name": "netfiles Datenraum",
+  "vendor": {
+    "name": "netfiles",
+    "website": "https://www.netfiles.com/de",
+    "country": "DE"
+  },
+  "website": "https://www.netfiles.com/de",
+  "category": "data-room",
+  "regions": [
+    "dach"
+  ],
+  "access": {
+    "web": {
+      "status": "available",
+      "notes": "SSO and 2FA not mentioned on homepage. A Microsoft Teams integration is offered."
+    },
+    "api": {
+      "status": "unknown",
+      "notes": "No API, WebDAV or interface (Schnittstelle) mentioned on the homepage or in the terms."
+    },
+    "mcp": {
+      "status": "unknown"
+    },
+    "sftp": {
+      "status": "unknown"
+    },
+    "webhooks": {
+      "status": "unknown"
+    },
+    "email_notifications": {
+      "status": "unknown",
+      "notes": "Homepage shows an 'E-Mail Empfangsbestaetigung' (email receipt confirmation) feature without detail."
+    }
+  },
+  "capabilities": [
+    "documents"
+  ],
+  "terms": {
+    "tos_url": "https://www.netfiles.com/de/rechtliche-informationen/nutzungsbedingungen",
+    "automation_policy": "tolerated",
+    "notes": "Nutzungsbedingungen bar running applications that could impair or alter netfiles (para 3(1)(g)) and limit an account to the named invited user (para 1(3)); bots and scraping are not addressed. Bot-blocking not checked. AGB at /de/rechtliche-informationen/agb."
+  },
+  "oipp": {
+    "status": "none"
+  },
+  "verification": {
+    "status": "unverified"
+  },
+  "notes": "German company with headquarters, development and hosting in Germany (vendor statement). netfiles.de redirects to netfiles.com/de. Unknown: API, 2FA, export.",
+  "updated": "2026-11-07"
+}
