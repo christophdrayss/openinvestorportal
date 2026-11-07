@@ -89,12 +89,12 @@ createServer(async (req, res) => {
     if (req.method !== "GET") return json(res, 405, { error: "method not allowed" });
     if (url.pathname === "/health") return json(res, 200, { ok: true, portals: portals().length });
     // static assets (favicons, manifest) from server/public
-    const asset = url.pathname.match(/^\/((?:logos\/)?[a-z0-9-]+\.(svg|png|ico|webmanifest|css))$/);
+    const asset = url.pathname.match(/^\/((?:logos\/)?[a-z0-9-]+\.(svg|png|ico|webmanifest|css|js))$/);
     if (asset) {
       const file = join(root, "server/public", asset[1]);
       if (!existsSync(file)) return json(res, 404, { error: "not found" });
-      const types = { svg: "image/svg+xml", png: "image/png", ico: "image/x-icon", webmanifest: "application/manifest+json", css: "text/css; charset=utf-8" };
-      res.writeHead(200, { "content-type": types[asset[2]], "cache-control": asset[2] === "css" ? "no-cache" : "public, max-age=86400" });
+      const types = { svg: "image/svg+xml", png: "image/png", ico: "image/x-icon", webmanifest: "application/manifest+json", css: "text/css; charset=utf-8", js: "text/javascript; charset=utf-8" };
+      res.writeHead(200, { "content-type": types[asset[2]], "cache-control": ["css", "js"].includes(asset[2]) ? "no-cache" : "public, max-age=86400" });
       return res.end(readFileSync(file));
     }
     if (url.pathname === "/schema/portal.schema.json") {

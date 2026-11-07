@@ -141,3 +141,64 @@
 #reg th[aria-sort="descending"]{color:var(--ink)}
 #reg th[aria-sort="descending"]::after{content:"\2193";opacity:.9}
 .soon{display:inline-block;margin-left:10px;padding:2px 9px;border-radius:999px;border:1px solid rgba(94,116,97,.4);color:var(--accent);font-size:11px;letter-spacing:.06em;vertical-align:1px;background:#fff}
+
+/* ---- mobile: menu button, registry cards, stacked tables ---- */
+.menu-btn{display:none;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;border:0;border-radius:8px;background:none;color:var(--ink);cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+.menu-btn:hover{background:var(--bg2)}
+@media (max-width:860px){
+  nav .wrap{height:56px}
+  .menu-btn{display:inline-flex}
+  nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;padding:8px 0 14px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -18px rgba(11,18,32,.25);font-size:16px}
+  nav.open ul a{display:block;padding:12px 24px;color:var(--ink2)}
+  nav.open ul a:hover,nav.open ul a[aria-current="page"]{color:var(--ink);background:var(--bg2)}
+  td:first-child{min-width:0}
+  th,td{white-space:normal}
+  .search{min-width:0;width:100%}
+  .reg-head > *{width:100%}
+}
+@media (max-width:760px){
+  /* landing-page registry: one compact card per portal */
+  #reg,#reg tbody{display:block}
+  #reg thead{display:none}
+  #reg tr{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 12px;padding:16px;border-bottom:1px solid var(--line)}
+  #reg tr:last-child{border-bottom:0}
+  #reg td{display:block;padding:0;border:0;white-space:normal;min-width:0;max-width:none}
+  #reg td:nth-child(1){grid-column:1/-1;font-size:15.5px;margin-bottom:2px}
+  #reg td:nth-child(2){grid-column:1/-1;font-size:13px;color:var(--ink2);padding-left:30px}
+  #reg td:nth-child(3){grid-column:1/-1;font-size:12.5px;padding-left:30px;margin-bottom:12px}
+  #reg td:nth-child(n+4):nth-child(-n+7)::before{display:block;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+  #reg td:nth-child(4)::before{content:"API"}
+  #reg td:nth-child(5)::before{content:"MCP"}
+  #reg td:nth-child(6)::before{content:"SFTP"}
+  #reg td:nth-child(7)::before{content:"Difficulty"}
+  #reg td:nth-child(7){grid-column:1/3;margin-top:10px}
+  #reg td:nth-child(8){align-self:end;text-align:right}
+  #reg td[colspan]{grid-column:1/-1;padding:0}
+  #reg .pill{font-size:12px;padding:2px 9px 2px 7px}
+
+  /* every other data table: rows become labeled cards, no sideways scrolling */
+  table.stack{display:block;min-width:0 !important;width:100% !important}
+  table.stack thead{display:none}
+  table.stack tbody{display:block}
+  table.stack tr{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 12px;background:#fff}
+  table.stack td,table.stack tbody th{display:block;position:relative;padding:7px 0 7px 38%;border:0;white-space:normal !important;min-width:0 !important;width:auto !important;max-width:none !important;text-align:left;font-size:14px;overflow-wrap:anywhere}
+  table.stack td::before,table.stack tbody th::before{content:attr(data-label);position:absolute;left:0;top:9px;width:34%;font-size:11px;line-height:1.3;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  table.stack tr > :first-child{padding:0 0 9px;margin-bottom:4px;border-bottom:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)}
+  table.stack tr > :first-child::before{display:none}
+  table.stack td:empty{display:none}
+  .tablewrap:has(table.stack){border:0;background:none;overflow:visible}
+  [class*="scroll"]:has(> table.stack),[class*="wrap"]:has(> table.stack){overflow:visible !important;margin-left:0;margin-right:0}
+}
+.wrap.hero{padding-left:24px;padding-right:24px}
+.pill{white-space:nowrap}
+@media (max-width:760px){
+  /* clean hero on phones: no animation behind the text, no eyebrow chip */
+  #net,.hero-fade,.legend,.eyebrow{display:none}
+  .hero{min-height:0;padding-top:56px;padding-bottom:56px}
+  h1{font-size:clamp(32px,9vw,40px)}
+  .lead{font-size:17px;margin-bottom:0}
+  section{padding:64px 0}
+  #reg tr{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #reg .pill{padding:2px 8px 2px 6px;gap:5px}
+}

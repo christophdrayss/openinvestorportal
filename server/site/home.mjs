@@ -9,7 +9,7 @@
 import { readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { SITE_NAME, apiPath } from "./context.mjs";
-import { esc, abs, LOGO_SVG, EXT_ICON, NAV, breadcrumbLd, faqLd } from "./layout.mjs";
+import { esc, abs, LOGO_SVG, EXT_ICON, NAV, MENU_BTN, breadcrumbLd, faqLd } from "./layout.mjs";
 
 const decode = (s) =>
   String(s)
@@ -74,6 +74,7 @@ function nav({ onHome = false, active = "" } = {}) {
   <ul>
 ${items}
   </ul>
+  ${MENU_BTN}
 </div></nav>`;
 }
 

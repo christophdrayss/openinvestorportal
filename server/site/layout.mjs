@@ -86,11 +86,14 @@ export const NAV = [
   ["/vaults", "Managed Vaults"],
 ];
 
+export const MENU_BTN = `<button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>`;
+
 export const navHtml = (active = "") => `<nav><div class="wrap">
   <a class="logo" href="/">${LOGO_SVG}${SITE_NAME}</a>
   <ul>${NAV.map(
     ([href, label]) => `<li><a href="${href}"${active && href === active ? ' aria-current="page"' : ""}>${label}</a></li>`
   ).join("")}</ul>
+  ${MENU_BTN}
 </div></nav>`;
 
 export const footerHtml = () => `<footer><div class="wrap">
@@ -134,8 +137,8 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta property="og:t
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="/site.css?v=3">
-<link rel="stylesheet" href="/content.css?v=1">
+<link rel="stylesheet" href="/site.css?v=4">
+<link rel="stylesheet" href="/content.css?v=2">
 ${css ? `<style>${css}</style>\n` : ""}${lds
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`)
     .join("\n")}
@@ -146,6 +149,7 @@ ${navHtml(active)}
 ${body}
 </main>
 ${footerHtml()}
+<script src="/site.js?v=2" defer></script>
 </body>
 </html>
 `;
