@@ -1,7 +1,6 @@
 // Guide: what a "partner-only" API status means for an investor (LP), with eFront Investment Café as the
 // worked example. All registry facts (statuses, deployments, the partner-only table) are generated from ctx.
 import { esc, pill, portalLink, breadcrumbs, faq, faqLd, STATUS_LABEL, CATEGORY_LABEL, DIFFICULTY_LABEL } from "../layout.mjs";
-import { adminPath } from "../admins.mjs";
 
 const SLUG = "partner-only-portal-access-explained";
 const UPDATED = "2026-11-07";
@@ -60,19 +59,6 @@ function statusCounts(ctx) {
   return c;
 }
 
-function deploymentList(ctx, id) {
-  const deps = ctx.deployments.filter((d) => d.product === id);
-  if (!deps.length) return "<p>The registry lists no known deployments for this product yet.</p>";
-  return `<ul>${deps
-    .map((d) => {
-      const admin = d.administrator && adminPath(d.administrator)
-        ? `, administrator <a href="${esc(adminPath(d.administrator))}">${esc(d.administrator)}</a>`
-        : "";
-      const conf = d.confidence ? ` (${esc(d.confidence)})` : "";
-      return `<li><strong>${esc(d.portal_name ?? d.operator)}</strong>: operator ${esc(d.operator)}${admin}${d.country ? `, ${esc(d.country)}` : ""}${conf}</li>`;
-    })
-    .join("")}</ul>`;
-}
 
 function exampleFacts(ctx, e) {
   const a = ctx.assessments[e.id] ?? {};
@@ -140,10 +126,7 @@ function render(ctx) {
   const example = e
     ? `<p>The registry entry for ${portalLink(ctx, e)} reads as follows. Vendor: ${esc(e.vendor.name)}. Category: ${esc(CATEGORY_LABEL[e.category] ?? e.category)}. The entry is community research with verification status <strong>${esc(e.verification?.status ?? "unverified")}</strong>.</p>
 ${exampleFacts(ctx, e)}
-<p>The API note in the entry says: "${esc(e.access?.api?.notes ?? "")}" The general note adds: "No LP-side programmatic access identified." In other words, the API that exists is described as back-office integration for the GP or administrator, and the registry has found no route for an investor to obtain API credentials.</p>
-<p>Investors rarely meet eFront directly. They meet a portal branded and run by a GP or an administrator. The registry lists these known deployments:</p>
-${deploymentList(ctx, e.id)}
-<p>Take the case from the opening. An investor in a Lakestar fund whose reporting portal is run by Aztec Group on eFront has a relationship with Lakestar, set out in the fund documents, and through Lakestar with Aztec Group as administrator. Aztec Group, not the investor, is eFront's customer for that portal. The request to get notices in another way therefore goes to the GP or administrator. A contract with the software vendor is not needed for it.</p>`
+<p>The API note in the entry says: "${esc(e.access?.api?.notes ?? "")}" The general note adds: "No LP-side programmatic access identified." In other words, the API that exists is described as back-office integration for the GP or administrator, and the registry has found no route for an investor to obtain API credentials.</p>`
     : `<p>The eFront entry is not in the registry at the moment.</p>`;
 
   return `<section class="page-head"><div class="wrap">
