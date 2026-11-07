@@ -20,7 +20,7 @@ import {
 import { SITE_NAME } from "./context.mjs";
 import { PAIRS, comparePath, pairsFor, reasonFor, shortName } from "./compare-pairs.mjs";
 
-const CONTACT = "hello@openinvestorportal.org";
+const CONTACT = "hello@openinvestorportal.com";
 const GUIDE_CHOOSE = "/guides/how-to-choose-an-investor-portal";
 
 // ---------- labels for schema enums ----------

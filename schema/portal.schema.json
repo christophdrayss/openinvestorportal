@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://openinvestorportal.org/schema/portal.schema.json",
+  "$id": "https://openinvestorportal.com/schema/portal.schema.json",
   "title": "Investor Portal Registry Entry",
   "description": "Describes how an investor portal can be accessed programmatically: web, API, MCP, SFTP, notifications.",
   "type": "object",

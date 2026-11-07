@@ -39,7 +39,7 @@ paths:
                   capabilities: { type: array, items: { $ref: "#/components/schemas/Capability" } }
                   jwks_uri: { type: string, format: uri, description: Portal keys for response signatures }
                   link_url: { type: string, format: uri, description: Where an investor links their key }
-                  trust_anchors: { type: array, items: { type: string, format: uri }, example: ["https://openinvestorportal.org/.well-known/jwks.json"] }
+                  trust_anchors: { type: array, items: { type: string, format: uri }, example: ["https://openinvestorportal.com/.well-known/jwks.json"] }
   /accounts:
     get:
       summary: Investor accounts (commitments) on this portal

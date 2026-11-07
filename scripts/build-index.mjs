@@ -13,7 +13,7 @@ const entries = readdirSync(dir)
 
 const status = (e, ch) => e.access?.[ch]?.status ?? "unknown";
 const index = {
-  $schema: "https://openinvestorportal.org/schema/index.schema.json",
+  $schema: "https://openinvestorportal.com/schema/index.schema.json",
   generated_at: new Date().toISOString(),
   count: entries.length,
   portals: entries.map((e) => ({

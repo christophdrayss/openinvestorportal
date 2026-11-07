@@ -4,7 +4,7 @@
 // copies public assets and adds a 404 page. The filterable REST API and MCP endpoint need the Node server.
 //
 // Env:
-//   SITE_URL   public origin plus path, e.g. https://christophdrayss.github.io/openinvestorportal
+//   SITE_URL   public origin plus path, e.g. https://openinvestorportal.com
 //   BASE_PATH  path prefix when served from a subpath, e.g. /openinvestorportal (defaults to SITE_URL's path)
 // Usage: SITE_URL=... node scripts/build-site.mjs
 process.env.STATIC_EXPORT = "1";

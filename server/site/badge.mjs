@@ -6,7 +6,7 @@
 import { SITE_NAME } from "./context.mjs";
 import { layout, esc, abs, breadcrumbs, breadcrumbLd, faq, faqLd } from "./layout.mjs";
 
-const CONTACT = "hello@openinvestorportal.org";
+const CONTACT = "hello@openinvestorportal.com";
 const H = 28; // badge height
 const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
 

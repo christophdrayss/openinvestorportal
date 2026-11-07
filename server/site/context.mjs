@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { root, loadPortals, deployments, assessments, summarize } from "../registry.mjs";
 
 // Public origin used for canonical URLs, sitemap and structured data. Placeholder until the domain is live.
-export const SITE_URL = (process.env.SITE_URL ?? "https://openinvestorportal.org").replace(/\/$/, "");
+export const SITE_URL = (process.env.SITE_URL ?? "https://openinvestorportal.com").replace(/\/$/, "");
 export const SITE_NAME = "OpenInvestorPortal";
 // Static export (GitHub Pages and other static hosts): no live JSON API or MCP endpoint, only static JSON files.
 export const STATIC_EXPORT = process.env.STATIC_EXPORT === "1";

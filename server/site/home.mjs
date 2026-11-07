@@ -31,7 +31,7 @@ const organization = () => ({
   name: SITE_NAME,
   url: abs("/"),
   logo: { "@type": "ImageObject", url: abs("/icon-512.png"), width: 512, height: 512 },
-  email: "hello@openinvestorportal.org",
+  email: "hello@openinvestorportal.com",
   description: "Open registry and peer-to-peer protocol for investor portal access.",
 });
 const orgRef = { "@type": "Organization", "@id": ORG_ID, name: SITE_NAME, url: abs("/") };

@@ -102,7 +102,7 @@ def main() -> None:
     # Footer band.
     d.line([s(left), s(536), s(W - left), s(536)], fill=LINE, width=s(1.5))
     small = font("regular", 21)
-    text(d, (left, 576), "openinvestorportal.org", small, MUTED)
+    text(d, (left, 576), "openinvestorportal.com", small, MUTED)
     label = "Registry  ·  Protocol  ·  Open data, CC0"
     lw = d.textlength(label, font=small) / SS
     text(d, (W - left - lw, 576), label, small, MUTED)

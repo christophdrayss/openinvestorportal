@@ -25,7 +25,7 @@ Nobody exchanges a keypair. The investor generates a keypair locally and exchang
 ```
 oip init
   -> generates Ed25519 keypair in OS keychain / HSM / KMS
-  -> POST https://api.openinvestorportal.org/v1/investors { public_key }
+  -> POST https://api.openinvestorportal.com/v1/investors { public_key }
   <- { investor_id: "oip:inv_7f3a...", key_id: "k1" }
 ```
 
@@ -103,7 +103,7 @@ Result: the platform is a certificate authority plus directory. It sees that inv
 ### Mode B: gateway. One URL, still no credentials.
 
 ```
-client -> gateway:   GET https://api.openinvestorportal.org/v1/portals/juniper-square/documents   (signed)
+client -> gateway:   GET https://api.openinvestorportal.com/v1/portals/juniper-square/documents   (signed)
 gateway -> portal:   forwards the request *with the original investor signature intact*
 portal:              verifies the investor signature, not the gateway
 ```
@@ -141,7 +141,7 @@ Rules, enforced by the connector runtime and recorded in the registry:
 4. **Human does MFA.** The connector never stores or relays one-time codes. It pauses and asks the user.
 5. **Read-only.** No clicks that change state: no acknowledgements, no e-signatures, no profile edits.
 6. **Polite.** One session, serial requests, a fixed delay between page loads, no retries on 429 or 403, a daily cap per portal. Looks like one careful user, because it is one user.
-7. **Identifiable.** User agent includes `OpenInvestorPortal-Connector/<version> (+https://openinvestorportal.org/connectors)` so vendors can see it and talk to you instead of blocking.
+7. **Identifiable.** User agent includes `OpenInvestorPortal-Connector/<version> (+https://openinvestorportal.com/connectors)` so vendors can see it and talk to you instead of blocking.
 8. **Audit log.** Every fetch is logged locally with timestamp, URL, document id. The investor can hand that log to the vendor or an auditor.
 9. **No evasion.** No CAPTCHA solving, no fingerprint spoofing, no proxy rotation, no cookie import from another browser profile. If a portal blocks, the connector stops. This rule is what lets you walk into a vendor meeting.
 10. **Carrot.** Every fallback connector carries a banner: "This portal has not joined OIPP yet. Ask them: <link>." Vendors who join get the API route and lose the scraper.
@@ -150,7 +150,7 @@ The registry itself is also safe to scrape: it is public JSON under CC0, served 
 
 ## What the platform runs (control plane)
 
-- **Registry API**: this repo, served at `api.openinvestorportal.org`. Public, cached, CC0.
+- **Registry API**: this repo, served at `api.openinvestorportal.com`. Public, cached, CC0.
 - **Investor directory**: `POST /v1/investors`, JWKS per investor, key rotation and revocation.
 - **Link service**: challenge/response for linking, webhooks to portals, `GET /v1/me/links` for clients.
 - **Connector catalog**: signed packages for official connectors (OIPP client, fallback connectors), version pinning.
