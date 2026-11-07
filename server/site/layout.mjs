@@ -1,5 +1,6 @@
 // Shared HTML layout and helpers for all generated SEO pages. Every page module renders through layout().
 import { SITE_URL, SITE_NAME, STATIC_EXPORT } from "./context.mjs";
+import { footerLegal } from "./legal.mjs";
 
 export const esc = (s) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -98,8 +99,10 @@ export const navHtml = (active = "") => `<nav><div class="wrap">
 
 export const footerHtml = () => `<footer><div class="wrap">
   <div>${SITE_NAME} · open registry and protocol for investor portal access · code MIT, data CC0<br><span style="font-size:12.5px">Product names and logos are trademarks of their respective owners and are used only to identify the listed products. Listing does not imply endorsement or affiliation. Owners can request a correction or removal by pull request or email.</span></div>
-  <div class="footlinks"><a href="/portals">Registry</a> <a href="/compare">Comparisons</a> <a href="/guides">Guides</a> <a href="/administrators">Administrators</a> <a href="/vaults">Managed Vaults</a> <a href="/llms.txt">llms.txt</a></div>
-</div></footer>`;
+  <div class="footlinks"><a href="/portals">Registry</a> <a href="/compare">Comparisons</a> <a href="/guides">Guides</a> <a href="/administrators">Administrators</a> <a href="/vaults">Managed Vaults</a> <a href="/llms.txt">llms.txt</a> <a href="/imprint">Imprint</a></div>
+</div>
+${footerLegal()}
+</footer>`;
 
 /**
  * Full HTML document for a generated page.
@@ -137,7 +140,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta property="og:t
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="/site.css?v=4">
+<link rel="stylesheet" href="/site.css?v=5">
 <link rel="stylesheet" href="/content.css?v=2">
 ${css ? `<style>${css}</style>\n` : ""}${lds
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`)

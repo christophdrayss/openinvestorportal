@@ -12,10 +12,10 @@ const load = async (name) => {
     return { pages: async () => [] };
   }
 };
-const [home, portalPages, adminPages, comparePages, guidePages, badge, technical] = await Promise.all(
-  ["home", "portal-pages", "admin-pages", "compare-pages", "guide-pages", "badge", "technical"].map(load)
+const [home, portalPages, adminPages, comparePages, guidePages, badge, legal, technical] = await Promise.all(
+  ["home", "portal-pages", "admin-pages", "compare-pages", "guide-pages", "badge", "legal", "technical"].map(load)
 );
-const contentModules = [home, portalPages, adminPages, comparePages, guidePages, badge];
+const contentModules = [home, portalPages, adminPages, comparePages, guidePages, badge, legal];
 const safePages = async (m, ...args) => {
   try {
     return await m.pages(...args);

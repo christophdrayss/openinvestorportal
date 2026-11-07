@@ -146,7 +146,7 @@ const GUIDES = {
 const TITLE_SUFFIX = ": API, MCP and document access";
 const TITLE_MAX = 60;
 const OFFERED = new Set(["available", "beta", "partner-only"]);
-const CONTACT = "mailto:hello@openinvestorportal.com?subject=Registry%20correction";
+const CONTACT = "mailto:contact@openinvestorportal.com?subject=Registry%20correction";
 
 // ---------------------------------------------------------------------------------------------
 // Small text helpers

@@ -26,7 +26,7 @@ const confPill = (c) => {
 };
 const AUDIENCE = { lp: "investors", gp: "fund managers", "fund-admin": "administrators", partner: "partners" };
 const OPEN = ["available", "beta", "partner-only"];
-const CORRECT_MAIL = "hello@openinvestorportal.com";
+const CORRECT_MAIL = "contact@openinvestorportal.com";
 
 let regionNames;
 try {

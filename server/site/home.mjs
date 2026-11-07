@@ -9,7 +9,7 @@
 import { readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { SITE_NAME, apiPath } from "./context.mjs";
-import { esc, abs, LOGO_SVG, EXT_ICON, NAV, MENU_BTN, breadcrumbLd, faqLd } from "./layout.mjs";
+import { esc, abs, LOGO_SVG, EXT_ICON, NAV, MENU_BTN, footerHtml, breadcrumbLd, faqLd } from "./layout.mjs";
 
 const decode = (s) =>
   String(s)
@@ -31,7 +31,7 @@ const organization = () => ({
   name: SITE_NAME,
   url: abs("/"),
   logo: { "@type": "ImageObject", url: abs("/icon-512.png"), width: 512, height: 512 },
-  email: "hello@openinvestorportal.com",
+  email: "contact@openinvestorportal.com",
   description: "Open registry and peer-to-peer protocol for investor portal access.",
 });
 const orgRef = { "@type": "Organization", "@id": ORG_ID, name: SITE_NAME, url: abs("/") };
@@ -206,6 +206,7 @@ function renderHome(ctx) {
   return html
     .replace("<!--SEO_HEAD-->", () => seoHead(html, "/", jsonld))
     .replace("<!--NAV-->", () => nav({ onHome: true }))
+    .replace("<!--FOOTER-->", () => footerHtml())
     .replace("<!--REG_COUNT-->", () => `${rows.length} portals · `)
     .replace("<!--REG_ROWS-->", () => rows.map(rowHtml).join("") || '<tr><td colspan="8" style="color:var(--muted)">No match.</td></tr>')
     .replace("<!--REG_DATA-->", () => JSON.stringify(data).replace(/</g, "\\u003c"));
@@ -237,7 +238,8 @@ function renderVaults(ctx) {
     faqLd(qa),
     breadcrumbLd([{ name: "Managed Vaults", path: "/vaults" }]),
   ];
-  return html.replace("<!--SEO_HEAD-->", () => seoHead(html, "/vaults", jsonld)).replace("<!--NAV-->", () => nav({ active: "/vaults" }));
+  return html.replace("<!--SEO_HEAD-->", () => seoHead(html, "/vaults", jsonld)).replace("<!--NAV-->", () => nav({ active: "/vaults" }))
+    .replace("<!--FOOTER-->", () => footerHtml());
 }
 
 const fileDate = (ctx, name) => statSync(join(ctx.root, "server/public", name)).mtime.toISOString().slice(0, 10);
